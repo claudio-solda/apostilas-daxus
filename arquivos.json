@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "seed-guia-prompts-ia",
+    "nome": "Guia de Prompts e Ferramentas de IA (Daxus)",
+    "categoria": "apostila",
+    "tipo": "application/pdf",
+    "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/guia_prompts_ia.pdf",
+    "createdAt": 1751500000000
+  }
+]
