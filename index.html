@@ -207,10 +207,12 @@
 <div id="lockScreen">
   <div class="lock-icon">🔒</div>
   <h2>Apostilas Daxus</h2>
-  <p>Digite a senha para acessar</p>
+  <p id="lockSubtitle">Digite a senha para acessar</p>
+  <button class="btn" id="biometricBtn" style="display:none;">👆 Desbloquear com digital</button>
   <input type="password" id="lockInput" placeholder="Senha" autocomplete="off">
   <button class="btn" id="lockBtn">Entrar</button>
   <div id="lockError"></div>
+  <button class="btn-outline btn" id="enableBiometricBtn" style="display:none; margin-top:6px;">Ativar digital neste aparelho</button>
 </div>
 
 <div id="adminScreen" class="hidden">
@@ -292,32 +294,142 @@ const CONFIG = {
 const FIRESTORE_BASE = `https://firestore.googleapis.com/v1/projects/${CONFIG.firebaseProjectId}/databases/(default)/documents`;
 const COLLECTION_PATH = `apostilas_daxus/claudio/arquivos`;
 
+// ---------- BIOMETRIA (WebAuthn - digital/Face ID do aparelho) ----------
+const BIO_CRED_KEY = 'apostilas_daxus_bio_credential_id';
+const BIO_ENABLED_KEY = 'apostilas_daxus_bio_enabled';
+
+function bufToB64(buf){
+  return btoa(String.fromCharCode(...new Uint8Array(buf)));
+}
+function b64ToBuf(b64){
+  const bin = atob(b64);
+  const arr = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) arr[i] = bin.charCodeAt(i);
+  return arr.buffer;
+}
+
+async function biometriaDisponivel(){
+  if(!window.PublicKeyCredential) return false;
+  try{
+    return await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+  }catch(e){ return false; }
+}
+
+async function cadastrarDigital(){
+  try{
+    const publicKey = {
+      challenge: crypto.getRandomValues(new Uint8Array(32)),
+      rp: { name: "Apostilas Daxus" },
+      user: {
+        id: crypto.getRandomValues(new Uint8Array(16)),
+        name: "claudio",
+        displayName: "Claudio"
+      },
+      pubKeyCredParams: [{alg:-7, type:"public-key"}, {alg:-257, type:"public-key"}],
+      authenticatorSelection: { authenticatorAttachment:"platform", userVerification:"required" },
+      timeout: 60000,
+      attestation: "none"
+    };
+    const cred = await navigator.credentials.create({publicKey});
+    localStorage.setItem(BIO_CRED_KEY, bufToB64(cred.rawId));
+    localStorage.setItem(BIO_ENABLED_KEY, 'yes');
+    return true;
+  }catch(e){
+    console.error('Erro ao cadastrar digital', e);
+    return false;
+  }
+}
+
+async function desbloquearComDigital(){
+  const credIdB64 = localStorage.getItem(BIO_CRED_KEY);
+  if(!credIdB64) return false;
+  try{
+    const publicKey = {
+      challenge: crypto.getRandomValues(new Uint8Array(32)),
+      allowCredentials: [{ id: b64ToBuf(credIdB64), type:'public-key' }],
+      userVerification: "required",
+      timeout: 60000
+    };
+    await navigator.credentials.get({publicKey});
+    return true;
+  }catch(e){
+    console.error('Falha na digital', e);
+    return false;
+  }
+}
+
 // ---------- LOCK ----------
 (function initLock(){
   const lockScreen = document.getElementById('lockScreen');
   const lockInput = document.getElementById('lockInput');
   const lockBtn = document.getElementById('lockBtn');
   const lockError = document.getElementById('lockError');
+  const lockSubtitle = document.getElementById('lockSubtitle');
+  const biometricBtn = document.getElementById('biometricBtn');
+  const enableBiometricBtn = document.getElementById('enableBiometricBtn');
 
   if(localStorage.getItem(CONFIG.lockKey) === 'yes'){
     lockScreen.classList.add('hidden');
     init();
     return;
   }
+
+  function desbloquear(){
+    localStorage.setItem(CONFIG.lockKey, 'yes');
+    lockScreen.classList.add('hidden');
+    init();
+  }
+
   function tryUnlock(){
     const senhaAtual = localStorage.getItem(CONFIG.customPasswordKey) || CONFIG.password;
     if(lockInput.value === senhaAtual){
-      localStorage.setItem(CONFIG.lockKey, 'yes');
-      lockScreen.classList.add('hidden');
-      init();
+      // se digital disponível e ainda não cadastrada, oferece ativar
+      biometriaDisponivel().then(disponivel=>{
+        if(disponivel && localStorage.getItem(BIO_ENABLED_KEY) !== 'yes'){
+          enableBiometricBtn.style.display = 'block';
+          lockInput.style.display = 'none';
+          lockBtn.style.display = 'none';
+          lockSubtitle.textContent = 'Senha certa! Quer ativar a digital neste aparelho?';
+          lockError.textContent = '';
+          enableBiometricBtn.onclick = async ()=>{
+            enableBiometricBtn.textContent = 'Aguardando digital...';
+            const ok = await cadastrarDigital();
+            if(ok){ desbloquear(); } else { desbloquear(); }
+          };
+          // permite pular e entrar direto também
+          setTimeout(()=>{ if(!lockScreen.classList.contains('hidden')){} }, 0);
+        } else {
+          desbloquear();
+        }
+      });
     } else {
       lockError.textContent = 'Senha errada, tenta de novo';
       lockInput.value=''; lockInput.focus();
     }
   }
+
   lockBtn.addEventListener('click', tryUnlock);
   lockInput.addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
-  setTimeout(()=>lockInput.focus(), 300);
+
+  // permite pular a oferta de digital e entrar direto tocando fora — clique duplo no subtítulo pula
+  lockSubtitle.addEventListener('dblclick', ()=>{ if(enableBiometricBtn.style.display==='block') desbloquear(); });
+
+  // ---- oferece digital já na entrada, se cadastrada ----
+  biometriaDisponivel().then(disponivel=>{
+    if(disponivel && localStorage.getItem(BIO_ENABLED_KEY)==='yes'){
+      biometricBtn.style.display = 'block';
+      lockSubtitle.textContent = 'Use sua digital ou a senha para acessar';
+      biometricBtn.addEventListener('click', async ()=>{
+        biometricBtn.textContent = '👆 Aguardando digital...';
+        const ok = await desbloquearComDigital();
+        biometricBtn.textContent = '👆 Desbloquear com digital';
+        if(ok){ desbloquear(); } else { lockError.textContent = 'Não reconheci a digital, tenta de novo ou usa a senha'; }
+      });
+      setTimeout(()=> biometricBtn.click(), 400); // já tenta automaticamente ao abrir
+    } else {
+      setTimeout(()=>lockInput.focus(), 300);
+    }
+  });
 })();
 
 // ---------- ADMIN (5 taps no título) ----------
