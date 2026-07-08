@@ -368,14 +368,14 @@ async function desbloquearComDigital(){
   const biometricBtn = document.getElementById('biometricBtn');
   const enableBiometricBtn = document.getElementById('enableBiometricBtn');
 
-  if(localStorage.getItem(CONFIG.lockKey) === 'yes'){
+  if(sessionStorage.getItem(CONFIG.lockKey) === 'yes'){
     lockScreen.classList.add('hidden');
     init();
     return;
   }
 
   function desbloquear(){
-    localStorage.setItem(CONFIG.lockKey, 'yes');
+    sessionStorage.setItem(CONFIG.lockKey, 'yes');
     lockScreen.classList.add('hidden');
     init();
   }
