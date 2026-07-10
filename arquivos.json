@@ -14,5 +14,13 @@
     "tipo": "application/pdf",
     "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/curso_solda_resistencia.pdf",
     "createdAt": 1783707973000
+  },
+  {
+    "id": "estudo-brigada-incendio",
+    "nome": "Estudo - Brigada de Incendio (Preparacao para o Curso)",
+    "categoria": "apostila",
+    "tipo": "application/pdf",
+    "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/estudo_brigada_incendio.pdf",
+    "createdAt": 1783709118000
   }
 ]
