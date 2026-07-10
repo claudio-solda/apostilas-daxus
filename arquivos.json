@@ -6,5 +6,13 @@
     "tipo": "application/pdf",
     "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/guia_prompts_ia.pdf",
     "createdAt": 1751500000000
+  },
+  {
+    "id": "curso-solda-resistencia",
+    "nome": "Curso de Solda por Resistencia (Porca e Projecao)",
+    "categoria": "apostila",
+    "tipo": "application/pdf",
+    "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/curso_solda_resistencia.pdf",
+    "createdAt": 1783707973000
   }
 ]
