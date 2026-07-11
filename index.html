@@ -594,6 +594,8 @@ function render(){
       <div class="file-actions">
         <button class="icon-btn" onclick="abrirArquivo('${a.id}')" title="Abrir">👁️</button>
         <button class="icon-btn" onclick="baixarArquivo('${a.id}')" title="Baixar">⬇️</button>
+        <button class="icon-btn" onclick="compartilharWhatsApp('${a.id}')" title="Compartilhar no WhatsApp">💬</button>
+        <button class="icon-btn" onclick="compartilharEmail('${a.id}')" title="Compartilhar por e-mail">✉️</button>
         ${a.removable ? `<button class="icon-btn danger" onclick="excluirArquivo('${a.id}')" title="Excluir">🗑️</button>` : ''}
       </div>
     </div>`;
@@ -601,6 +603,29 @@ function render(){
 }
 
 function findArquivo(id){ return arquivos.find(a=>a.id===id); }
+
+window.compartilharWhatsApp = function(id){
+  const a = findArquivo(id);
+  if(!a) return;
+  if(a.src.startsWith('data:')){
+    toast('Este arquivo é local — baixe primeiro para poder compartilhar.');
+    return;
+  }
+  const texto = encodeURIComponent(`${a.nome}\n${a.src}`);
+  window.open(`https://wa.me/?text=${texto}`, '_blank');
+};
+
+window.compartilharEmail = function(id){
+  const a = findArquivo(id);
+  if(!a) return;
+  if(a.src.startsWith('data:')){
+    toast('Este arquivo é local — baixe primeiro para poder compartilhar.');
+    return;
+  }
+  const assunto = encodeURIComponent(a.nome);
+  const corpo = encodeURIComponent(`Segue o material: ${a.nome}\n\n${a.src}`);
+  window.location.href = `mailto:?subject=${assunto}&body=${corpo}`;
+};
 
 window.abrirArquivo = async function(id){
   const a = findArquivo(id);
