@@ -1,0 +1,1279 @@
+{
+  "titulo": "Curso Completo de Solda por Resistência",
+  "autor": "Claudio Roberto",
+  "versao": "1.0",
+  "aplicativo": "Apostilha de Solda / RELATÓRIO DE SOLDA",
+  "totalAulas": 13,
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "Introdução à Solda por Resistência",
+      "descricao": "Visão geral do processo, sua importância industrial e onde ele é aplicado.",
+      "conteudo": "A solda por resistência elétrica é um processo de união de metais que utiliza o calor gerado pela passagem de corrente elétrica através da interface entre duas ou mais peças, associado à aplicação de pressão mecânica pelos eletrodos. Diferente de processos como MIG/MAG ou eletrodo revestido, a solda por resistência não utiliza material de adição nem chama aberta: o próprio calor gerado pela resistência elétrica do material funde a região de contato, formando o que chamamos de 'lentilha de solda' (nugget).\n\nEsse processo é amplamente utilizado na indústria automotiva, eletrodomésticos, estruturas metálicas e linhas de montagem seriada, principalmente pela alta velocidade de execução, ausência de material de adição, facilidade de automação e repetibilidade. Uma carroceria de automóvel, por exemplo, pode conter entre 3.000 e 5.000 pontos de solda por resistência.\n\nO processo se baseia na Lei de Joule: o calor gerado é proporcional ao quadrado da corrente, à resistência elétrica do circuito e ao tempo de aplicação (Q = I² x R x t). Esse princípio é a base para entender por que os três parâmetros — corrente, tempo e pressão — precisam estar sempre equilibrados: alterar um exige reavaliar os outros dois.",
+      "exemplosPraticos": [
+        "Solda de longarinas e reforços estruturais em carrocerias automotivas.",
+        "Fixação de porcas e parafusos em suportes de fixação (solda de porca).",
+        "União de chapas em eletrodomésticos como fogões e máquinas de lavar."
+      ],
+      "dicasImportantes": [
+        "A qualidade da solda depende do equilíbrio entre corrente, tempo e pressão — nunca ajuste um sem considerar os outros.",
+        "Solda por resistência é um processo essencialmente mecânico-elétrico: limpeza e alinhamento das peças são tão importantes quanto os parâmetros elétricos."
+      ],
+      "observacoes": "Esta aula é a base conceitual para todas as demais — recomenda-se revisão antes de avançar para os parâmetros técnicos.",
+      "imagens": [
+        {
+          "legenda": "Esquema básico do circuito de solda por resistência",
+          "arquivo": "midia/galeria/aula01_esquema.jpg"
+        },
+        {
+          "legenda": "Pontos de solda em carroceria automotiva",
+          "arquivo": "midia/galeria/aula01_carroceria.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que gera o calor na solda por resistência?",
+          "opcoes": [
+            "Chama de gás",
+            "Corrente elétrica passando pela resistência do material",
+            "Arco elétrico contínuo",
+            "Fricção mecânica"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "A solda por resistência utiliza material de adição?",
+          "opcoes": [
+            "Sim, sempre",
+            "Apenas em juntas grandes",
+            "Não",
+            "Somente na solda de porca"
+          ],
+          "correta": 2
+        },
+        {
+          "pergunta": "Qual lei física fundamenta o aquecimento na solda por resistência?",
+          "opcoes": [
+            "Lei de Ohm apenas",
+            "Lei de Joule",
+            "Lei de Faraday",
+            "Lei de Coulomb"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Fundamentos da Soldagem por Resistência",
+      "descricao": "Princípios físicos, formação da lentilha de solda e fatores que influenciam a qualidade.",
+      "conteudo": "Todo processo de solda por resistência depende da formação de um circuito elétrico fechado entre os dois eletrodos, passando pelas chapas a serem unidas. A resistência elétrica no ponto de contato entre as chapas é maior que a resistência do próprio material das chapas, o que concentra o aquecimento exatamente na interface — é ali que se forma a lentilha de solda.\n\nExistem três resistências elétricas em série no circuito: a resistência de contato eletrodo-chapa, a resistência de contato chapa-chapa (a mais importante, pois é onde queremos o aquecimento) e a resistência interna do próprio material (resistividade). A pressão dos eletrodos tem papel duplo: reduz a resistência de contato eletrodo-chapa (evitando queima superficial) e mantém as chapas unidas durante a solidificação da lentilha.\n\nO ciclo de solda é dividido em quatro fases: Squeeze Time (tempo de aproximação/pressão inicial, antes de energizar), Weld Time (tempo em que a corrente efetivamente passa), Hold Time (tempo em que a pressão é mantida após a corrente cessar, para a lentilha solidificar sob pressão) e Off Time (tempo de alívio, antes do próximo ciclo). Erros comuns acontecem quando o Hold Time é insuficiente: a lentilha ainda líquida perde a pressão de contenção e ocorre expulsão de material fundido.",
+      "exemplosPraticos": [
+        "Ajuste de Squeeze Time insuficiente causando respingo (expulsão) logo no início do ciclo.",
+        "Hold Time curto demais gerando trinca interna na lentilha por resfriamento sob pressão inadequada."
+      ],
+      "dicasImportantes": [
+        "A resistência de contato chapa-chapa é o que realmente queremos aquecer — eletrodos limpos e bem dressados evitam aquecimento indesejado na superfície.",
+        "Nunca reduza o Hold Time para 'ganhar tempo de ciclo' sem validar a resistência da solda por teste de arrancamento."
+      ],
+      "observacoes": "Fundamental entender esta aula antes de mexer em parâmetros de máquina na aula 5.",
+      "imagens": [
+        {
+          "legenda": "Diagrama das quatro fases do ciclo de solda (Squeeze/Weld/Hold/Off)",
+          "arquivo": "midia/galeria/aula02_ciclo.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual resistência de contato é a mais importante para a formação da lentilha?",
+          "opcoes": [
+            "Eletrodo-chapa",
+            "Chapa-chapa",
+            "Interna do eletrodo",
+            "Do cabo de alimentação"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que acontece se o Hold Time for insuficiente?",
+          "opcoes": [
+            "A solda fica mais forte",
+            "Pode ocorrer expulsão ou trinca por resfriamento sob pressão inadequada",
+            "Nada muda",
+            "O eletrodo dura mais"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Em qual fase do ciclo a corrente efetivamente passa pelas chapas?",
+          "opcoes": [
+            "Squeeze Time",
+            "Weld Time",
+            "Off Time",
+            "Hold Time"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Tipos de Solda (Ponto, Projeção, Costura e Porca)",
+      "descricao": "Diferenças entre os principais processos de solda por resistência e suas aplicações.",
+      "conteudo": "SOLDA PONTO (Spot Welding): é o processo mais comum, onde dois eletrodos em formato de ponta pressionam as chapas em um único ponto, formando uma lentilha localizada. É o padrão em estruturas automotivas e chapas finas sobrepostas.\n\nSOLDA POR PROJEÇÃO (Projection Welding): utiliza uma saliência (projeção) previamente estampada em uma das peças, que concentra a corrente e a pressão em um ponto definido. Muito usada quando se deseja soldar porcas, parafusos ou peças com geometria irregular, permitindo múltiplos pontos simultâneos com eletrodos planos.\n\nSOLDA POR COSTURA (Seam Welding): utiliza eletrodos em formato de roda (rolete) que giram continuamente sobre as chapas, aplicando pulsos de corrente em sequência, formando uma linha contínua ou sobreposta de pontos — resultando em uma junta estanque (à prova de vazamento), usada em tanques e dutos.\n\nSOLDA DE PORCA (Nut Welding): é um caso específico de solda por projeção, onde a porca possui pequenas saliências (projeções) na face de contato que concentram a corrente. É amplamente usada para fixar pontos de parafusamento em chapas, permitindo montagem posterior sem necessidade de furos rosqueados.",
+      "exemplosPraticos": [
+        "Solda ponto: união de painéis de porta em veículos.",
+        "Solda por projeção: fixação de parafusos com base soldável em suportes de fixação.",
+        "Solda por costura: fabricação de tanques de combustível.",
+        "Solda de porca: pontos de fixação para posterior montagem de componentes elétricos."
+      ],
+      "dicasImportantes": [
+        "Cada tipo de solda exige eletrodo e parâmetros específicos — não existe 'parâmetro universal'.",
+        "Na solda por projeção e de porca, a qualidade da estampagem da projeção é tão crítica quanto os parâmetros elétricos."
+      ],
+      "observacoes": "As aulas 7 e 8 aprofundam especificamente a solda de porca e a solda por projeção.",
+      "imagens": [
+        {
+          "legenda": "Comparativo visual: ponto, projeção, costura e porca",
+          "arquivo": "midia/galeria/aula03_tipos.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual processo utiliza eletrodos em formato de roda?",
+          "opcoes": [
+            "Solda ponto",
+            "Solda por projeção",
+            "Solda por costura",
+            "Solda de porca"
+          ],
+          "correta": 2
+        },
+        {
+          "pergunta": "A solda de porca é um caso específico de qual processo?",
+          "opcoes": [
+            "Solda ponto",
+            "Solda por projeção",
+            "Solda por costura",
+            "Nenhum dos anteriores"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual processo é usado para fabricar juntas estanques como tanques?",
+          "opcoes": [
+            "Solda ponto",
+            "Solda por costura",
+            "Solda de porca",
+            "Solda por projeção"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Componentes da Máquina de Solda",
+      "descricao": "Principais partes de uma máquina de solda por resistência e a função de cada uma.",
+      "conteudo": "TRANSFORMADOR DE SOLDA: reduz a alta tensão da rede para uma tensão muito baixa (poucos volts), elevando drasticamente a corrente (podendo chegar a dezenas de milhares de ampères). É o coração elétrico da máquina.\n\nCILINDRO PNEUMÁTICO (ou servo-motor, em máquinas mais modernas): responsável por aplicar a força mecânica entre os eletrodos. A pressão do ar comprimido (ou o torque do servo) determina a força de compressão sobre as chapas.\n\nELETRODOS: peças de cobre (ou ligas de cobre) que conduzem a corrente até a peça e aplicam a pressão. São consumíveis e precisam de manutenção periódica (dressagem).\n\nSISTEMA DE REFRIGERAÇÃO: circuito de água que resfria eletrodos, braços e transformador, evitando superaquecimento — essencial para produção contínua.\n\nCONTROLADOR (CLP/Timer de Solda): equipamento eletrônico que define e monitora os parâmetros do ciclo (corrente, tempo, pressão), muitas vezes com monitoramento em tempo real da qualidade da solda através de curvas de corrente e resistência dinâmica.\n\nBRAÇOS E SUPORTES: estrutura mecânica que sustenta e posiciona os eletrodos, podendo ser fixos (máquinas estacionárias) ou móveis (pinças de solda robotizadas).",
+      "exemplosPraticos": [
+        "Uma máquina estacionária MS de bancada típica de produção seriada.",
+        "Uma pinça de solda acoplada a um braço robótico em linha automatizada."
+      ],
+      "dicasImportantes": [
+        "Nunca opere a máquina com o sistema de refrigeração desligado ou com vazamento — o superaquecimento reduz a vida útil do eletrodo e do transformador.",
+        "Verifique periodicamente vazamentos de ar no cilindro pneumático — perda de pressão altera diretamente a força aplicada."
+      ],
+      "observacoes": "Conhecer os componentes ajuda a diagnosticar rapidamente a causa de um defeito (aula 10).",
+      "imagens": [
+        {
+          "legenda": "Vista explodida de uma máquina de solda por resistência",
+          "arquivo": "midia/galeria/aula04_componentes.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual componente reduz a tensão e eleva a corrente?",
+          "opcoes": [
+            "Cilindro pneumático",
+            "Transformador de solda",
+            "Eletrodo",
+            "Controlador"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Para que serve o sistema de refrigeração?",
+          "opcoes": [
+            "Aumentar a corrente",
+            "Resfriar eletrodos, braços e transformador",
+            "Substituir o eletrodo",
+            "Medir a pressão"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que define e monitora os parâmetros do ciclo de solda?",
+          "opcoes": [
+            "O cilindro pneumático",
+            "O controlador (CLP/Timer)",
+            "O braço de suporte",
+            "O sistema de refrigeração"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Regulagem e Parâmetros (Corrente, Tempo, Pressão e Refrigeração)",
+      "descricao": "Como ajustar e validar os quatro parâmetros críticos do processo.",
+      "conteudo": "CORRENTE (medida em kA - quiloampères): é o parâmetro que mais influencia a geração de calor, já que o calor é proporcional ao quadrado da corrente (Q = I²Rt). Corrente baixa demais gera solda fria (falta de fusão); corrente alta demais gera expulsão de material e crateras.\n\nTEMPO DE SOLDA (medido em ciclos de rede, 1 ciclo = 1/60s no Brasil): controla por quanto tempo a corrente passa. Tempo curto pode não permitir fusão adequada; tempo longo pode superaquecer e amolecer excessivamente o eletrodo.\n\nPRESSÃO PNEUMÁTICA (medida em bar ou kgf): mantém as chapas em contato firme e contém a lentilha líquida. Pressão baixa gera expulsão e resistência de contato irregular; pressão alta demais pode 'esmagar' a chapa e reduzir a área de solda.\n\nREFRIGERAÇÃO: embora não seja um parâmetro do ciclo de solda propriamente dito, a temperatura da água de refrigeração e a vazão afetam diretamente a vida útil do eletrodo e a estabilidade dos parâmetros ao longo do turno — eletrodos que não resfriam adequadamente perdem geometria mais rápido e alteram a densidade de corrente aplicada.\n\nA validação de um ajuste de parâmetros nunca deve ser feita apenas visualmente: o padrão correto é realizar teste de arrancamento (peel test) ou torque, verificando o diâmetro da lentilha formada contra a especificação da norma ou do plano de controle.",
+      "exemplosPraticos": [
+        "Ajuste típico de solda ponto em chapa 0,8mm: corrente na faixa de 8-10 kA, tempo de 8-10 ciclos, pressão conforme especificação do plano de controle.",
+        "Validação por teste de arrancamento: o botão de solda arrancado deve furar a chapa (falha no metal-base), não descolar limpo (falha adesiva)."
+      ],
+      "dicasImportantes": [
+        "Sempre valide qualquer alteração de parâmetro com teste de arrancamento antes de liberar a produção.",
+        "Registre os parâmetros validados no plano de controle da peça — não confie apenas na memória ou no último ajuste feito."
+      ],
+      "observacoes": "Esta é uma das aulas mais consultadas no dia a dia — recomenda-se revisão periódica.",
+      "imagens": [
+        {
+          "legenda": "Gráfico de corrente x tempo em um ciclo de solda típico",
+          "arquivo": "midia/galeria/aula05_grafico.jpg"
+        },
+        {
+          "legenda": "Teste de arrancamento (peel test) de um ponto de solda",
+          "arquivo": "midia/galeria/aula05_arrancamento.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O calor gerado na solda é proporcional a quê?",
+          "opcoes": [
+            "Apenas ao tempo",
+            "Ao quadrado da corrente, à resistência e ao tempo",
+            "Apenas à pressão",
+            "À temperatura da água"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Como é medido o tempo de solda no Brasil?",
+          "opcoes": [
+            "Em segundos apenas",
+            "Em ciclos de rede (1 ciclo = 1/60s)",
+            "Em minutos",
+            "Em kA"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual o teste padrão para validar a resistência de um ponto de solda?",
+          "opcoes": [
+            "Teste visual apenas",
+            "Teste de arrancamento (peel test) ou torque",
+            "Medir só a temperatura",
+            "Contar o tempo de ciclo"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Eletrodos: Tipos, Materiais, Dressagem e Troca",
+      "descricao": "Como escolher, manter e substituir eletrodos corretamente.",
+      "conteudo": "MATERIAIS: a maioria dos eletrodos é feita de ligas de cobre-cromo ou cobre-cromo-zircônio, que combinam boa condutividade elétrica/térmica com resistência mecânica a quente. Ligas de cobre-berílio são usadas em aplicações que exigem dureza superior, mas são mais caras.\n\nFORMATOS/PONTAS: os formatos mais comuns são ponta reta (tipo A), ponta cônica truncada (tipo B) e ponta esférica — a escolha depende do acesso à peça, da espessura da chapa e da área de contato desejada.\n\nDRESSAGEM: com o uso, a ponta do eletrodo deforma (achata) e perde o diâmetro original de contato, aumentando a área de contato e reduzindo a densidade de corrente — isso enfraquece a solda mesmo com os mesmos parâmetros elétricos. A dressagem é o processo de reusinar a ponta do eletrodo, devolvendo sua geometria original, geralmente feito com fresas específicas (dressadores manuais ou pneumáticos) diretamente na máquina.\n\nTROCA: eletrodos devem ser substituídos quando a dressagem já não recupera mais o diâmetro dentro da tolerância, quando há trincas visíveis, ou após um número definido de dressagens (conforme plano de manutenção). Usar um eletrodo além do limite gera instabilidade de processo, mesmo com parâmetros corretos no controlador.\n\nPERIODICIDADE: a frequência de dressagem depende do material soldado (chapas galvanizadas exigem dressagem mais frequente que chapas a frio, devido ao zinco que contamina e desgasta a ponta mais rápido), da corrente utilizada e do volume de produção.",
+      "exemplosPraticos": [
+        "Dressagem programada a cada 500 pontos em produção de chapa galvanizada.",
+        "Troca de eletrodo após identificar trinca na ponta durante inspeção visual de rotina."
+      ],
+      "dicasImportantes": [
+        "Eletrodo achatado é uma das causas mais comuns (e mais ignoradas) de solda fria em produção estável.",
+        "Sempre verifique o diâmetro da ponta com calibre/gabarito após a dressagem, não apenas visualmente."
+      ],
+      "observacoes": "O controle de eletrodos e o controle de dressagem estão listados como funcionalidades futuras do app (Módulo 14).",
+      "imagens": [
+        {
+          "legenda": "Eletrodo novo x eletrodo desgastado (comparação de ponta)",
+          "arquivo": "midia/galeria/aula06_eletrodo.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que acontece quando a ponta do eletrodo achata com o uso?",
+          "opcoes": [
+            "A solda melhora",
+            "A área de contato aumenta e a densidade de corrente cai, enfraquecendo a solda",
+            "Nada muda",
+            "A corrente aumenta automaticamente"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que é a dressagem?",
+          "opcoes": [
+            "Troca do transformador",
+            "Reusinagem da ponta do eletrodo para recuperar a geometria",
+            "Ajuste do tempo de solda",
+            "Limpeza do painel de controle"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Por que chapas galvanizadas exigem dressagem mais frequente?",
+          "opcoes": [
+            "Por serem mais espessas",
+            "Por causa do zinco, que contamina e desgasta a ponta mais rápido",
+            "Porque são mais baratas",
+            "Não exigem dressagem"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Solda de Porca (Processo Completo)",
+      "descricao": "Do posicionamento ao teste final: o passo a passo completo da solda de porca por projeção.",
+      "conteudo": "A solda de porca é um processo de solda por projeção onde a própria porca possui pequenas saliências (geralmente 3, dispostas em triângulo, ou uma saliência circular contínua) usinadas ou estampadas em sua face de assentamento. Essas projeções concentram corrente e pressão em pontos definidos, permitindo fusão controlada sem necessitar de eletrodo com ponta específica para a rosca.\n\nPASSO A PASSO: (1) Posicionamento da porca no pino-guia ou gabarito da chapa, garantindo alinhamento com o furo; (2) Descida do eletrodo superior (geralmente plano ou levemente côncavo) até tocar a porca; (3) Aplicação da pressão de Squeeze Time, comprimindo a porca contra a chapa; (4) Passagem da corrente (Weld Time), fundindo as projeções simultaneamente; (5) Hold Time, mantendo a pressão até a solidificação; (6) Subida do eletrodo e liberação da peça.\n\nPONTOS CRÍTICOS: alinhamento da porca com o furo da chapa (desalinhamento causa solda assimétrica e possível obstrução parcial da rosca), limpeza da face de projeção (óleo ou sujeira impede contato elétrico uniforme), e verificação da integridade da rosca após soldagem (respingos internos podem obstruir a rosca).\n\nVALIDAÇÃO: teste de torque (aplicar parafuso e verificar torque de arrancamento/quebra conforme especificação) e inspeção visual da simetria da solda ao redor da porca — solda assimétrica indica problema de alinhamento ou de projeções desgastadas na porca.",
+      "exemplosPraticos": [
+        "Solda de porca M6 com 3 projeções triangulares em suporte de fixação de componente elétrico.",
+        "Verificação pós-solda com calibre passa/não-passa na rosca."
+      ],
+      "dicasImportantes": [
+        "Sempre confira o alinhamento porca-furo antes de fechar o ciclo — corrigir depois da solda não é possível.",
+        "Respingo interno na rosca é defeito crítico: pode reprovar a peça mesmo com a solda estruturalmente correta."
+      ],
+      "observacoes": "Processo mencionado como um dos certificados emitidos pelo curso (Certificado de Conclusão).",
+      "imagens": [
+        {
+          "legenda": "Porca com projeções em triângulo antes da solda",
+          "arquivo": "midia/galeria/aula07_porca.jpg"
+        },
+        {
+          "legenda": "Sequência do ciclo de solda de porca",
+          "arquivo": "midia/galeria/aula07_ciclo.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Onde ficam as projeções na solda de porca?",
+          "opcoes": [
+            "No eletrodo",
+            "Na própria porca, na face de assentamento",
+            "Na chapa",
+            "No transformador"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual é um ponto crítico de atenção no processo de solda de porca?",
+          "opcoes": [
+            "Cor da porca",
+            "Alinhamento da porca com o furo da chapa",
+            "Marca do fabricante",
+            "Peso da porca"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual defeito pode obstruir a rosca após a solda?",
+          "opcoes": [
+            "Falta de pintura",
+            "Respingo interno na rosca",
+            "Excesso de brilho",
+            "Excesso de refrigeração"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "Solda por Projeção",
+      "descricao": "Aprofundamento no processo de solda por projeção além da solda de porca.",
+      "conteudo": "A solda por projeção (projection welding) é utilizada quando se deseja controlar com precisão a localização do ponto de solda através de uma saliência geométrica pré-formada em uma das peças (estampada, usinada ou natural, como em fios cruzados). Diferente da solda ponto tradicional, os eletrodos podem ser planos e de maior área, já que é a projeção — e não a geometria do eletrodo — que concentra a corrente.\n\nVANTAGENS: permite soldar múltiplos pontos simultaneamente com um único ciclo (várias projeções na mesma peça), reduz o desgaste do eletrodo (que fica plano e maior, distribuindo melhor o calor), e permite maior repetibilidade em peças complexas, como suportes com múltiplos pontos de fixação.\n\nCOMPORTAMENTO DA PROJEÇÃO DURANTE O CICLO: no início da aplicação de corrente, a projeção concentra toda a densidade de corrente em sua área reduzida, aquecendo e amolecendo rapidamente; à medida que colapsa sob pressão, a área de contato aumenta e a corrente se distribui, formando a lentilha final. Esse colapso controlado é o que diferencia uma boa solda por projeção de uma solda instável.\n\nCUIDADOS: a geometria e a altura da projeção devem ser padronizadas na estampagem — projeções fora de especificação (muito baixas, muito altas, ou com geometria irregular) causam variação significativa na qualidade mesmo com parâmetros elétricos idênticos, sendo uma causa de defeito frequentemente atribuída erroneamente à máquina.",
+      "exemplosPraticos": [
+        "Solda simultânea de 2 projeções em um suporte de fixação em um único ciclo.",
+        "Solda de fios cruzados (cross-wire welding) em telas e grades metálicas."
+      ],
+      "dicasImportantes": [
+        "Se a solda por projeção estiver instável, verifique primeiro a estampagem da projeção antes de mexer nos parâmetros da máquina.",
+        "Eletrodos planos de solda por projeção também desgastam e precisam de manutenção, ainda que com menor frequência que os de ponta."
+      ],
+      "observacoes": "Complementa a aula 3 (tipos de solda) com maior profundidade técnica sobre este processo específico.",
+      "imagens": [
+        {
+          "legenda": "Colapso da projeção durante o ciclo de solda",
+          "arquivo": "midia/galeria/aula08_projecao.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que concentra a corrente na solda por projeção?",
+          "opcoes": [
+            "A ponta do eletrodo",
+            "Uma saliência (projeção) pré-formada na peça",
+            "A cor da chapa",
+            "O tempo de refrigeração"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual vantagem da solda por projeção sobre a solda ponto tradicional?",
+          "opcoes": [
+            "Usa menos energia sempre",
+            "Permite soldar múltiplas projeções simultaneamente com eletrodos planos",
+            "Não precisa de pressão",
+            "Dispensa controlador"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que pode causar variação de qualidade mesmo com parâmetros elétricos idênticos?",
+          "opcoes": [
+            "A cor do eletrodo",
+            "Geometria/altura da projeção fora de especificação",
+            "A marca da máquina",
+            "O horário do turno"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "Controle de Qualidade",
+      "descricao": "Métodos de inspeção e validação da solda por resistência.",
+      "conteudo": "O controle de qualidade em solda por resistência combina inspeção destrutiva, não-destrutiva e monitoramento em processo.\n\nTESTE DE ARRANCAMENTO (Peel Test): destrutivo, consiste em separar as chapas soldadas com ferramenta apropriada (talhadeira, alicate) e avaliar o botão de solda formado. O critério de aprovação típico é que ocorra 'furo no metal-base' (o material rasga ao redor do ponto) e não 'descolamento limpo' (interface lisa, indicando falta de fusão).\n\nTESTE DE TORQUE: usado principalmente em solda de porca, mede o torque necessário para arrancar ou quebrar a porca soldada, comparado à especificação da peça.\n\nMEDIÇÃO DO DIÂMETRO DA LENTILHA: em corte metalográfico (macrografia), mede-se o diâmetro real da lentilha formada e compara-se com o mínimo especificado pela norma (geralmente relacionado à espessura da chapa mais fina da junta).\n\nMONITORAMENTO EM PROCESSO (resistência dinâmica): controladores modernos monitoram a curva de resistência elétrica durante o próprio ciclo de solda, identificando desvios em tempo real sem necessidade de destruir a peça — permitindo alarme automático quando uma solda sai fora da janela de processo esperada.\n\nFREQUÊNCIA DE INSPEÇÃO: normalmente definida pelo plano de controle da peça, considerando início de turno, troca de lote, troca de eletrodo e amostragem periódica durante a produção.",
+      "exemplosPraticos": [
+        "Teste de arrancamento no início de turno, antes de liberar a produção de determinado item.",
+        "Corte metalográfico mensal para validação do diâmetro da lentilha em peça crítica de segurança."
+      ],
+      "dicasImportantes": [
+        "'Descolamento limpo' no teste de arrancamento é sinal de solda fria, mesmo que visualmente pareça boa.",
+        "Registre todos os testes no histórico da máquina/peça — isso é rastreabilidade e pode ser exigido em auditoria."
+      ],
+      "observacoes": "Esta aula conecta diretamente com o módulo Relatório do app, onde peças refugadas por contenção são registradas.",
+      "imagens": [
+        {
+          "legenda": "Exemplo de teste de arrancamento aprovado (furo no metal-base)",
+          "arquivo": "midia/galeria/aula09_arrancamento.jpg"
+        },
+        {
+          "legenda": "Macrografia de uma lentilha de solda",
+          "arquivo": "midia/galeria/aula09_macrografia.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que indica um 'descolamento limpo' no teste de arrancamento?",
+          "opcoes": [
+            "Solda perfeita",
+            "Falta de fusão (solda fria)",
+            "Excesso de corrente",
+            "Eletrodo novo"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que é resistência dinâmica no contexto de monitoramento?",
+          "opcoes": [
+            "A resistência do eletrodo parado",
+            "O acompanhamento da curva de resistência durante o próprio ciclo de solda",
+            "A resistência do cabo elétrico",
+            "A dureza da chapa"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que se mede em um corte metalográfico da solda?",
+          "opcoes": [
+            "A cor da chapa",
+            "O diâmetro da lentilha formada",
+            "A temperatura ambiente",
+            "O tempo de refrigeração"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "titulo": "Defeitos de Soldagem, Causas e Soluções",
+      "descricao": "Principais defeitos encontrados na solda por resistência, suas causas prováveis e correções.",
+      "conteudo": "SOLDA FRIA (falta de fusão): a lentilha não atinge diâmetro/resistência adequados. Causas comuns: corrente baixa, tempo curto, eletrodo desgastado (área de contato grande demais), chapa suja ou oxidada, má refrigeração alterando resistência do eletrodo. Solução: revisar parâmetros, dressar ou trocar eletrodo, limpar a superfície da chapa.\n\nEXPULSÃO (respingo): material fundido é expelido da junta durante o ciclo. Causas comuns: corrente excessiva, pressão insuficiente, Squeeze Time curto (peças não completamente comprimidas antes da corrente), folga excessiva entre chapas. Solução: reduzir corrente, aumentar pressão, revisar Squeeze Time, verificar amassamento/gap entre chapas.\n\nTRINCA NA LENTILHA: geralmente causada por Hold Time insuficiente (a lentilha solidifica sem pressão de contenção adequada) ou resfriamento excessivamente rápido. Solução: aumentar Hold Time, revisar vazão de refrigeração.\n\nMARCA EXCESSIVA NA CHAPA (indentação): eletrodo com pressão excessiva ou ponta desgastada com maior área de contato reduz a densidade de corrente e aumenta a marca visível. Solução: revisar pressão, dressar eletrodo.\n\nSOLDA ASSIMÉTRICA (comum em solda de porca/projeção): geralmente causada por desalinhamento entre peça e eletrodo, ou projeções desgastadas/irregulares. Solução: verificar gabarito de alinhamento, revisar qualidade da estampagem da projeção.\n\nComo regra prática de diagnóstico: sempre isole uma variável por vez (parâmetro elétrico, eletrodo, alinhamento, limpeza) antes de concluir a causa raiz — mudar vários fatores ao mesmo tempo dificulta identificar o que realmente resolveu o problema.",
+      "exemplosPraticos": [
+        "Diagnóstico de respingo constante em MS002 → verificado gap entre chapas fora do especificado → corrigido no processo anterior de conformação.",
+        "Solda fria identificada por teste de arrancamento → eletrodo estava com 2mm de achatamento além do limite → dressagem resolveu."
+      ],
+      "dicasImportantes": [
+        "Nunca corrija um defeito aumentando corrente automaticamente — investigue a causa raiz primeiro (pode ser eletrodo, alinhamento ou limpeza).",
+        "Documente o defeito, a causa identificada e a correção aplicada — isso alimenta o histórico de manutenção da máquina."
+      ],
+      "observacoes": "Esta aula deve ser consultada em conjunto com o módulo Máquinas do app para diagnóstico rápido.",
+      "imagens": [
+        {
+          "legenda": "Tabela comparativa de defeitos, causas e soluções",
+          "arquivo": "midia/galeria/aula10_tabela.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual é uma causa comum de expulsão (respingo)?",
+          "opcoes": [
+            "Corrente baixa",
+            "Pressão insuficiente ou corrente excessiva",
+            "Eletrodo novo",
+            "Refrigeração excessiva"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que geralmente causa trinca na lentilha?",
+          "opcoes": [
+            "Hold Time insuficiente",
+            "Corrente baixa",
+            "Excesso de limpeza",
+            "Eletrodo novo"
+          ],
+          "correta": 0
+        },
+        {
+          "pergunta": "Qual a regra prática recomendada ao diagnosticar um defeito?",
+          "opcoes": [
+            "Mudar todos os parâmetros ao mesmo tempo",
+            "Isolar uma variável por vez antes de concluir a causa raiz",
+            "Sempre trocar o eletrodo primeiro",
+            "Ignorar o histórico da máquina"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "titulo": "Segurança na Operação",
+      "descricao": "Riscos específicos da solda por resistência e EPIs necessários.",
+      "conteudo": "RISCOS ELÉTRICOS: embora a tensão de operação seja baixa, a corrente é extremamente alta — contato direto com partes energizadas do secundário do transformador pode causar queimaduras severas. Manutenção elétrica deve sempre ser feita com a máquina desenergizada e bloqueada (lockout/tagout).\n\nRISCOS MECÂNICOS: esmagamento de mãos/dedos entre eletrodos é um dos acidentes mais comuns em solda por resistência. Máquinas devem possuir proteções (cortinas de luz, botoeiras bimanuais, protetores mecânicos) e o operador nunca deve posicionar as mãos na área de fechamento dos eletrodos.\n\nRISCOS TÉRMICOS: respingos de material fundido podem causar queimaduras e projeção nos olhos — uso de óculos de proteção é obrigatório mesmo sem chama visível, já que a expulsão de partículas incandescentes é comum.\n\nRISCOS QUÍMICOS: soldagem de chapas galvanizadas gera vapores de zinco, que podem causar febre dos fumos metálicos em exposição prolongada sem exaustão adequada — recomenda-se ventilação/exaustão localizada em processos com alto volume de chapa galvanizada.\n\nEPIs RECOMENDADOS: óculos de proteção, luvas de proteção mecânica (atenção: luvas inadequadas podem aumentar risco de esmagamento ao invés de proteger — seguir especificação do fabricante), calçado de segurança, e protetor auricular em ambientes com múltiplas máquinas em operação simultânea.",
+      "exemplosPraticos": [
+        "Uso obrigatório de botoeira bimanual em máquina de solda ponto estacionária.",
+        "Exaustão localizada instalada sobre máquina que solda predominantemente chapa galvanizada."
+      ],
+      "dicasImportantes": [
+        "Nunca burle ou desative dispositivos de segurança (cortina de luz, bimanual) para 'ganhar tempo de ciclo' — o risco de esmagamento é real e grave.",
+        "Sempre siga o procedimento de bloqueio (lockout/tagout) antes de qualquer intervenção elétrica ou mecânica na máquina."
+      ],
+      "observacoes": "Esta aula reforça o conteúdo do curso de brigada de incêndio e segurança do trabalho já realizados na empresa.",
+      "imagens": [
+        {
+          "legenda": "EPIs recomendados para operação de solda por resistência",
+          "arquivo": "midia/galeria/aula11_epi.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual é um dos acidentes mais comuns em solda por resistência?",
+          "opcoes": [
+            "Choque elétrico no operador",
+            "Esmagamento de mãos/dedos entre eletrodos",
+            "Queda de altura",
+            "Intoxicação por gás de solda MIG"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que pode causar febre dos fumos metálicos na solda por resistência?",
+          "opcoes": [
+            "Solda de chapa a frio",
+            "Vapores de zinco ao soldar chapa galvanizada sem exaustão adequada",
+            "Uso de óculos de proteção",
+            "Refrigeração da máquina"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que deve ser feito antes de qualquer intervenção elétrica na máquina?",
+          "opcoes": [
+            "Aumentar a corrente",
+            "Bloqueio e desenergização (lockout/tagout)",
+            "Trocar o eletrodo",
+            "Ligar a exaustão"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "titulo": "Manutenção Preventiva",
+      "descricao": "Rotinas de manutenção que garantem estabilidade e vida útil da máquina de solda.",
+      "conteudo": "A manutenção preventiva em solda por resistência busca evitar que desgastes progressivos (que muitas vezes não são percebidos ponto a ponto) se transformem em defeitos de produção ou quebras inesperadas.\n\nROTINA DIÁRIA (operador): verificação visual de vazamento de ar e água, checagem de vibração/ruído anormal, verificação do estado da ponta do eletrodo, teste de arrancamento no início do turno.\n\nROTINA SEMANAL/MENSAL (manutenção): verificação de aperto de conexões elétricas (conexões frouxas aumentam resistência de contato e geram aquecimento fora do ponto de solda, podendo danificar cabos), inspeção do sistema pneumático (pressão, vazamentos, válvulas), verificação de alinhamento dos braços/eletrodos.\n\nTROCA DE CABOS: cabos de solda (shunts) se degradam com o tempo devido ao calor e flexão repetida, aumentando a resistência do circuito e reduzindo a corrente efetiva na peça mesmo com o controlador ajustado corretamente — substituição programada evita perda de qualidade não percebida no controlador (que não 'vê' a queda de tensão no cabo degradado).\n\nPLANO TPM (Manutenção Produtiva Total): integra operador e manutenção em uma rotina compartilhada de inspeção, limpeza, lubrificação e pequenos ajustes, com o objetivo de identificar anomalias antes que se tornem parada não planejada — este é o modelo referenciado nas atualizações futuras do aplicativo (Plano TPM, Checklist Diário).",
+      "exemplosPraticos": [
+        "Checklist diário de início de turno cobrindo vazamento, ruído, estado do eletrodo e teste de arrancamento.",
+        "Substituição programada de cabo de solda a cada X meses conforme histórico de degradação."
+      ],
+      "dicasImportantes": [
+        "Conexões elétricas frouxas são uma causa de defeito frequentemente ignorada — o controlador não enxerga a queda de tensão externa ao seu circuito interno.",
+        "Documentar todo o histórico de manutenção ajuda a prever falhas recorrentes por máquina."
+      ],
+      "observacoes": "Base conceitual para as funcionalidades futuras: Plano TPM, Checklist Diário e Histórico de Manutenção, já listadas na estrutura do app.",
+      "imagens": [
+        {
+          "legenda": "Modelo de checklist diário de manutenção preventiva",
+          "arquivo": "midia/galeria/aula12_checklist.jpg"
+        }
+      ],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que causa uma conexão elétrica frouxa no circuito de solda?",
+          "opcoes": [
+            "Melhora a corrente",
+            "Aumenta a resistência de contato e gera aquecimento fora do ponto de solda",
+            "Não tem efeito",
+            "Reduz o tempo de ciclo"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Por que os cabos de solda (shunts) precisam de substituição programada?",
+          "opcoes": [
+            "Por estética",
+            "Porque se degradam com calor e flexão, aumentando a resistência do circuito",
+            "Porque mudam de cor",
+            "Não precisam ser trocados"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que é o TPM mencionado nesta aula?",
+          "opcoes": [
+            "Um tipo de eletrodo",
+            "Manutenção Produtiva Total, integrando operador e manutenção",
+            "Um parâmetro elétrico",
+            "Um teste de qualidade"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "titulo": "Glossário de Termos Técnicos",
+      "descricao": "Referência rápida dos principais termos utilizados no curso.",
+      "conteudo": "Consulte abaixo os principais termos técnicos utilizados ao longo do curso, organizados em ordem de aparição temática.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [
+        "Use esta aula como consulta rápida durante a operação — ideal para dúvidas pontuais de terminologia."
+      ],
+      "observacoes": "Glossário poderá futuramente alimentar a funcionalidade de 'Consulta de Parâmetros' prevista nas atualizações futuras do app.",
+      "imagens": [],
+      "video": null,
+      "glossario": [
+        {
+          "termo": "Lentilha de solda (Nugget)",
+          "definicao": "Região fundida e solidificada formada entre as chapas na solda por resistência."
+        },
+        {
+          "termo": "Squeeze Time",
+          "definicao": "Tempo de aplicação de pressão antes de iniciar a passagem de corrente."
+        },
+        {
+          "termo": "Weld Time",
+          "definicao": "Tempo em que a corrente elétrica efetivamente passa pelas peças."
+        },
+        {
+          "termo": "Hold Time",
+          "definicao": "Tempo de manutenção da pressão após o fim da corrente, para solidificação da lentilha."
+        },
+        {
+          "termo": "Off Time",
+          "definicao": "Tempo de alívio entre o fim de um ciclo e o início do próximo."
+        },
+        {
+          "termo": "Expulsão",
+          "definicao": "Projeção de material fundido para fora da junta durante o ciclo de solda."
+        },
+        {
+          "termo": "Dressagem",
+          "definicao": "Reusinagem da ponta do eletrodo para recuperar sua geometria original."
+        },
+        {
+          "termo": "kA (quiloampère)",
+          "definicao": "Unidade de medida da corrente de solda, equivalente a mil ampères."
+        },
+        {
+          "termo": "Ciclo de rede",
+          "definicao": "Unidade de tempo usada em solda por resistência; no Brasil, 1 ciclo = 1/60 segundo."
+        },
+        {
+          "termo": "Resistência dinâmica",
+          "definicao": "Variação da resistência elétrica ao longo do próprio ciclo de solda, usada para monitoramento em processo."
+        },
+        {
+          "termo": "Peel Test (teste de arrancamento)",
+          "definicao": "Teste destrutivo que separa as chapas soldadas para avaliar a qualidade do ponto de solda."
+        },
+        {
+          "termo": "Solda fria",
+          "definicao": "Defeito por falta de fusão adequada entre as chapas."
+        },
+        {
+          "termo": "Projeção",
+          "definicao": "Saliência estampada ou usinada em uma peça, usada para concentrar corrente na solda por projeção."
+        },
+        {
+          "termo": "Shunt (cabo de solda)",
+          "definicao": "Cabo flexível de cobre que conduz a corrente entre o transformador e o eletrodo."
+        },
+        {
+          "termo": "Lockout/Tagout",
+          "definicao": "Procedimento de bloqueio e sinalização para intervenção segura em máquinas energizadas."
+        }
+      ],
+      "quizAula": [
+        {
+          "pergunta": "O que é um 'shunt' na solda por resistência?",
+          "opcoes": [
+            "Um tipo de eletrodo",
+            "O cabo flexível de cobre que conduz corrente ao eletrodo",
+            "Um teste de qualidade",
+            "Um parâmetro de tempo"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que significa 1 ciclo de rede no Brasil?",
+          "opcoes": [
+            "1 segundo",
+            "1/60 segundo",
+            "1 minuto",
+            "1/50 segundo"
+          ],
+          "correta": 1
+        }
+      ]
+    }
+  ],
+  "quizFinal": {
+    "titulo": "Quiz Final - Curso Completo de Solda por Resistência",
+    "totalPerguntas": 50,
+    "perguntas": [
+      {
+        "pergunta": "O que gera o calor na solda por resistência?",
+        "opcoes": [
+          "Chama de gás",
+          "Corrente elétrica passando pela resistência do material",
+          "Arco elétrico",
+          "Atrito mecânico"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "A solda por resistência utiliza material de adição?",
+        "opcoes": [
+          "Sim, sempre",
+          "Não",
+          "Apenas em chapas grossas",
+          "Somente em costura"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual lei física fundamenta o aquecimento na solda por resistência?",
+        "opcoes": [
+          "Lei de Ohm apenas",
+          "Lei de Joule",
+          "Lei de Faraday",
+          "Lei de Coulomb"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quantas resistências elétricas em série existem no circuito de solda?",
+        "opcoes": [
+          "Uma",
+          "Duas",
+          "Três",
+          "Quatro"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual resistência de contato é a mais importante para formar a lentilha?",
+        "opcoes": [
+          "Eletrodo-chapa",
+          "Chapa-chapa",
+          "Do cabo",
+          "Do transformador"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quais são as quatro fases do ciclo de solda?",
+        "opcoes": [
+          "Squeeze, Weld, Hold, Off",
+          "Início, Meio, Fim, Pausa",
+          "Pressão, Corrente, Calor, Frio",
+          "Setup, Weld, Test, Off"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Em qual fase a corrente efetivamente passa?",
+        "opcoes": [
+          "Squeeze Time",
+          "Weld Time",
+          "Hold Time",
+          "Off Time"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que acontece com Hold Time insuficiente?",
+        "opcoes": [
+          "Solda mais forte",
+          "Expulsão ou trinca por resfriamento sob pressão inadequada",
+          "Nada muda",
+          "Eletrodo dura mais"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual processo usa eletrodos em formato de roda?",
+        "opcoes": [
+          "Solda ponto",
+          "Solda por projeção",
+          "Solda por costura",
+          "Solda de porca"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "A solda de porca é um caso específico de qual processo?",
+        "opcoes": [
+          "Solda ponto",
+          "Solda por projeção",
+          "Solda por costura",
+          "Nenhum"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual processo forma juntas estanques, como tanques?",
+        "opcoes": [
+          "Solda ponto",
+          "Solda por costura",
+          "Solda de porca",
+          "Solda por projeção"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual componente reduz tensão e eleva corrente?",
+        "opcoes": [
+          "Cilindro pneumático",
+          "Transformador de solda",
+          "Eletrodo",
+          "Controlador"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Para que serve o sistema de refrigeração da máquina?",
+        "opcoes": [
+          "Aumentar corrente",
+          "Resfriar eletrodos, braços e transformador",
+          "Substituir eletrodo",
+          "Medir pressão"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que define e monitora os parâmetros do ciclo?",
+        "opcoes": [
+          "Cilindro pneumático",
+          "Controlador (CLP/Timer)",
+          "Braço de suporte",
+          "Refrigeração"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O calor gerado é proporcional a quê (Lei de Joule)?",
+        "opcoes": [
+          "Apenas ao tempo",
+          "Ao quadrado da corrente, resistência e tempo",
+          "Apenas à pressão",
+          "À temperatura da água"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Como é medido o tempo de solda no Brasil?",
+        "opcoes": [
+          "Em segundos",
+          "Em ciclos de rede (1 ciclo = 1/60s)",
+          "Em minutos",
+          "Em kA"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual teste valida a resistência de um ponto de solda?",
+        "opcoes": [
+          "Teste visual",
+          "Teste de arrancamento (peel test) ou torque",
+          "Medir temperatura",
+          "Contar ciclos"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que acontece quando a ponta do eletrodo achata?",
+        "opcoes": [
+          "Solda melhora",
+          "Área de contato aumenta, densidade de corrente cai, solda enfraquece",
+          "Nada muda",
+          "Corrente sobe sozinha"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é dressagem?",
+        "opcoes": [
+          "Troca do transformador",
+          "Reusinagem da ponta do eletrodo",
+          "Ajuste do tempo de solda",
+          "Limpeza do painel"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Por que chapa galvanizada exige dressagem mais frequente?",
+        "opcoes": [
+          "É mais espessa",
+          "O zinco contamina e desgasta a ponta mais rápido",
+          "É mais barata",
+          "Não exige"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Onde ficam as projeções na solda de porca?",
+        "opcoes": [
+          "No eletrodo",
+          "Na própria porca",
+          "Na chapa",
+          "No transformador"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual ponto crítico na solda de porca?",
+        "opcoes": [
+          "Cor da porca",
+          "Alinhamento da porca com o furo",
+          "Marca do fabricante",
+          "Peso da porca"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual defeito pode obstruir a rosca após a solda de porca?",
+        "opcoes": [
+          "Falta de pintura",
+          "Respingo interno na rosca",
+          "Excesso de brilho",
+          "Refrigeração excessiva"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que concentra a corrente na solda por projeção?",
+        "opcoes": [
+          "A ponta do eletrodo",
+          "Uma saliência pré-formada na peça",
+          "A cor da chapa",
+          "O tempo de refrigeração"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual vantagem da solda por projeção sobre a solda ponto?",
+        "opcoes": [
+          "Usa sempre menos energia",
+          "Permite soldar várias projeções simultaneamente com eletrodos planos",
+          "Dispensa pressão",
+          "Dispensa controlador"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que pode causar variação mesmo com parâmetros elétricos idênticos na solda por projeção?",
+        "opcoes": [
+          "Cor do eletrodo",
+          "Geometria/altura da projeção fora de especificação",
+          "Marca da máquina",
+          "Horário do turno"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que indica 'descolamento limpo' no teste de arrancamento?",
+        "opcoes": [
+          "Solda perfeita",
+          "Falta de fusão (solda fria)",
+          "Excesso de corrente",
+          "Eletrodo novo"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é resistência dinâmica?",
+        "opcoes": [
+          "Resistência do eletrodo parado",
+          "Acompanhamento da curva de resistência durante o ciclo",
+          "Resistência do cabo",
+          "Dureza da chapa"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que se mede em um corte metalográfico da solda?",
+        "opcoes": [
+          "Cor da chapa",
+          "Diâmetro da lentilha formada",
+          "Temperatura ambiente",
+          "Tempo de refrigeração"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual é uma causa comum de expulsão (respingo)?",
+        "opcoes": [
+          "Corrente baixa",
+          "Pressão insuficiente ou corrente excessiva",
+          "Eletrodo novo",
+          "Refrigeração excessiva"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que geralmente causa trinca na lentilha?",
+        "opcoes": [
+          "Hold Time insuficiente",
+          "Corrente baixa",
+          "Excesso de limpeza",
+          "Eletrodo novo"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual a regra prática para diagnosticar defeitos?",
+        "opcoes": [
+          "Mudar tudo ao mesmo tempo",
+          "Isolar uma variável por vez",
+          "Trocar sempre o eletrodo primeiro",
+          "Ignorar o histórico"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual é um dos acidentes mais comuns em solda por resistência?",
+        "opcoes": [
+          "Choque elétrico no operador",
+          "Esmagamento de mãos/dedos entre eletrodos",
+          "Queda de altura",
+          "Intoxicação por gás MIG"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que pode causar febre dos fumos metálicos?",
+        "opcoes": [
+          "Solda de chapa a frio",
+          "Vapores de zinco ao soldar chapa galvanizada sem exaustão",
+          "Óculos de proteção",
+          "Refrigeração"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que fazer antes de intervenção elétrica na máquina?",
+        "opcoes": [
+          "Aumentar corrente",
+          "Bloqueio e desenergização (lockout/tagout)",
+          "Trocar eletrodo",
+          "Ligar exaustão"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que causa uma conexão elétrica frouxa no circuito?",
+        "opcoes": [
+          "Melhora a corrente",
+          "Aumenta resistência de contato e gera aquecimento indevido",
+          "Nenhum efeito",
+          "Reduz o tempo de ciclo"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Por que os cabos de solda (shunts) precisam de troca programada?",
+        "opcoes": [
+          "Estética",
+          "Degradam com calor/flexão, aumentando resistência do circuito",
+          "Mudam de cor",
+          "Não precisam"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é TPM?",
+        "opcoes": [
+          "Um tipo de eletrodo",
+          "Manutenção Produtiva Total",
+          "Um parâmetro elétrico",
+          "Um teste de qualidade"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é um shunt?",
+        "opcoes": [
+          "Um eletrodo especial",
+          "Cabo flexível de cobre que conduz corrente ao eletrodo",
+          "Um teste de qualidade",
+          "Um parâmetro de tempo"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que significa 1 ciclo de rede no Brasil?",
+        "opcoes": [
+          "1 segundo",
+          "1/60 segundo",
+          "1 minuto",
+          "1/50 segundo"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual é a unidade de medida da corrente de solda?",
+        "opcoes": [
+          "Volt",
+          "Quiloampère (kA)",
+          "Ohm",
+          "Watt"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é a lentilha de solda?",
+        "opcoes": [
+          "A ferramenta de corte",
+          "A região fundida e solidificada entre as chapas",
+          "O cabo de alimentação",
+          "O eletrodo"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Corrente baixa demais durante a solda tende a causar qual defeito?",
+        "opcoes": [
+          "Expulsão",
+          "Solda fria",
+          "Trinca por pressão excessiva",
+          "Marca excessiva"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Pressão insuficiente durante o ciclo tende a causar qual defeito?",
+        "opcoes": [
+          "Solda fria apenas",
+          "Expulsão de material",
+          "Melhora da qualidade",
+          "Nenhum efeito"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Marca excessiva (indentação) na chapa geralmente é causada por quê?",
+        "opcoes": [
+          "Pressão excessiva ou eletrodo desgastado",
+          "Corrente muito baixa",
+          "Refrigeração excessiva",
+          "Squeeze Time longo"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual liga é mais comum em eletrodos de solda por resistência?",
+        "opcoes": [
+          "Aço carbono",
+          "Cobre-cromo ou cobre-cromo-zircônio",
+          "Alumínio puro",
+          "Ferro fundido"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Solda assimétrica em solda de porca/projeção geralmente indica o quê?",
+        "opcoes": [
+          "Eletrodo novo",
+          "Desalinhamento ou projeções irregulares",
+          "Corrente excessiva apenas",
+          "Refrigeração insuficiente"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual EPI é obrigatório mesmo sem chama visível na solda por resistência?",
+        "opcoes": [
+          "Avental de raspa",
+          "Óculos de proteção",
+          "Máscara de solda com viseira escura de MIG",
+          "Protetor auricular apenas"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual dispositivo de segurança evita esmagamento de mãos entre eletrodos?",
+        "opcoes": [
+          "Exaustão localizada",
+          "Botoeira bimanual ou cortina de luz",
+          "Óculos de proteção",
+          "Calçado de segurança"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual é o objetivo principal do plano de manutenção preventiva (TPM)?",
+        "opcoes": [
+          "Reduzir o número de operadores",
+          "Identificar anomalias antes que se tornem parada não planejada",
+          "Aumentar o preço da peça",
+          "Eliminar o controle de qualidade"
+        ],
+        "correta": 1
+      }
+    ]
+  }
+}
