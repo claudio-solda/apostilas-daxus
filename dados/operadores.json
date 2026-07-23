@@ -1,0 +1,22 @@
+{
+  "esquema": {
+    "nome": "string",
+    "funcao": "string",
+    "turno": "1º | 2º | 3º",
+    "dataAdmissao": "AAAA-MM-DD",
+    "cursosConcluidos": [
+      "ids das aulas concluídas, ex: [1,2,3]"
+    ],
+    "certificados": [
+      {
+        "curso": "string (ex: Solda por Resistência, Solda de Porca, Solda por Projeção)",
+        "data": "AAAA-MM-DD",
+        "cargaHoraria": "string (ex: 8h)",
+        "instrutor": "Claudio Roberto",
+        "codigoVerificacao": "string"
+      }
+    ],
+    "progressoTreinamento": "percentual calculado a partir de cursosConcluidos / totalAulas"
+  },
+  "operadores": []
+}
