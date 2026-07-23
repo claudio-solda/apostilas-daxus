@@ -1,0 +1,239 @@
+{
+  "maquinas": [
+    {
+      "codigo": "MS001",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS002",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS003",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS004",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS005",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS006",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS007",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS008",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS009",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS010",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS011",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS012",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS013",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS014",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS015",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS016",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS017",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    },
+    {
+      "codigo": "MS018",
+      "status": "Disponível",
+      "ultimaInspecao": null,
+      "operador": null,
+      "observacoes": "",
+      "eletrodo": {
+        "ultimaDressagem": null,
+        "numeroDressagens": 0,
+        "proximaTroca": null
+      },
+      "historicoManutencao": []
+    }
+  ],
+  "totalMaquinas": 18
+}
