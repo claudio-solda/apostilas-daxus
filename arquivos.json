@@ -22,5 +22,13 @@
     "tipo": "application/pdf",
     "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/estudo_brigada_incendio.pdf",
     "createdAt": 1783709118000
+  },
+  {
+    "id": "ferramentas-ia-referencia",
+    "nome": "Ferramentas de IA por Categoria (Referencia Rapida)",
+    "categoria": "apostila",
+    "tipo": "application/pdf",
+    "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/ferramentas_ia_referencia.pdf",
+    "createdAt": 1784855322776
   }
 ]
