@@ -30,5 +30,13 @@
     "tipo": "application/pdf",
     "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/ferramentas_ia_referencia.pdf",
     "createdAt": 1784855322776
+  },
+  {
+    "id": "curso-github",
+    "nome": "Curso de GitHub (do basico ao avancado)",
+    "categoria": "apostila",
+    "tipo": "application/pdf",
+    "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/curso_github.pdf",
+    "createdAt": 1785618240235
   }
 ]
