@@ -212,6 +212,11 @@
   <input type="password" id="lockInput" placeholder="Senha" autocomplete="off">
   <button class="btn" id="lockBtn">Entrar</button>
   <div id="lockError"></div>
+  <div id="lockHint" style="font-size:12px;color:var(--muted);min-height:16px;"></div>
+  <div style="display:flex; gap:16px; margin-top:4px;">
+    <a href="#" id="showHintLink" style="font-size:12px;color:var(--muted);text-decoration:underline;">Ver dica</a>
+    <a href="#" id="forgotPassLink" style="font-size:12px;color:var(--muted);text-decoration:underline;">Esqueci minha senha</a>
+  </div>
   <button class="btn-outline btn" id="enableBiometricBtn" style="display:none; margin-top:6px;">Ativar digital neste aparelho</button>
 </div>
 
@@ -223,6 +228,7 @@
   <div id="adminPanel" style="display:none; flex-direction:column; align-items:center; gap:12px; width:100%; max-width:280px;">
     <label style="font-size:12px;color:var(--muted);">Trocar senha de acesso</label>
     <input type="text" id="newPassInput" placeholder="Nova senha">
+    <input type="text" id="newHintInput" placeholder="Dica de senha (opcional)">
     <button class="btn" id="savePassBtn">Salvar nova senha</button>
     <div id="adminMsg"></div>
     <button class="btn-outline btn" id="closeAdminBtn" style="margin-top:10px;">Fechar</button>
@@ -290,6 +296,7 @@ const CONFIG = {
   password: "Daxus2026",
   lockKey: "apostilas_daxus_unlocked",
   customPasswordKey: "apostilas_daxus_custom_password",
+  customPasswordHintKey: "apostilas_daxus_custom_password_hint",
   adminPassword: "0198",
   firebaseApiKey: "AIzaSyC58yXOGfhBhVRhWWHd-Cd5zwPFRutVdoA",
   firebaseProjectId: "livros-fotos",
@@ -416,6 +423,13 @@ async function desbloquearComDigital(){
 
   lockBtn.addEventListener('click', tryUnlock);
   lockInput.addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
+  const lockHint = document.getElementById('lockHint');
+  const showHintLink = document.getElementById('showHintLink');
+  showHintLink.addEventListener('click', e=>{
+    e.preventDefault();
+    const dica = localStorage.getItem(CONFIG.customPasswordHintKey);
+    lockHint.textContent = dica ? ('💡 ' + dica) : 'Nenhuma dica cadastrada';
+  });
 
   // permite pular a oferta de digital e entrar direto tocando fora — clique duplo no subtítulo pula
   lockSubtitle.addEventListener('dblclick', ()=>{ if(enableBiometricBtn.style.display==='block') desbloquear(); });
@@ -457,21 +471,24 @@ async function desbloquearComDigital(){
     adminInput.style.display = '';
     adminBtn.style.display = '';
   }
+  function abrirAdmin(){
+    adminScreen.classList.remove('hidden');
+    adminInput.value=''; adminError.textContent=''; adminMsg.textContent='';
+    newPassInput.value='';
+    document.getElementById('newHintInput').value='';
+    adminPanel.style.display='none';
+    adminInput.style.display=''; adminBtn.style.display='';
+    setTimeout(()=>adminInput.focus(),200);
+  }
   let taps=0, timer=null;
   titulo.addEventListener('click', ()=>{
     taps++;
     clearTimeout(timer);
     timer = setTimeout(()=>{taps=0;}, 1500);
-    if(taps>=5){
-      taps=0;
-      adminScreen.classList.remove('hidden');
-      adminInput.value=''; adminError.textContent=''; adminMsg.textContent='';
-      newPassInput.value='';
-      adminPanel.style.display='none';
-      adminInput.style.display=''; adminBtn.style.display='';
-      setTimeout(()=>adminInput.focus(),200);
-    }
+    if(taps>=5){ taps=0; abrirAdmin(); }
   });
+  const forgotPassLink = document.getElementById('forgotPassLink');
+  forgotPassLink.addEventListener('click', e=>{ e.preventDefault(); abrirAdmin(); });
   function tryAdmin(){
     if(adminInput.value === CONFIG.adminPassword){
       adminError.textContent='';
@@ -487,8 +504,11 @@ async function desbloquearComDigital(){
   adminInput.addEventListener('keydown', e=>{ if(e.key==='Enter') tryAdmin(); });
   savePassBtn.addEventListener('click', ()=>{
     const nova = newPassInput.value.trim();
+    const dica = document.getElementById('newHintInput').value.trim();
     if(nova.length<3){ adminMsg.textContent='Digite pelo menos 3 caracteres'; return; }
     localStorage.setItem(CONFIG.customPasswordKey, nova);
+    if(dica){ localStorage.setItem(CONFIG.customPasswordHintKey, dica); }
+    else { localStorage.removeItem(CONFIG.customPasswordHintKey); }
     adminMsg.textContent='Senha atualizada! ✅';
     setTimeout(fecharAdmin, 1200);
   });
