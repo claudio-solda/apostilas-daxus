@@ -1,11 +1,11 @@
 [
   {
     "id": "seed-guia-prompts-ia",
-    "nome": "Guia de Prompts e Ferramentas de IA (Daxus)",
+    "nome": "Guia para Iniciantes em Inteligência Artificial",
     "categoria": "apostila",
     "tipo": "application/pdf",
     "src": "https://raw.githubusercontent.com/claudio-solda/apostilas-daxus/main/arquivos/guia_prompts_ia.pdf",
-    "createdAt": 1751500000000
+    "createdAt": 1785807377059
   },
   {
     "id": "curso-solda-resistencia",
