@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luma RH</title>
+<style>
+  :root{
+    --navy:#131B2E; --navy2:#1D2942; --amber:#F5A623; --amber2:#FEF3E2;
+    --green:#22C55E; --green2:#E9F7EF; --red:#EF4444; --red2:#FEECEC;
+    --gray:#6B7280; --gray2:#EEF0F3; --bg:#F5F6F8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--navy);}
+  #app{display:flex;min-height:100vh;flex-direction:column;}
+  @media(min-width:768px){#app{flex-direction:row;}}
+
+  /* Sidebar */
+  .sidebar{background:var(--navy);color:#fff;display:flex;flex-shrink:0;}
+  @media(min-width:768px){.sidebar{width:230px;flex-direction:column;}}
+  .brand{display:flex;align-items:center;gap:8px;padding:18px 20px;}
+  .brand .dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;
+    background:radial-gradient(circle at 35% 30%,#FFE9B8,#F5A623 55%,#B9750E 100%);
+    box-shadow:0 0 14px 2px rgba(245,166,35,.55);}
+  .brand span{font-weight:600;font-size:17px;letter-spacing:-0.2px;}
+  .nav{display:flex;flex:1;padding:0 10px 12px;gap:4px;}
+  @media(min-width:768px){.nav{flex-direction:column;padding:0 12px 20px;}}
+  .nav button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    background:transparent;border:none;color:rgba(255,255,255,.6);font-size:14px;
+    padding:10px 12px;border-radius:8px;cursor:pointer;font-family:inherit;}
+  @media(min-width:768px){.nav button{justify-content:flex-start;}}
+  .nav button:hover{color:#fff;background:rgba(255,255,255,.06);}
+  .nav button.ativo{color:#fff;background:rgba(255,255,255,.1);border-left:2px solid var(--amber);}
+
+  main{flex:1;min-width:0;padding:20px;}
+  @media(min-width:768px){main{padding:32px;}}
+  h1.pagetitle{font-size:22px;font-weight:600;letter-spacing:-0.3px;margin:0 0 4px;}
+  .subtitle{color:var(--gray);font-size:14px;margin:0 0 24px;}
+
+  .card{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(20,20,43,.06);}
+  .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:28px;}
+  @media(min-width:768px){.cards-grid{grid-template-columns:repeat(5,1fr);}}
+  .stat{padding:16px;}
+  .stat .icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:16px;}
+  .stat .valor{font-size:22px;font-weight:600;line-height:1;margin-bottom:4px;}
+  .stat .label{font-size:12px;color:var(--gray);line-height:1.3;}
+
+  .charts-grid{display:grid;gap:16px;}
+  @media(min-width:768px){.charts-grid{grid-template-columns:1fr 1fr;}}
+  .chart-card{padding:20px;}
+  .chart-card h2{font-size:14px;font-weight:600;margin:0 0 16px;}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:12px;}
+  .bar-row .rotulo{width:90px;color:var(--navy);flex-shrink:0;}
+  .bar-track{flex:1;height:10px;background:var(--gray2);border-radius:6px;overflow:hidden;}
+  .bar-fill{height:100%;background:var(--amber);border-radius:6px;}
+  .bar-row .pct{width:36px;text-align:right;color:var(--gray);flex-shrink:0;}
+
+  .donut-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .donut{width:150px;height:150px;border-radius:50%;flex-shrink:0;}
+  .legend{display:flex;flex-direction:column;gap:8px;font-size:12px;}
+  .legend .item{display:flex;align-items:center;gap:8px;}
+  .legend .sw{width:10px;height:10px;border-radius:50%;}
+
+  .toolbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-size:13px;
+    font-weight:500;padding:10px 16px;border-radius:8px;border:none;cursor:pointer;font-family:inherit;}
+  .btn-primary:hover{background:var(--navy2);}
+  .btn-secondary{flex:1;padding:10px;border-radius:8px;font-size:13px;font-weight:500;color:var(--gray);
+    border:1px solid var(--gray2);background:#fff;cursor:pointer;font-family:inherit;}
+  .btn-secondary:hover{background:var(--bg);}
+
+  .searchbox{display:flex;align-items:center;gap:8px;background:var(--bg);border-radius:8px;padding:8px 12px;max-width:280px;}
+  .searchbox input{border:none;background:transparent;outline:none;font-size:13px;flex:1;font-family:inherit;}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  thead tr{text-align:left;color:var(--gray);border-bottom:1px solid var(--gray2);}
+  th{padding:12px 16px;font-weight:500;}
+  td{padding:12px 16px;border-bottom:1px solid var(--bg);}
+  tr:hover td{background:#FAFBFC;}
+  .hide-mobile{display:none;}
+  @media(min-width:768px){.hide-mobile{display:table-cell;}}
+
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500;}
+  .badge .dot{width:6px;height:6px;border-radius:50%;}
+  .atraso-tag{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--red);margin-top:4px;}
+
+  .progress-cell{display:flex;align-items:center;gap:8px;width:110px;}
+  .progress-cell .bar-track{flex:1;height:6px;}
+  .progress-cell .bar-fill{background:var(--amber);}
+  .progress-cell span{font-size:12px;color:var(--gray);}
+
+  .link-btn{background:none;border:none;color:var(--navy);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;}
+  .link-btn:hover{color:var(--amber);}
+
+  .voltar{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--gray);font-size:13px;
+    font-weight:500;cursor:pointer;font-family:inherit;margin-bottom:20px;padding:0;}
+  .voltar:hover{color:var(--navy);}
+
+  .info-card{padding:22px;margin-bottom:16px;}
+  .info-card h1{font-size:20px;margin:0 0 8px;}
+  .info-line{display:flex;gap:18px;font-size:13px;color:var(--gray);flex-wrap:wrap;}
+  .info-line strong{color:#374151;}
+
+  .treino-card{padding:18px 20px;margin-bottom:12px;}
+  .treino-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+  .treino-head-left{display:flex;align-items:flex-start;gap:12px;}
+  .check{width:20px;height:20px;border-radius:50%;border:2px solid #D1D5DB;background:#fff;cursor:pointer;flex-shrink:0;margin-top:2px;}
+  .check.on{background:var(--green);border-color:var(--green);}
+  .treino-nome{font-weight:500;font-size:14px;}
+  .treino-prazo{font-size:12px;color:#9CA3AF;}
+  .treino-desc{font-size:13px;color:var(--gray);margin:8px 0 12px;margin-left:32px;}
+  .treino-fields{display:grid;gap:10px;margin-left:32px;}
+  @media(min-width:768px){.treino-fields{grid-template-columns:1fr 1fr;}}
+  .treino-fields label{font-size:11px;color:#9CA3AF;display:block;margin-bottom:4px;}
+  .treino-fields input{width:100%;font-size:13px;border:1px solid var(--gray2);border-radius:8px;padding:8px 10px;font-family:inherit;}
+  .treino-fields input:disabled{background:var(--bg);color:#9CA3AF;}
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;
+    justify-content:center;padding:16px;z-index:50;}
+  .modal{background:#fff;border-radius:16px;width:100%;max-width:420px;padding:24px;}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+  .modal-head h2{font-size:16px;margin:0;}
+  .modal-head button{background:none;border:none;color:#9CA3AF;font-size:18px;cursor:pointer;}
+  .field{margin-bottom:14px;}
+  .field label{font-size:12px;color:var(--gray);display:block;margin-bottom:4px;}
+  .field input,.field select{width:100%;border:1px solid var(--gray2);border-radius:8px;padding:10px 12px;
+    font-size:13px;font-family:inherit;outline:none;}
+  .field input:focus,.field select:focus{border-color:var(--amber);}
+  .modal-actions{display:flex;gap:8px;margin-top:8px;}
+  .empty{padding:40px 0;text-align:center;color:#9CA3AF;font-size:13px;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ---------- Dados base ----------
+const CARGOS = ["Trainee","Analista","Coordenador","Gerente"];
+const TRILHA_POR_CARGO = {
+  Trainee: "Fundamentos práticos da área e como entregar resultado rápido nos primeiros meses.",
+  Analista: "Processos técnicos da função, ferramentas específicas e padrões de entrega esperados.",
+  Coordenador: "Gestão de demandas, comunicação entre times e visão de projeto.",
+  Gerente: "Liderança, tomada de decisão, gestão de pessoas e visão estratégica."
+};
+const TREINAMENTOS_BASE = [
+  {id:1,nome:"Onboarding da Empresa",prazoLabel:"Semana 1",offsetDias:7,
+    descricao:"Apresentação da empresa, estrutura, missão, visão e primeiros passos do colaborador."},
+  {id:2,nome:"Cultura, Valores e Comportamento",prazoLabel:"Semana 2",offsetDias:14,
+    descricao:"Imersão na cultura da empresa, valores inegociáveis e comportamentos esperados no time."},
+  {id:3,nome:"Ferramentas e Processos Internos",prazoLabel:"Semanas 3 e 4",offsetDias:28,
+    descricao:"Apresentação das ferramentas utilizadas no dia a dia e principais processos internos da empresa."},
+  {id:4,nome:"Trilha do Cargo",prazoLabel:"Mês 2",offsetDias:60,descricao:null},
+  {id:5,nome:"Integração com a Equipe",prazoLabel:"Mês 3",offsetDias:90,
+    descricao:"Dinâmica do time, canais de comunicação, rituais de equipe e consolidação da integração."}
+];
+const STATUS_INFO = {
+  nao_iniciado:{label:"Não iniciado",bg:"#EEF0F3",text:"#6B7280",dot:"#9CA3AF"},
+  andamento:{label:"Em andamento",bg:"#FEF3E2",text:"#B45309",dot:"#F5A623"},
+  concluido:{label:"Concluído",bg:"#E9F7EF",text:"#15803D",dot:"#22C55E"}
+};
+const LS_KEY = "luma_rh_colaboradores_v1";
+
+function montarTreinamentos(cargo, dataEntradaISO){
+  const base = new Date(dataEntradaISO+"T00:00:00");
+  return TREINAMENTOS_BASE.map(t=>{
+    const prazo = new Date(base);
+    prazo.setDate(prazo.getDate()+t.offsetDias);
+    return {
+      id:t.id, nome:t.nome, prazoLabel:t.prazoLabel,
+      prazoData: prazo.toISOString().slice(0,10),
+      descricao: t.id===4 ? TRILHA_POR_CARGO[cargo] : t.descricao,
+      concluido:false, dataConclusao:"", observacao:""
+    };
+  });
+}
+function statusColaborador(c){
+  const feitos = c.treinamentos.filter(t=>t.concluido).length;
+  if(feitos===0) return "nao_iniciado";
+  if(feitos===5) return "concluido";
+  return "andamento";
+}
+function temAtraso(c){
+  const hoje = new Date().toISOString().slice(0,10);
+  return c.treinamentos.some(t=>!t.concluido && t.prazoData<hoje);
+}
+function formatarData(iso){
+  if(!iso) return "—";
+  const [y,m,d]=iso.split("-");
+  return d+"/"+m+"/"+y;
+}
+function seedInicial(){
+  const seeds=[
+    {nome:"Bianca Ferraz",cargo:"Analista",setor:"Marketing",dataEntrada:"2026-05-04",feitos:[1,2,3]},
+    {nome:"Rafael Nogueira",cargo:"Trainee",setor:"Operações",dataEntrada:"2026-07-20",feitos:[1]},
+    {nome:"Simone Aquino",cargo:"Coordenador",setor:"Financeiro",dataEntrada:"2026-02-10",feitos:[1,2,3,4,5]},
+    {nome:"Diego Marins",cargo:"Gerente",setor:"Comercial",dataEntrada:"2026-06-01",feitos:[]}
+  ];
+  return seeds.map((s,i)=>{
+    const treinamentos = montarTreinamentos(s.cargo,s.dataEntrada).map(t=>{
+      if(s.feitos.includes(t.id)) return {...t,concluido:true,dataConclusao:t.prazoData};
+      return t;
+    });
+    return {id:"seed-"+i,nome:s.nome,cargo:s.cargo,setor:s.setor,dataEntrada:s.dataEntrada,treinamentos};
+  });
+}
+function carregar(){
+  try{ const raw=localStorage.getItem(LS_KEY); if(raw) return JSON.parse(raw); }catch(e){}
+  return seedInicial();
+}
+function salvar(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(colaboradores)); }catch(e){} }
+
+// ---------- Estado ----------
+let colaboradores = carregar();
+let pagina = "dashboard";
+let selecionadoId = null;
+let modalAberto = false;
+let busca = "";
+
+function navegar(p){ pagina=p; selecionadoId=null; render(); }
+function abrirDetalhe(id){ selecionadoId=id; render(); }
+function voltarLista(){ selecionadoId=null; render(); }
+function abrirModal(){ modalAberto=true; render(); }
+function fecharModal(){ modalAberto=false; render(); }
+function atualizarBusca(v){ busca=v; render(); }
+
+function toggleConcluido(cid,tid){
+  const c = colaboradores.find(c=>c.id===cid);
+  const t = c.treinamentos.find(t=>t.id===tid);
+  t.concluido = !t.concluido;
+  t.dataConclusao = t.concluido ? new Date().toISOString().slice(0,10) : "";
+  salvar(); render();
+}
+function atualizarCampo(cid,tid,campo,valor){
+  const c = colaboradores.find(c=>c.id===cid);
+  const t = c.treinamentos.find(t=>t.id===tid);
+  t[campo]=valor;
+  salvar(); render();
+}
+function salvarColaborador(ev){
+  ev.preventDefault();
+  const f = ev.target;
+  const nome = f.nome.value.trim();
+  const cargo = f.cargo.value;
+  const setor = f.setor.value.trim();
+  const dataEntrada = f.dataEntrada.value;
+  if(!nome || !setor || !dataEntrada) return;
+  colaboradores.unshift({
+    id: Date.now().toString(), nome, cargo, setor, dataEntrada,
+    treinamentos: montarTreinamentos(cargo, dataEntrada)
+  });
+  salvar(); modalAberto=false; render();
+}
+
+// ---------- Render ----------
+function render(){
+  const app = document.getElementById("app");
+  const selecionado = colaboradores.find(c=>c.id===selecionadoId);
+  app.innerHTML = `
+    ${renderSidebar()}
+    <main>
+      ${pagina==="dashboard" ? renderDashboard() : ""}
+      ${pagina==="colaboradores" && !selecionado ? renderPaginaColaboradores() : ""}
+      ${pagina==="colaboradores" && selecionado ? renderDetalhe(selecionado) : ""}
+    </main>
+    ${modalAberto ? renderModal() : ""}
+  `;
+  if(modalAberto){
+    const f = document.getElementById("form-novo-colab");
+    if(f) f.addEventListener("submit", salvarColaborador);
+  }
+}
+
+function renderSidebar(){
+  return `
+  <aside class="sidebar">
+    <div style="display:flex;flex-direction:column;flex:1;">
+      <div class="brand"><div class="dot"></div><span>Luma RH</span></div>
+      <nav class="nav">
+        <button class="${pagina==='dashboard'?'ativo':''}" onclick="navegar('dashboard')">📊 <span class="hide-mobile-inline">Dashboard</span></button>
+        <button class="${pagina==='colaboradores'?'ativo':''}" onclick="navegar('colaboradores')">👥 <span class="hide-mobile-inline">Colaboradores</span></button>
+      </nav>
+    </div>
+  </aside>`;
+}
+
+function renderDashboard(){
+  const total = colaboradores.length;
+  const totalConcluidos = colaboradores.reduce((a,c)=>a+c.treinamentos.filter(t=>t.concluido).length,0);
+  const esperado = total*5;
+  const taxaGeral = esperado ? Math.round((totalConcluidos/esperado)*100) : 0;
+  const completos = colaboradores.filter(c=>statusColaborador(c)==="concluido").length;
+  const emAtraso = colaboradores.filter(temAtraso).length;
+
+  const cards = [
+    {label:"Colaboradores cadastrados",valor:total,icon:"👥",cor:"#131B2E"},
+    {label:"Treinamentos concluídos",valor:totalConcluidos,icon:"✅",cor:"#22C55E"},
+    {label:"Taxa de conclusão geral",valor:taxaGeral+"%",icon:"📈",cor:"#F5A623"},
+    {label:"Com os 5 treinamentos concluídos",valor:completos,icon:"🏁",cor:"#15803D"},
+    {label:"Com treinamentos em atraso",valor:emAtraso,icon:"⚠️",cor:"#EF4444"}
+  ];
+
+  const porCargo = CARGOS.map(cargo=>{
+    const grupo = colaboradores.filter(c=>c.cargo===cargo);
+    const feitos = grupo.reduce((a,c)=>a+c.treinamentos.filter(t=>t.concluido).length,0);
+    const esperadoCargo = grupo.length*5;
+    const taxa = esperadoCargo ? Math.round((feitos/esperadoCargo)*100) : 0;
+    return {cargo,taxa};
+  });
+
+  const distribuicao = ["nao_iniciado","andamento","concluido"].map(s=>({
+    status:s, label:STATUS_INFO[s].label,
+    valor: colaboradores.filter(c=>statusColaborador(c)===s).length,
+    cor: STATUS_INFO[s].dot
+  }));
+  const totalDist = distribuicao.reduce((a,d)=>a+d.valor,0) || 1;
+  let acc = 0;
+  const gradientParts = distribuicao.map(d=>{
+    const start = (acc/totalDist)*360;
+    acc += d.valor;
+    const end = (acc/totalDist)*360;
+    return `${d.cor} ${start}deg ${end}deg`;
+  });
+  const donutStyle = distribuicao.every(d=>d.valor===0)
+    ? "background:#EEF0F3;"
+    : `background: conic-gradient(${gradientParts.join(",")});`;
+
+  return `
+    <h1 class="pagetitle">Dashboard</h1>
+    <p class="subtitle">Visão geral dos treinamentos de onboarding</p>
+    <div class="cards-grid">
+      ${cards.map(c=>`
+        <div class="card stat">
+          <div class="icon" style="background:${c.cor}1A;">${c.icon}</div>
+          <div class="valor">${c.valor}</div>
+          <div class="label">${c.label}</div>
+        </div>
+      `).join("")}
+    </div>
+    <div class="charts-grid">
+      <div class="card chart-card">
+        <h2>Taxa de conclusão por cargo</h2>
+        ${porCargo.map(p=>`
+          <div class="bar-row">
+            <div class="rotulo">${p.cargo}</div>
+            <div class="bar-track"><div class="bar-fill" style="width:${p.taxa}%;"></div></div>
+            <div class="pct">${p.taxa}%</div>
+          </div>
+        `).join("")}
+      </div>
+      <div class="card chart-card">
+        <h2>Distribuição geral de status</h2>
+        <div class="donut-wrap">
+          <div class="donut" style="${donutStyle}"></div>
+          <div class="legend">
+            ${distribuicao.map(d=>`
+              <div class="item"><span class="sw" style="background:${d.cor};"></span>${d.label} (${d.valor})</div>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPaginaColaboradores(){
+  const filtrados = colaboradores.filter(c=>c.nome.toLowerCase().includes(busca.toLowerCase()));
+  return `
+    <div class="toolbar">
+      <div>
+        <h1 class="pagetitle">Colaboradores</h1>
+        <p class="subtitle" style="margin-bottom:0;">Cadastro e acompanhamento de onboarding</p>
+      </div>
+      <button class="btn-primary" onclick="abrirModal()">＋ Novo Colaborador</button>
+    </div>
+    <div class="card">
+      <div style="padding:16px;border-bottom:1px solid var(--gray2);">
+        <div class="searchbox">
+          🔎 <input placeholder="Buscar colaborador..." value="${busca}" oninput="atualizarBusca(this.value)">
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr>
+            <th>Nome</th><th>Cargo</th><th class="hide-mobile">Setor</th><th class="hide-mobile">Entrada</th>
+            <th>Progresso</th><th>Status</th><th></th>
+          </tr></thead>
+          <tbody>
+            ${filtrados.length===0 ? `<tr><td colspan="7" class="empty">Nenhum colaborador encontrado.</td></tr>` :
+            filtrados.map(c=>{
+              const feitos = c.treinamentos.filter(t=>t.concluido).length;
+              const status = statusColaborador(c);
+              const info = STATUS_INFO[status];
+              const atraso = temAtraso(c);
+              return `
+              <tr>
+                <td style="font-weight:500;">${c.nome}</td>
+                <td>${c.cargo}</td>
+                <td class="hide-mobile">${c.setor}</td>
+                <td class="hide-mobile">${formatarData(c.dataEntrada)}</td>
+                <td>
+                  <div class="progress-cell">
+                    <div class="bar-track"><div class="bar-fill" style="width:${(feitos/5)*100}%;"></div></div>
+                    <span>${feitos}/5</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge" style="background:${info.bg};color:${info.text};">
+                    <span class="dot" style="background:${info.dot};"></span>${info.label}
+                  </span>
+                  ${atraso ? `<div class="atraso-tag">⚠️ Em atraso</div>` : ""}
+                </td>
+                <td style="text-align:right;">
+                  <button class="link-btn" onclick="abrirDetalhe('${c.id}')">Ver detalhes ›</button>
+                </td>
+              </tr>`;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function renderDetalhe(c){
+  const hoje = new Date().toISOString().slice(0,10);
+  return `
+    <button class="voltar" onclick="voltarLista()">← Voltar para a lista</button>
+    <div class="card info-card">
+      <h1>${c.nome}</h1>
+      <div class="info-line">
+        <span><strong>Cargo:</strong> ${c.cargo}</span>
+        <span><strong>Setor:</strong> ${c.setor}</span>
+        <span><strong>Entrada:</strong> ${formatarData(c.dataEntrada)}</span>
+      </div>
+    </div>
+    ${c.treinamentos.map(t=>{
+      const atrasado = !t.concluido && t.prazoData<hoje;
+      const badge = t.concluido
+        ? `<span class="badge" style="background:#E9F7EF;color:#15803D;">Concluído</span>`
+        : atrasado
+          ? `<span class="badge" style="background:#FEECEC;color:#DC2626;">Em atraso</span>`
+          : `<span class="badge" style="background:#EEF0F3;color:#6B7280;">Não iniciado</span>`;
+      return `
+      <div class="card treino-card">
+        <div class="treino-head">
+          <div class="treino-head-left">
+            <div class="check ${t.concluido?'on':''}" onclick="toggleConcluido('${c.id}','${t.id}')"></div>
+            <div>
+              <div class="treino-nome">${t.nome}</div>
+              <div class="treino-prazo">Prazo: ${t.prazoLabel}</div>
+            </div>
+          </div>
+          ${badge}
+        </div>
+        <p class="treino-desc">${t.descricao}</p>
+        <div class="treino-fields">
+          <div>
+            <label>Data de conclusão</label>
+            <input type="date" value="${t.dataConclusao}" ${t.concluido?"":"disabled"}
+              onchange="atualizarCampo('${c.id}','${t.id}','dataConclusao',this.value)">
+          </div>
+          <div>
+            <label>Observação</label>
+            <input type="text" value="${t.observacao}" placeholder="Observação livre..."
+              onchange="atualizarCampo('${c.id}','${t.id}','observacao',this.value)">
+          </div>
+        </div>
+      </div>`;
+    }).join("")}
+  `;
+}
+
+function renderModal(){
+  return `
+  <div class="modal-overlay" onclick="if(event.target===this) fecharModal()">
+    <div class="modal">
+      <div class="modal-head">
+        <h2>Novo Colaborador</h2>
+        <button onclick="fecharModal()">✕</button>
+      </div>
+      <form id="form-novo-colab">
+        <div class="field">
+          <label>Nome completo</label>
+          <input name="nome" placeholder="Ex: Ana Souza" required>
+        </div>
+        <div class="field">
+          <label>Cargo</label>
+          <select name="cargo">
+            ${CARGOS.map(c=>`<option value="${c}">${c}</option>`).join("")}
+          </select>
+        </div>
+        <div class="field">
+          <label>Setor</label>
+          <input name="setor" placeholder="Ex: Financeiro" required>
+        </div>
+        <div class="field">
+          <label>Data de entrada</label>
+          <input type="date" name="dataEntrada" required>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="fecharModal()">Cancelar</button>
+          <button type="submit" class="btn-primary" style="flex:1;justify-content:center;">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>`;
+}
+
+render();
+</script>
+</body>
+</html>
