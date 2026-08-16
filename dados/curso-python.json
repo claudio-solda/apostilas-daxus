@@ -1,0 +1,1215 @@
+{
+  "titulo": "Curso Completo de Programação em Python",
+  "autor": "Claudio Roberto",
+  "versao": "1.0",
+  "aplicativo": "Apostilha Daxus",
+  "totalAulas": 14,
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "Introdução à Programação e ao Python",
+      "descricao": "O que é programar, por que Python é uma ótima primeira linguagem e o que você vai construir no curso.",
+      "conteudo": "Programar é dar instruções para um computador executar, passo a passo, na ordem certa. Um programa nada mais é do que uma sequência de comandos que o computador lê e executa exatamente como está escrito — por isso a lógica e a precisão são tão importantes quanto a criatividade.\n\nPython é uma linguagem criada em 1991 por Guido van Rossum, pensada para ser lida quase como português ou inglês estruturado. Diferente de linguagens mais antigas, ela não exige ponto e vírgula no fim de cada linha nem símbolos complicados para delimitar blocos de código — usa a própria indentação (espaços no início da linha) para isso. É usada hoje em automação de tarefas, análise de dados, inteligência artificial, desenvolvimento web e scripts do dia a dia.\n\nAo longo deste curso você vai sair do zero absoluto até conseguir escrever pequenos programas completos: calculadoras, listas de tarefas, jogos simples e scripts que leem e gravam arquivos. Cada aula constrói em cima da anterior, então a ordem importa — não pule aulas.",
+      "exemplosPraticos": [
+        "Um app de banco usa Python nos bastidores para calcular juros e validar transações.",
+        "Cientistas de dados usam Python para analisar planilhas com milhões de linhas.",
+        "Scripts em Python automatizam tarefas repetitivas, como renomear centenas de arquivos de uma vez."
+      ],
+      "dicasImportantes": [
+        "Não decore sintaxe: entenda a lógica por trás do comando, a sintaxe vem com a prática.",
+        "Erros (as famosas mensagens vermelhas) são normais e fazem parte do aprendizado — leia a mensagem, ela quase sempre diz o que está errado."
+      ],
+      "observacoes": "Esta aula é conceitual. Não é necessário ter o Python instalado ainda para acompanhá-la.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que é programar?",
+          "opcoes": [
+            "Desenhar telas de aplicativos",
+            "Dar instruções passo a passo para o computador executar",
+            "Apenas usar a internet",
+            "Formatar o computador"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que Python usa para delimitar blocos de código, em vez de chaves { }?",
+          "opcoes": [
+            "Ponto e vírgula",
+            "Indentação (espaços)",
+            "Parênteses",
+            "Colchetes"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Python é usado atualmente em:",
+          "opcoes": [
+            "Somente jogos 3D",
+            "Análise de dados, automação, IA e web, entre outros",
+            "Apenas em calculadoras físicas",
+            "Somente em sistemas operacionais antigos"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Instalando e Configurando o Ambiente",
+      "descricao": "Como instalar o Python no computador ou celular e onde escrever seu primeiro código.",
+      "conteudo": "Para programar em Python você precisa de duas coisas: o interpretador Python instalado (o programa que lê e executa seu código) e um editor de texto ou IDE para escrever esse código. No computador, o site oficial é python.org — baixe a versão mais recente e, no instalador do Windows, marque a opção 'Add Python to PATH' antes de concluir.\n\nDepois de instalado, você pode testar abrindo o terminal (Prompt de Comando no Windows, Terminal no Mac/Linux) e digitando 'python --version'. Se aparecer um número de versão, está tudo certo. Para escrever código de forma confortável, editores como VS Code (gratuito) facilitam muito, com destaque de sintaxe e detecção de erros em tempo real.\n\nSe você está no celular, como o Claudio, existem apps como Pydroid 3 (Android) que instalam um interpretador Python completo direto no aparelho, sem precisar de computador — ótimo para praticar durante o intervalo do trabalho. Também existem sites como replit.com que rodam Python direto no navegador, sem instalar nada.",
+      "exemplosPraticos": [
+        "Instalar o Python no notebook usando o instalador oficial de python.org.",
+        "Instalar o Pydroid 3 no celular Android para programar sem computador.",
+        "Usar o site replit.com no navegador do celular para testar um código rapidamente."
+      ],
+      "dicasImportantes": [
+        "No Windows, sempre marque 'Add Python to PATH' na instalação — evita dor de cabeça depois.",
+        "Prefira sempre a versão estável mais recente do Python (série 3.x)."
+      ],
+      "observacoes": "A partir da próxima aula, todos os exemplos assumem que você já tem um lugar para rodar código, seja app, site ou instalação local.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual comando no terminal verifica a versão instalada do Python?",
+          "opcoes": [
+            "python --version",
+            "python-check",
+            "run python",
+            "python/version"
+          ],
+          "correta": 0
+        },
+        {
+          "pergunta": "No Windows, o que deve ser marcado durante a instalação para facilitar o uso pelo terminal?",
+          "opcoes": [
+            "Add Python to PATH",
+            "Install as Administrator",
+            "Enable Dark Mode",
+            "Create Desktop Icon"
+          ],
+          "correta": 0
+        },
+        {
+          "pergunta": "Qual opção permite programar em Python direto do celular Android, sem instalar nada no PC?",
+          "opcoes": [
+            "Excel",
+            "Pydroid 3",
+            "Photoshop",
+            "WhatsApp Web"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Variáveis, Tipos de Dados e Operadores",
+      "descricao": "Como guardar informação na memória, os tipos básicos de dados e as operações matemáticas.",
+      "conteudo": "Uma variável é um espaço nomeado na memória do computador onde guardamos um valor para usar depois. Em Python, criar uma variável é simples: idade = 25. Não é preciso avisar antes qual tipo de dado ela vai guardar — o Python descobre isso sozinho, o que chamamos de tipagem dinâmica.\n\nOs tipos básicos mais usados são: int (números inteiros, como 10), float (números com casas decimais, como 3.14), str (texto, sempre entre aspas, como 'Claudio') e bool (verdadeiro ou falso: True ou False). Você pode descobrir o tipo de qualquer valor com a função type(), por exemplo type(idade).\n\nOs operadores aritméticos básicos são + (soma), - (subtração), * (multiplicação), / (divisão, sempre retorna float), // (divisão inteira, descarta o resto) e % (módulo, retorna o resto da divisão). Já os operadores de comparação (==, !=, >, <, >=, <=) retornam sempre um valor booleano (True ou False) e são a base das decisões que o programa vai tomar mais adiante.",
+      "exemplosPraticos": [
+        "nome = 'Claudio' guarda um texto na variável nome.",
+        "peso = 78.5 guarda um número decimal representando um peso em kg.",
+        "restante = 17 % 5 guarda o resto da divisão de 17 por 5, que é 2."
+      ],
+      "dicasImportantes": [
+        "Nomes de variáveis não podem começar com número nem ter espaços — use snake_case, como total_horas.",
+        "Divisão / sempre devolve float em Python, mesmo dividindo dois números inteiros exatos."
+      ],
+      "observacoes": "Entender bem tipos de dados evita muitos erros comuns, como tentar somar um número com um texto.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual tipo de dado representa texto em Python?",
+          "opcoes": [
+            "int",
+            "str",
+            "bool",
+            "float"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que o operador % retorna?",
+          "opcoes": [
+            "O resultado da divisão exata",
+            "O resto da divisão",
+            "A multiplicação",
+            "Um valor booleano"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual função descobre o tipo de uma variável?",
+          "opcoes": [
+            "typeof()",
+            "kind()",
+            "type()",
+            "class()"
+          ],
+          "correta": 2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Entrada e Saída de Dados (input e print)",
+      "descricao": "Como mostrar mensagens na tela e receber informações digitadas pelo usuário.",
+      "conteudo": "A função print() é usada para exibir qualquer informação na tela: texto, números, resultado de cálculos. Você pode juntar vários valores numa mesma linha separando por vírgula: print('Idade:', idade). Já a função input() faz o caminho contrário — pausa o programa e espera o usuário digitar algo no teclado, retornando sempre um texto (str), mesmo que a pessoa digite números.\n\nPor isso, quando você precisa que o valor digitado seja tratado como número, é necessário converter explicitamente com int() ou float(). Por exemplo: idade = int(input('Digite sua idade: ')) primeiro recebe o texto digitado e depois converte para inteiro antes de guardar na variável.\n\nUma técnica muito usada no dia a dia são as f-strings, que permitem inserir variáveis diretamente dentro de um texto usando chaves: print(f'Olá, {nome}! Você tem {idade} anos.'). Isso deixa a formatação de mensagens muito mais legível do que concatenar textos com o operador +.",
+      "exemplosPraticos": [
+        "print(f'Total: R$ {total}') exibe o valor da variável total formatado numa frase.",
+        "nome = input('Qual seu nome? ') pausa o programa esperando a digitação.",
+        "peso = float(input('Peso em kg: ')) converte o texto digitado em número decimal."
+      ],
+      "dicasImportantes": [
+        "input() sempre devolve texto — converta com int() ou float() antes de fazer contas.",
+        "Prefira f-strings (f'...') a concatenar textos com + — é mais legível e menos propenso a erro."
+      ],
+      "observacoes": "A partir daqui os exemplos combinam input e print para criar pequenas interações reais com o usuário.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que a função input() sempre retorna, independente do que for digitado?",
+          "opcoes": [
+            "Um número inteiro",
+            "Um texto (str)",
+            "Um valor booleano",
+            "Uma lista"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Como transformar o texto digitado em número inteiro?",
+          "opcoes": [
+            "str(input())",
+            "int(input())",
+            "input(int())",
+            "bool(input())"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que é uma f-string?",
+          "opcoes": [
+            "Um tipo de erro do Python",
+            "Uma forma de inserir variáveis dentro de um texto usando chaves",
+            "Um comando para formatar arquivos",
+            "Um tipo de loop"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Estruturas Condicionais (if, elif, else)",
+      "descricao": "Como fazer o programa tomar decisões diferentes dependendo da situação.",
+      "conteudo": "As estruturas condicionais permitem que o programa siga caminhos diferentes de acordo com uma condição. A estrutura básica é: if condição: (dois pontos), seguido de uma linha indentada com o que deve acontecer se a condição for verdadeira. Por exemplo: if idade >= 18: print('Maior de idade').\n\nQuando existe mais de uma possibilidade, usamos elif (abreviação de 'else if') para testar outras condições em sequência, e else para o que deve acontecer se nenhuma condição anterior for verdadeira. O Python testa as condições na ordem escrita e para no primeiro bloco verdadeiro — os seguintes nem são avaliados.\n\nÉ possível combinar condições usando os operadores lógicos and (as duas precisam ser verdadeiras), or (basta uma ser verdadeira) e not (inverte o valor). Por exemplo: if idade >= 18 and possui_carteira: libera o acesso apenas se as duas condições forem verdadeiras ao mesmo tempo.",
+      "exemplosPraticos": [
+        "if nota >= 7: print('Aprovado') else: print('Reprovado') decide o resultado de um aluno.",
+        "if temperatura > 38: print('Febre alta') elif temperatura > 37.5: print('Febre leve') else: print('Normal').",
+        "if turno == 'manhã' and maquina_ok: print('Pode iniciar produção')."
+      ],
+      "dicasImportantes": [
+        "A indentação (geralmente 4 espaços) é obrigatória em Python — ela define o que pertence ao bloco do if.",
+        "Use elif para evitar vários ifs separados quando as condições são mutuamente exclusivas."
+      ],
+      "observacoes": "Condicionais são a base de qualquer programa que precisa reagir a diferentes situações, do mais simples ao mais complexo.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual palavra-chave testa uma condição alternativa após um if?",
+          "opcoes": [
+            "else if",
+            "elif",
+            "orelse",
+            "alt"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que acontece se nenhuma condição do if/elif for verdadeira e houver um else?",
+          "opcoes": [
+            "O programa trava",
+            "O bloco do else é executado",
+            "Nada é executado e não há erro nem execução do else",
+            "O Python gera um erro obrigatoriamente"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O operador 'and' exige que:",
+          "opcoes": [
+            "Pelo menos uma condição seja verdadeira",
+            "Todas as condições sejam verdadeiras",
+            "Nenhuma condição seja verdadeira",
+            "As condições sejam números"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Estruturas de Repetição (for e while)",
+      "descricao": "Como repetir uma tarefa várias vezes sem escrever o mesmo código repetidamente.",
+      "conteudo": "Laços de repetição (loops) evitam que você escreva o mesmo código várias vezes. O for é usado quando você já sabe (ou tem uma lista de) quantas vezes quer repetir algo, geralmente combinado com range(): for i in range(5): repete o bloco 5 vezes, com i valendo 0, 1, 2, 3 e 4.\n\nO while repete um bloco enquanto uma condição continuar verdadeira, sendo ideal quando não se sabe de antemão quantas repetições serão necessárias — por exemplo, continuar pedindo uma senha até o usuário acertar. É essencial que, dentro do while, algo mude a condição a cada volta, senão o loop nunca termina (loop infinito).\n\nDuas palavras-chave úteis dentro de loops são break, que interrompe o loop imediatamente, e continue, que pula para a próxima repetição sem executar o restante do bloco atual. Elas dão controle fino sobre o fluxo de repetição em situações específicas, como parar assim que um item é encontrado.",
+      "exemplosPraticos": [
+        "for i in range(1, 11): print(i) imprime os números de 1 a 10.",
+        "while saldo > 0: saldo -= 10 repete enquanto o saldo for maior que zero.",
+        "for peca in lista_pecas: if peca == 'defeituosa': break para o loop assim que encontra uma peça defeituosa."
+      ],
+      "dicasImportantes": [
+        "Sempre confira se a condição do while vai mudar em algum momento — evita loops infinitos.",
+        "range(5) gera 0,1,2,3,4 — 5 números começando do zero, não termina em 5."
+      ],
+      "observacoes": "Loops são um dos conceitos mais poderosos da programação: pequenas quantidades de código podem processar milhares de itens.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Para que serve o range(5) dentro de um for?",
+          "opcoes": [
+            "Gera os números de 1 a 5",
+            "Gera os números de 0 a 4",
+            "Gera 5 letras",
+            "Cria uma lista vazia"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual comando interrompe um loop imediatamente?",
+          "opcoes": [
+            "stop",
+            "continue",
+            "break",
+            "end"
+          ],
+          "correta": 2
+        },
+        {
+          "pergunta": "Quando é mais indicado usar while em vez de for?",
+          "opcoes": [
+            "Quando não se sabe de antemão quantas repetições serão necessárias",
+            "Quando se quer repetir zero vezes",
+            "Sempre, é intercambiável com for",
+            "Apenas para números pares"
+          ],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Listas e Tuplas",
+      "descricao": "Como guardar várias informações organizadas numa única variável.",
+      "conteudo": "Uma lista é uma coleção ordenada de itens, criada com colchetes: pecas = ['parafuso', 'porca', 'arruela']. Cada item tem uma posição (índice), começando do zero: pecas[0] é 'parafuso'. Listas são mutáveis, ou seja, você pode adicionar itens com .append(), remover com .remove() ou alterar um item existente diretamente pelo índice.\n\nPara percorrer todos os itens de uma lista, o jeito mais comum é combinar com for: for peca in pecas: print(peca). Também é possível saber quantos itens existem com len(pecas), e verificar se um valor está presente com o operador in: if 'porca' in pecas.\n\nTuplas são parecidas com listas, mas criadas com parênteses — coordenadas = (10, 20) — e, uma vez criadas, não podem ser alteradas (são imutáveis). São úteis quando você quer garantir que aquele conjunto de valores nunca vai mudar durante a execução do programa, como coordenadas fixas ou configurações de máquina.",
+      "exemplosPraticos": [
+        "maquinas = ['MS001', 'MS002', 'MS003'] guarda os nomes de três máquinas.",
+        "maquinas.append('MS004') adiciona uma nova máquina ao final da lista.",
+        "coordenada = (23.5, -46.6) guarda latitude e longitude que não devem ser alteradas."
+      ],
+      "dicasImportantes": [
+        "Índices em Python sempre começam em 0, não em 1.",
+        "Use lista quando os dados podem mudar; use tupla quando os dados devem permanecer fixos."
+      ],
+      "observacoes": "Listas são um dos tipos de dado mais usados no dia a dia da programação, praticamente todo programa maior usa alguma.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual é o índice do primeiro item de uma lista em Python?",
+          "opcoes": [
+            "1",
+            "0",
+            "-1",
+            "Depende da lista"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual método adiciona um item ao final de uma lista?",
+          "opcoes": [
+            ".add()",
+            ".insert()",
+            ".append()",
+            ".push()"
+          ],
+          "correta": 2
+        },
+        {
+          "pergunta": "Qual a principal diferença entre lista e tupla?",
+          "opcoes": [
+            "Tupla só guarda números",
+            "Lista é mutável, tupla é imutável",
+            "Lista não pode ter texto",
+            "Não há diferença"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "Dicionários e Conjuntos",
+      "descricao": "Como organizar dados por nome (chave) em vez de posição, e como trabalhar com valores únicos.",
+      "conteudo": "Um dicionário guarda dados em pares de chave e valor, criado com chaves { }: operador = {'nome': 'Claudio', 'turno': 'manhã', 'anos_experiencia': 25}. Diferente da lista, o acesso não é por posição numérica, mas pelo nome da chave: operador['nome'] retorna 'Claudio'. Isso torna o código muito mais legível quando os dados têm um significado claro.\n\nPara adicionar ou alterar um valor, basta atribuir diretamente: operador['turno'] = 'tarde'. Para percorrer um dicionário inteiro, usa-se .items(), que devolve cada par chave-valor: for chave, valor in operador.items(): print(chave, valor). Também é possível checar se uma chave existe com in: if 'turno' in operador.\n\nJá um conjunto (set) é uma coleção que não permite valores duplicados e não mantém ordem, criado com chaves mas sem pares: pecas_unicas = {'parafuso', 'porca'}. É muito usado para remover duplicatas de uma lista rapidamente: set(lista_com_repetidos) elimina automaticamente qualquer item repetido.",
+      "exemplosPraticos": [
+        "maquina = {'id': 'MS007', 'status': 'ativa', 'ultima_manutencao': '2026-06-01'} organiza dados de uma máquina.",
+        "for chave, valor in maquina.items(): print(f'{chave}: {valor}') imprime todos os dados formatados.",
+        "operadores_unicos = set(lista_operadores) remove nomes repetidos automaticamente."
+      ],
+      "dicasImportantes": [
+        "Chaves de dicionário devem ser únicas — se repetir uma chave, o valor mais recente sobrescreve o anterior.",
+        "Use dicionário quando os dados têm nome e significado; use lista quando é apenas uma sequência."
+      ],
+      "observacoes": "Dicionários são extremamente usados em Python real, inclusive para representar dados vindos de arquivos JSON, como os deste próprio app.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Como se acessa um valor num dicionário chamado dados a partir da chave 'nome'?",
+          "opcoes": [
+            "dados[0]",
+            "dados.nome",
+            "dados['nome']",
+            "dados->nome"
+          ],
+          "correta": 2
+        },
+        {
+          "pergunta": "O que caracteriza um conjunto (set) em Python?",
+          "opcoes": [
+            "Permite duplicatas e mantém ordem",
+            "Não permite valores duplicados",
+            "Só aceita números",
+            "É o mesmo que uma tupla"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual método percorre pares chave-valor de um dicionário?",
+          "opcoes": [
+            ".pairs()",
+            ".items()",
+            ".values_keys()",
+            ".loop()"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "Strings e Manipulação de Texto",
+      "descricao": "Como cortar, buscar, transformar e formatar textos em Python.",
+      "conteudo": "Uma string (str) é uma sequência de caracteres, e o Python oferece muitos métodos prontos para manipulá-la. .upper() e .lower() transformam para maiúsculas ou minúsculas; .strip() remove espaços em branco do início e do fim, muito útil ao tratar dados digitados pelo usuário; .replace('a', 'b') substitui um trecho por outro.\n\nPara dividir um texto em partes, .split(' ') separa por espaço (ou qualquer outro caractere indicado) e devolve uma lista; o caminho inverso é ' '.join(lista), que junta uma lista de textos usando o separador indicado. É possível também acessar pedaços de uma string por posição, como numa lista: texto[0:5] pega os cinco primeiros caracteres (fatiamento ou 'slicing').\n\nPara verificações, .startswith() e .endswith() checam o início e o fim de um texto, e in verifica se um trecho está contido: if 'erro' in mensagem.lower(). Combinar esses métodos permite validar e limpar dados digitados antes de usá-los, algo essencial em qualquer programa real.",
+      "exemplosPraticos": [
+        "nome = nome.strip().title() remove espaços extras e deixa cada palavra com inicial maiúscula.",
+        "partes = 'MS001-MS018'.split('-') separa o texto em ['MS001', 'MS018'].",
+        "if codigo.startswith('MS'): print('Código de máquina válido')."
+      ],
+      "dicasImportantes": [
+        ".strip() é essencial ao validar textos digitados pelo usuário, que costumam vir com espaços extras.",
+        "Strings são imutáveis: métodos como .upper() não alteram o texto original, retornam um novo texto."
+      ],
+      "observacoes": "Manipulação de texto é usada o tempo todo em programas que leem dados digitados ou arquivos.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual método remove espaços em branco do início e fim de um texto?",
+          "opcoes": [
+            ".trim()",
+            ".strip()",
+            ".clean()",
+            ".remove()"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que 'a,b,c'.split(',') retorna?",
+          "opcoes": [
+            "Uma string única 'abc'",
+            "Uma lista ['a', 'b', 'c']",
+            "Um dicionário",
+            "Um número"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Strings em Python são:",
+          "opcoes": [
+            "Mutáveis, podem ser alteradas diretamente",
+            "Imutáveis, métodos retornam um novo texto",
+            "Sempre números",
+            "Listas de números"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "titulo": "Funções",
+      "descricao": "Como organizar código em blocos reutilizáveis, com entradas e saídas próprias.",
+      "conteudo": "Uma função é um bloco de código nomeado que pode ser executado (chamado) quantas vezes for preciso, evitando repetir a mesma lógica em vários lugares do programa. Ela é criada com def nome_da_funcao(): seguido do bloco indentado, e executada simplesmente escrevendo seu nome com parênteses: nome_da_funcao().\n\nFunções podem receber parâmetros (valores de entrada) entre os parênteses e devolver um resultado com return. Por exemplo: def calcular_media(nota1, nota2): return (nota1 + nota2) / 2. Ao chamar media = calcular_media(7, 9), o valor retornado fica guardado na variável media. É possível também definir valores padrão para parâmetros: def saudacao(nome='visitante').\n\nUma boa prática é que cada função faça uma única coisa bem definida — isso facilita testar, reutilizar e corrigir erros depois. Funções também tornam o código mais legível: em vez de um bloco enorme, o programa principal vira uma sequência de chamadas de função com nomes que já explicam o que fazem.",
+      "exemplosPraticos": [
+        "def calcular_oee(disponibilidade, performance, qualidade): return disponibilidade * performance * qualidade calcula o OEE de uma máquina.",
+        "def saudacao(nome): print(f'Bem-vindo, {nome}!') é chamada com saudacao('Claudio').",
+        "def esta_aprovado(nota): return nota >= 7 devolve True ou False conforme a nota."
+      ],
+      "dicasImportantes": [
+        "Uma função sem return devolve automaticamente None (nenhum valor).",
+        "Nomeie funções com verbos que descrevem a ação, como calcular_total() ou validar_entrada()."
+      ],
+      "observacoes": "Funções são a base para organizar programas maiores — quase todo código profissional é dividido em várias funções pequenas.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual palavra-chave cria uma função em Python?",
+          "opcoes": [
+            "function",
+            "def",
+            "func",
+            "define"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que a palavra-chave return faz?",
+          "opcoes": [
+            "Imprime um valor na tela",
+            "Devolve um valor de dentro da função para quem a chamou",
+            "Encerra o programa inteiro",
+            "Cria uma nova variável global"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que uma função sem return explícito devolve por padrão?",
+          "opcoes": [
+            "0",
+            "Uma string vazia",
+            "None",
+            "Um erro"
+          ],
+          "correta": 2
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "titulo": "Tratamento de Erros (try, except)",
+      "descricao": "Como evitar que o programa trave quando algo inesperado acontece.",
+      "conteudo": "Erros em tempo de execução (exceções) acontecem quando o programa tenta fazer algo impossível, como dividir por zero ou converter um texto não numérico em número. Sem tratamento, esses erros interrompem o programa imediatamente. O bloco try/except permite 'tentar' um trecho de código e capturar o erro caso ele aconteça, sem travar tudo.\n\nA estrutura básica é: try: (código que pode falhar) except TipoDeErro: (o que fazer se falhar). Por exemplo: try: numero = int(input('Digite um número: ')) except ValueError: print('Isso não é um número válido!'). É possível capturar tipos específicos de erro (ValueError, ZeroDivisionError) ou usar except Exception para capturar qualquer erro genérico.\n\nExiste ainda o bloco finally, que executa sempre, tenha havido erro ou não — muito usado para garantir que um arquivo seja fechado, por exemplo. Tratar erros corretamente é o que diferencia um script frágil de um programa robusto, que continua funcionando mesmo diante de uma entrada inesperada do usuário.",
+      "exemplosPraticos": [
+        "try: resultado = 10 / divisor except ZeroDivisionError: print('Não é possível dividir por zero').",
+        "try: idade = int(input()) except ValueError: print('Digite apenas números').",
+        "try: arquivo = open('dados.txt') finally: arquivo.close() garante o fechamento do arquivo mesmo com erro."
+      ],
+      "dicasImportantes": [
+        "Nunca use except vazio sem especificar o tipo — isso esconde erros que você deveria ver e corrigir.",
+        "Trate apenas os erros que você realmente espera que possam acontecer naquele trecho."
+      ],
+      "observacoes": "Programas usados por outras pessoas, como os apps do Claudio, sempre devem tratar entradas inesperadas do usuário.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que o bloco try/except evita?",
+          "opcoes": [
+            "Que o código seja lido",
+            "Que o programa trave ao encontrar um erro",
+            "Que existam variáveis",
+            "Que o programa rode mais rápido"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual exceção ocorre ao tentar converter um texto inválido para número?",
+          "opcoes": [
+            "ZeroDivisionError",
+            "ValueError",
+            "TypeError de sintaxe",
+            "IndexError"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O bloco finally é executado:",
+          "opcoes": [
+            "Só quando há erro",
+            "Só quando não há erro",
+            "Sempre, com ou sem erro",
+            "Nunca é executado automaticamente"
+          ],
+          "correta": 2
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "titulo": "Manipulação de Arquivos",
+      "descricao": "Como ler e gravar dados em arquivos de texto e em formato JSON, para guardar informações permanentemente.",
+      "conteudo": "Até agora, tudo que os programas guardavam desaparecia ao fechar o programa, porque ficava só na memória (RAM). Para guardar dados de forma permanente, usamos arquivos. A função open('arquivo.txt', 'r') abre um arquivo para leitura ('r'), 'w' para escrita (sobrescrevendo o conteúdo) e 'a' para adicionar ao final sem apagar o que já existe.\n\nA forma mais segura de abrir um arquivo é usando with open('arquivo.txt', 'r') as f: — esse formato garante que o arquivo seja fechado automaticamente ao final do bloco, mesmo se ocorrer um erro no meio do caminho. Dentro do bloco, f.read() lê todo o conteúdo, e f.readlines() devolve uma lista com cada linha do arquivo.\n\nPara dados estruturados, como os catálogos JSON usados nos apps do Claudio, a biblioteca json facilita muito: json.load(f) lê um arquivo JSON e transforma direto em dicionário ou lista do Python, e json.dump(dados, f) faz o caminho inverso, gravando uma estrutura Python como JSON no arquivo. É exatamente esse mecanismo que faz este próprio curso funcionar: o app lê o curso.json e transforma em aulas navegáveis na tela.",
+      "exemplosPraticos": [
+        "with open('log.txt', 'a') as f: f.write('Máquina MS007 parada às 14h\\n') registra um evento sem apagar o histórico.",
+        "with open('curso.json', 'r') as f: curso = json.load(f) carrega os dados do curso como um dicionário Python.",
+        "json.dump(operadores, f) grava a lista de operadores em formato JSON legível por outros programas."
+      ],
+      "dicasImportantes": [
+        "Prefira sempre with open(...) as f: em vez de abrir e fechar manualmente — evita arquivos 'travados' abertos por engano.",
+        "O modo 'w' apaga todo o conteúdo anterior do arquivo — use 'a' quando quiser apenas adicionar."
+      ],
+      "observacoes": "Esta aula conecta a lógica de programação ao que o Claudio já faz na prática com JSON nos seus próprios apps.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual modo de abertura de arquivo adiciona conteúdo sem apagar o que já existe?",
+          "opcoes": [
+            "'r'",
+            "'w'",
+            "'a'",
+            "'x'"
+          ],
+          "correta": 2
+        },
+        {
+          "pergunta": "Qual função da biblioteca json transforma um arquivo JSON em dicionário Python?",
+          "opcoes": [
+            "json.read()",
+            "json.load()",
+            "json.open()",
+            "json.parse()"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Por que usar with open(...) as f: em vez de abrir manualmente?",
+          "opcoes": [
+            "É mais rápido para o processador",
+            "Garante o fechamento automático do arquivo mesmo com erro",
+            "É a única forma que existe",
+            "Só funciona com arquivos JSON"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "titulo": "Programação Orientada a Objetos (Introdução)",
+      "descricao": "Como agrupar dados e comportamentos relacionados dentro de uma 'classe', representando objetos do mundo real.",
+      "conteudo": "Programação Orientada a Objetos (POO) é uma forma de organizar o código em torno de 'objetos' que representam coisas do mundo real, cada um com suas características (atributos) e ações (métodos). Uma classe é o molde que descreve como esse objeto deve ser, criada com class NomeDaClasse:. Por exemplo, uma classe Maquina poderia ter atributos como id, status e ultima_manutencao.\n\nO método especial __init__ é chamado automaticamente sempre que um novo objeto é criado a partir da classe, e é usado para definir os valores iniciais: def __init__(self, id, status): self.id = id; self.status = status. O parâmetro self representa o próprio objeto sendo criado, e precisa estar presente em todo método da classe.\n\nDepois de definida a classe, você cria objetos (instâncias) dela: maquina1 = Maquina('MS007', 'ativa'). Cada objeto tem seus próprios valores, independentes dos outros — maquina2 = Maquina('MS008', 'parada') não interfere em maquina1. Métodos adicionais podem definir comportamentos, como maquina1.iniciar_producao(), deixando o código muito mais organizado quando o programa cresce.",
+      "exemplosPraticos": [
+        "class Operador: def __init__(self, nome, turno): self.nome = nome; self.turno = turno representa um operador.",
+        "operador1 = Operador('Claudio', 'manhã') cria um objeto real a partir da classe.",
+        "class Maquina: def status_atual(self): return f'{self.id} está {self.status}' define um comportamento do objeto."
+      ],
+      "dicasImportantes": [
+        "self sempre se refere ao próprio objeto e deve ser o primeiro parâmetro de todo método da classe.",
+        "Pense em classes como 'moldes' e objetos como as 'peças' criadas a partir desses moldes."
+      ],
+      "observacoes": "POO é um tema mais avançado — não se preocupe em dominar tudo já na primeira leitura, a prática constrói esse entendimento aos poucos.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "O que é uma classe em Python?",
+          "opcoes": [
+            "Um tipo de erro",
+            "Um molde que descreve atributos e comportamentos de um objeto",
+            "Uma função sem retorno",
+            "Um tipo de loop"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Para que serve o método __init__?",
+          "opcoes": [
+            "Para deletar um objeto",
+            "Para definir os valores iniciais quando um objeto é criado",
+            "Para imprimir na tela",
+            "Para importar bibliotecas"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que self representa dentro de um método de classe?",
+          "opcoes": [
+            "O nome da classe",
+            "O próprio objeto sendo usado",
+            "Um valor fixo igual a zero",
+            "A biblioteca importada"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "titulo": "Módulos, Bibliotecas e Projeto Final",
+      "descricao": "Como reaproveitar código pronto de outras pessoas e juntar tudo o que você aprendeu num projeto real.",
+      "conteudo": "Um módulo é um arquivo Python com código reutilizável (funções, classes) que pode ser importado em outro programa com import nome_do_modulo. O próprio Python já vem com uma biblioteca padrão enorme: import math dá acesso a funções matemáticas, import random permite gerar números aleatórios, e import datetime trabalha com datas e horários.\n\nAlém da biblioteca padrão, existem milhares de bibliotecas externas instaláveis com o gerenciador pip (pip install nome_da_biblioteca), como pandas para análise de dados em planilhas, requests para acessar sites e APIs, e flask para criar aplicações web. Saber procurar e usar bibliotecas prontas é uma habilidade tão importante quanto saber programar do zero — reinventar a roda raramente vale a pena.\n\nCom tudo que você viu neste curso — variáveis, condicionais, loops, listas, dicionários, funções, arquivos e um pouco de POO — você já tem base para construir um projeto real: por exemplo, um controle de estoque simples que lê e grava um arquivo JSON, pede dados ao usuário com input(), organiza tudo em uma lista de dicionários e mostra relatórios formatados com f-strings. Esse é exatamente o tipo de lógica usada nos seus próprios apps, como o niken-estoque e o relatoriosolda.",
+      "exemplosPraticos": [
+        "import random; codigo = random.randint(1000, 9999) gera um código aleatório de 4 dígitos.",
+        "import datetime; hoje = datetime.date.today() pega a data atual do sistema.",
+        "Projeto final sugerido: um controle de estoque em Python que lê estoque.json, permite adicionar/remover peças e grava o resultado de volta no arquivo."
+      ],
+      "dicasImportantes": [
+        "Use pip install nome_da_biblioteca no terminal para instalar bibliotecas externas.",
+        "Antes de programar algo do zero, pesquise se já existe uma biblioteca pronta e confiável para aquilo."
+      ],
+      "observacoes": "Parabéns por chegar até aqui — o próximo passo é praticar construindo pequenos projetos próprios, com erros e tudo, que é assim que a fluência realmente se desenvolve.",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual comando instala uma biblioteca externa em Python?",
+          "opcoes": [
+            "python install",
+            "pip install nome_da_biblioteca",
+            "import install",
+            "get nome_da_biblioteca"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual biblioteca padrão do Python é usada para gerar números aleatórios?",
+          "opcoes": [
+            "math",
+            "random",
+            "datetime",
+            "os"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual é uma boa prática antes de programar uma solução do zero?",
+          "opcoes": [
+            "Nunca usar bibliotecas prontas",
+            "Verificar se já existe uma biblioteca pronta e confiável para o problema",
+            "Sempre reescrever tudo em outra linguagem",
+            "Evitar usar o pip"
+          ],
+          "correta": 1
+        }
+      ]
+    }
+  ],
+  "quizFinal": {
+    "titulo": "Quiz Final - Curso Completo de Programação em Python",
+    "totalPerguntas": 50,
+    "perguntas": [
+      {
+        "pergunta": "O que é programar?",
+        "opcoes": [
+          "Desenhar ícones",
+          "Dar instruções passo a passo para o computador",
+          "Instalar aplicativos",
+          "Formatar o celular"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Python usa o quê para delimitar blocos de código?",
+        "opcoes": [
+          "Chaves { }",
+          "Indentação (espaços)",
+          "Ponto e vírgula",
+          "Parênteses"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quem criou a linguagem Python?",
+        "opcoes": [
+          "Bill Gates",
+          "Guido van Rossum",
+          "Linus Torvalds",
+          "Mark Zuckerberg"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual comando de terminal mostra a versão do Python instalada?",
+        "opcoes": [
+          "python --version",
+          "python new",
+          "py check",
+          "python/v"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "O que deve ser marcado ao instalar Python no Windows?",
+        "opcoes": [
+          "Add Python to PATH",
+          "Modo escuro",
+          "Instalar como convidado",
+          "Ativar firewall"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual app permite programar Python direto no Android?",
+        "opcoes": [
+          "Pydroid 3",
+          "Excel",
+          "Paint",
+          "Bluetooth"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Como se cria uma variável chamada idade com valor 30?",
+        "opcoes": [
+          "idade == 30",
+          "idade = 30",
+          "var idade = 30;",
+          "int idade = 30"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual tipo representa números com casas decimais?",
+        "opcoes": [
+          "int",
+          "float",
+          "str",
+          "bool"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual função revela o tipo de uma variável?",
+        "opcoes": [
+          "type()",
+          "kind()",
+          "class()",
+          "typeof()"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "O que o operador // faz?",
+        "opcoes": [
+          "Divisão exata com casas decimais",
+          "Divisão inteira, descartando o resto",
+          "Multiplicação",
+          "Comentário de código"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que o operador % retorna?",
+        "opcoes": [
+          "A soma",
+          "O resto da divisão",
+          "A média",
+          "Um valor booleano sempre"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que a função print() faz?",
+        "opcoes": [
+          "Recebe dados do usuário",
+          "Exibe informação na tela",
+          "Apaga a tela",
+          "Cria uma variável"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que input() sempre retorna?",
+        "opcoes": [
+          "Um número inteiro",
+          "Um texto (str)",
+          "Um valor booleano",
+          "Uma lista"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Como converter o texto digitado em número inteiro?",
+        "opcoes": [
+          "str(input())",
+          "int(input())",
+          "bool(input())",
+          "list(input())"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é uma f-string?",
+        "opcoes": [
+          "Um erro do Python",
+          "Uma forma de inserir variáveis num texto com chaves",
+          "Um tipo de loop",
+          "Uma função matemática"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual estrutura testa uma condição alternativa após um if?",
+        "opcoes": [
+          "elif",
+          "else if",
+          "orelse",
+          "altif"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "O operador and exige que:",
+        "opcoes": [
+          "Apenas uma condição seja verdadeira",
+          "Todas as condições sejam verdadeiras",
+          "Nenhuma seja verdadeira",
+          "As condições sejam textos"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O operador or exige que:",
+        "opcoes": [
+          "Todas as condições sejam verdadeiras",
+          "Pelo menos uma condição seja verdadeira",
+          "Nenhuma condição exista",
+          "Apenas números sejam usados"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que not faz com uma condição booleana?",
+        "opcoes": [
+          "Duplica o valor",
+          "Inverte o valor (True vira False e vice-versa)",
+          "Soma 1 ao valor",
+          "Nada, é apenas comentário"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que range(5) gera dentro de um for?",
+        "opcoes": [
+          "Os números de 1 a 5",
+          "Os números de 0 a 4",
+          "5 textos vazios",
+          "Uma lista vazia"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual comando interrompe um loop imediatamente?",
+        "opcoes": [
+          "stop",
+          "break",
+          "continue",
+          "end"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual comando pula para a próxima repetição de um loop sem executar o resto do bloco?",
+        "opcoes": [
+          "break",
+          "continue",
+          "skip",
+          "next"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quando é mais indicado usar while em vez de for?",
+        "opcoes": [
+          "Quando não se sabe de antemão quantas repetições serão necessárias",
+          "Sempre",
+          "Nunca",
+          "Apenas com listas"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual é o índice do primeiro item de uma lista em Python?",
+        "opcoes": [
+          "1",
+          "0",
+          "-1",
+          "Depende"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual método adiciona um item ao final de uma lista?",
+        "opcoes": [
+          ".push()",
+          ".add()",
+          ".append()",
+          ".insert_end()"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual a principal diferença entre lista e tupla?",
+        "opcoes": [
+          "Não há diferença",
+          "Lista é mutável, tupla é imutável",
+          "Tupla só guarda texto",
+          "Lista não aceita números"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Como se cria uma tupla em Python?",
+        "opcoes": [
+          "Com colchetes [ ]",
+          "Com parênteses ( )",
+          "Com chaves { }",
+          "Com aspas duplas"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Como se acessa o valor da chave 'nome' num dicionário chamado dados?",
+        "opcoes": [
+          "dados[0]",
+          "dados['nome']",
+          "dados.nome()",
+          "dados->nome"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que caracteriza um conjunto (set) em Python?",
+        "opcoes": [
+          "Permite duplicatas",
+          "Não permite valores duplicados",
+          "É igual a uma tupla",
+          "Só aceita texto"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual método percorre pares chave-valor de um dicionário?",
+        "opcoes": [
+          ".items()",
+          ".pairs()",
+          ".both()",
+          ".loop()"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual método remove espaços em branco do início e fim de um texto?",
+        "opcoes": [
+          ".trim()",
+          ".strip()",
+          ".clean()",
+          ".cut()"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que 'a,b,c'.split(',') retorna?",
+        "opcoes": [
+          "Uma string única",
+          "Uma lista ['a', 'b', 'c']",
+          "Um número",
+          "Um erro"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Strings em Python são:",
+        "opcoes": [
+          "Mutáveis",
+          "Imutáveis",
+          "Listas de números",
+          "Sempre vazias"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual palavra-chave cria uma função em Python?",
+        "opcoes": [
+          "function",
+          "def",
+          "func",
+          "define"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que a palavra-chave return faz numa função?",
+        "opcoes": [
+          "Apaga a função",
+          "Devolve um valor para quem chamou a função",
+          "Imprime na tela obrigatoriamente",
+          "Cria uma nova classe"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que uma função sem return explícito devolve por padrão?",
+        "opcoes": [
+          "0",
+          "Uma lista vazia",
+          "None",
+          "Um erro sempre"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "O que try/except evita?",
+        "opcoes": [
+          "Que existam variáveis",
+          "Que o programa trave ao encontrar um erro",
+          "Que o código seja lido",
+          "Que loops funcionem"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual exceção ocorre ao converter um texto inválido para número?",
+        "opcoes": [
+          "ValueError",
+          "ZeroDivisionError",
+          "IndexError",
+          "TypeError obrigatório"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "O bloco finally é executado:",
+        "opcoes": [
+          "Só se houver erro",
+          "Só se não houver erro",
+          "Sempre, com ou sem erro",
+          "Nunca automaticamente"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual modo de abertura de arquivo adiciona conteúdo sem apagar o existente?",
+        "opcoes": [
+          "'r'",
+          "'w'",
+          "'a'",
+          "'x'"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual função do módulo json transforma um arquivo JSON em dicionário Python?",
+        "opcoes": [
+          "json.read()",
+          "json.load()",
+          "json.parse()",
+          "json.open()"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Por que usar with open(...) as f: em vez de abrir manualmente?",
+        "opcoes": [
+          "É obrigatório sempre",
+          "Garante o fechamento automático do arquivo mesmo com erro",
+          "É mais rápido para o processador",
+          "Só funciona com JSON"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é uma classe em Python?",
+        "opcoes": [
+          "Um tipo de erro",
+          "Um molde que descreve atributos e comportamentos de um objeto",
+          "Uma variável especial",
+          "Um tipo de loop"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Para que serve o método __init__?",
+        "opcoes": [
+          "Para deletar um objeto",
+          "Para definir valores iniciais quando um objeto é criado",
+          "Para importar bibliotecas",
+          "Para imprimir erros"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que self representa dentro de um método de classe?",
+        "opcoes": [
+          "O nome da classe",
+          "O próprio objeto em uso",
+          "Um valor fixo",
+          "Uma biblioteca externa"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Como se importa um módulo chamado math?",
+        "opcoes": [
+          "include math",
+          "import math",
+          "using math",
+          "require math"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual comando instala uma biblioteca externa?",
+        "opcoes": [
+          "pip install nome",
+          "python get nome",
+          "import install nome",
+          "download nome"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual biblioteca padrão gera números aleatórios?",
+        "opcoes": [
+          "math",
+          "random",
+          "os",
+          "sys"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual biblioteca padrão trabalha com datas e horários?",
+        "opcoes": [
+          "datetime",
+          "time_math",
+          "calendar_py",
+          "date_py"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Antes de programar uma solução do zero, uma boa prática é:",
+        "opcoes": [
+          "Nunca usar bibliotecas prontas",
+          "Verificar se já existe uma biblioteca pronta e confiável",
+          "Reescrever tudo em outra linguagem",
+          "Evitar o terminal"
+        ],
+        "correta": 1
+      }
+    ]
+  }
+}
