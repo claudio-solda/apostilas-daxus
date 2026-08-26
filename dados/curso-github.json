@@ -1,0 +1,117 @@
+{
+  "titulo": "Curso Prático: Dominando o GitHub do Zero",
+  "autor": "Claudio Roberto",
+  "versao": "1.0",
+  "aplicativo": "Apostilha Daxus",
+  "totalAulas": 5,
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "O Que é Git e GitHub?",
+      "descricao": "Entenda a diferença entre a ferramenta instalada no seu computador e a plataforma na nuvem.",
+      "conteudo": "Git é um sistema instalado no computador que grava o histórico de alterações de um projeto. Ele funciona localmente, guardando cada versão salva do seu código para que você possa voltar atrás ou entender o que mudou ao longo do tempo.\n\nGitHub é uma plataforma na nuvem onde você armazena e compartilha os projetos que estão sob controle do Git. É como se o Git fosse o motor que grava a história do seu trabalho, e o GitHub fosse o lugar na internet onde essa história fica hospedada, visível e compartilhável com outras pessoas.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 2,
+      "titulo": "Termos Fundamentais",
+      "descricao": "Os quatro conceitos básicos que você vai usar o tempo todo: repositório, commit, push e pull.",
+      "conteudo": "Repositório (Repo): é a pasta onde ficam os arquivos do seu projeto.\n\nCommit: é salvar uma versão do código com uma mensagem descritiva, explicando o que mudou.\n\nPush: é enviar as alterações do seu computador local para o servidor do GitHub.\n\nPull: é baixar as atualizações que estão no GitHub para o seu computador local.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 3,
+      "titulo": "Passo a Passo no Navegador",
+      "descricao": "Como criar um repositório e adicionar arquivos usando apenas o site do GitHub, sem linha de comando.",
+      "conteudo": "1. Acesse github.com e clique no botão verde New.\n2. Digite o nome do repositório (ex: meu-projeto).\n3. Marque a opção Add a README file e clique em Create repository.\n4. Para criar arquivos, clique em Add file > Create new file.\n5. Crie o arquivo chamado index.html para ser a página inicial.\n6. Clique no botão verde Commit changes... para salvar.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 4,
+      "titulo": "Principais Comandos Git",
+      "descricao": "Os comandos de terminal mais usados no dia a dia com Git.",
+      "conteudo": "git init - Inicializa o repositório na pasta atual.\n\ngit status - Verifica o status das alterações.\n\ngit add . - Adiciona todos os arquivos alterados.\n\ngit commit -m \"Mensagem\" - Salva o estado do código.\n\ngit push origin main - Envia as alterações para o GitHub.\n\ngit pull origin main - Puxa as alterações mais recentes do GitHub.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 5,
+      "titulo": "Publicando um Site com GitHub Pages",
+      "descricao": "Como colocar seu site no ar gratuitamente usando o próprio GitHub.",
+      "conteudo": "1. Acesse o seu repositório no GitHub.\n2. Clique na aba Settings (Configurações).\n3. Na barra lateral esquerda, clique em Pages.\n4. Em Branch, altere de None para main e mantenha / (root).\n5. Clique em Save e aguarde 2 minutos.\n6. O site estará disponível em: https://seu-usuario.github.io/nome-do-repositorio/",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    }
+  ],
+  "quizFinal": {
+    "titulo": "Quiz de Avaliação - Curso Prático: Dominando o GitHub do Zero",
+    "totalPerguntas": 4,
+    "perguntas": [
+      {
+        "pergunta": "Qual a diferença entre Git e GitHub?",
+        "opcoes": [
+          "Git é para criar sites e GitHub para códigos",
+          "Git é o sistema de controle local e GitHub é a plataforma na nuvem",
+          "São a mesma ferramenta"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Para que serve o comando git push?",
+        "opcoes": [
+          "Para apagar o projeto",
+          "Para baixar alterações da nuvem",
+          "Para enviar as alterações locais para o GitHub"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Qual o nome do arquivo principal para abrir o site no GitHub Pages?",
+        "opcoes": [
+          "inicio.html",
+          "index.html",
+          "home.html"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é um \"Commit\"?",
+        "opcoes": [
+          "Uma senha de acesso",
+          "Um registro/salvamento das alterações do código",
+          "Um comando para deletar arquivos"
+        ],
+        "correta": 1
+      }
+    ],
+    "tabelaNotas": [
+      { "acertos": 4, "nota": "10,0", "conceito": "Excelente" },
+      { "acertos": 3, "nota": "7,5", "conceito": "Muito bom" },
+      { "acertos": 2, "nota": "5,0", "conceito": "Atenção" },
+      { "acertos": "0 a 1", "nota": "0 a 2,5", "conceito": "Refazer leitura" }
+    ]
+  }
+}
