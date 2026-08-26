@@ -3,7 +3,7 @@
   "autor": "Claudio Roberto",
   "versao": "1.0",
   "aplicativo": "Apostilha Daxus",
-  "totalAulas": 14,
+  "totalAulas": 15,
   "aulas": [
     {
       "id": 1,
@@ -700,6 +700,87 @@
             "Verificar se já existe uma biblioteca pronta e confiável para o problema",
             "Sempre reescrever tudo em outra linguagem",
             "Evitar usar o pip"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "titulo": "Agentes de API com Python",
+      "descricao": "Como criar um programa que consulta APIs automaticamente, valida regras e dispara alertas sem intervenção humana.",
+      "conteudo": "Um Agente de API é um programa inteligente que consulta fontes de dados (endpoints) automaticamente, analisa regras em tempo real e toma decisões ou envia alertas sem precisar de intervenção humana.\n\nPara entender uma API, pense nela como um garçom de restaurante: você (o usuário ou o bot) faz o pedido, que é a requisição (Request). O garçom, que é a própria API, leva esse pedido até a cozinha e traz o prato pronto, que é a resposta (Response). A cozinha representa o servidor ou banco de dados, onde os dados brutos ficam guardados.\n\nUm agente automatizado opera em um ciclo contínuo de 4 etapas: primeiro, um gatilho de tempo (loop) faz o agente 'acordar' a cada X segundos ou minutos; em seguida, ele faz a requisição, chamando a API por um endereço específico (endpoint) e enviando chaves de acesso (tokens/headers); depois vem o processamento (filtro), quando ele lê a resposta estruturada, geralmente em JSON, e valida se as condições da regra foram atingidas; por fim, a ação (output) dispara caso a regra seja verdadeira, enviando uma notificação por Webhook, Telegram ou salvando no banco de dados.",
+      "exemplosPraticos": [
+        "Passo 1 — Obter Credenciais da API: acesse o painel da plataforma escolhida e gere sua API Key ou Bearer Token, que funciona como a senha de acesso do agente.",
+        "Passo 2 — Configurar o Endpoint e Parâmetros: defina a URL exata que o agente vai consultar e insira os filtros necessários na requisição.",
+        "Passo 3 — Escrever a Lógica de Validação: defina as condições exatas para acionamento. Se os dados não atenderem 100% dos requisitos, o agente descarta e aguarda a próxima checagem.",
+        "Passo 4 — Conectar a Saída (Webhooks): vincule o resultado positivo a um serviço de envio (Telegram, Discord ou Webhook do seu app) para receber o alerta na hora."
+      ],
+      "dicasImportantes": [
+        "GET → Buscar/Ler dados. Exemplo: consultar o placar de um jogo ou um saldo.",
+        "POST → Enviar/Criar dados. Exemplo: enviar um novo alerta ou criar um registro.",
+        "PUT/PATCH → Atualizar dados existentes, como alterar uma configuração.",
+        "DELETE → Remover dados, como apagar um registro antigo."
+      ],
+      "observacoes": "Exemplo de código em Python (loop contínuo, checando a cada 60 segundos):<pre style=\"white-space:pre-wrap;background:var(--card-2);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:12px;color:var(--text);overflow-x:auto;margin-top:8px;\">import requests\nimport time\n\n# Configurações do Agente\nURL_API = \"https://api.exemplo.com/dados\"\nTOKEN = \"SEU_TOKEN_AQUI\"\n\nheaders = {\n    \"Authorization\": f\"Bearer {TOKEN}\"\n}\n\ndef executar_agente():\n    try:\n        # 1. Faz a requisição para a API\n        resposta = requests.get(URL_API, headers=headers)\n\n        # 2. Verifica se a chamada deu certo (Código 200 OK)\n        if resposta.status_code == 200:\n            dados = resposta.json()\n            print(\"Dados recebidos da API com sucesso!\")\n\n            # 3. Lógica de decisão do agente\n            if dados.get(\"condicao\") == True:\n                print(\"Regra atingida! Disparando alerta...\")\n            else:\n                print(\"Condição não atingida nesta checagem.\")\n        else:\n            print(f\"Erro na requisição: Código {resposta.status_code}\")\n\n    except Exception as e:\n        print(f\"Erro ao conectar na API: {e}\")\n\n# 4. Loop contínuo (executa a cada 60 segundos)\nwhile True:\n    executar_agente()\n    time.sleep(60)</pre>",
+      "imagens": [],
+      "video": null,
+      "glossario": [
+        {
+          "termo": "Endpoint",
+          "definicao": "O endereço (URL) específico da API que o agente consulta para obter ou enviar dados."
+        },
+        {
+          "termo": "Token / API Key",
+          "definicao": "Chave de acesso enviada nos headers da requisição, funciona como a senha do agente perante a API."
+        },
+        {
+          "termo": "Webhook",
+          "definicao": "Um endereço de saída que recebe automaticamente uma notificação quando uma regra do agente é atingida."
+        },
+        {
+          "termo": "JSON",
+          "definicao": "Formato estruturado de dados (chave-valor) mais comum nas respostas de APIs, fácil de ler por humanos e programas."
+        }
+      ],
+      "quizAula": [
+        {
+          "pergunta": "Na analogia do restaurante, o que representa a própria API?",
+          "opcoes": [
+            "O cliente que faz o pedido",
+            "O garçom",
+            "A cozinha",
+            "O prato pronto"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual método HTTP é usado para buscar ou ler dados, como consultar um saldo?",
+          "opcoes": [
+            "POST",
+            "GET",
+            "DELETE",
+            "PUT"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que a etapa de 'Processamento (Filtro)' faz no ciclo do agente?",
+          "opcoes": [
+            "Envia a notificação final via Telegram",
+            "Lê a resposta em JSON e valida se a regra foi atingida",
+            "Apaga um registro do banco de dados",
+            "Gera um novo token de acesso"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Para que serve o Webhook conectado na Ação (Output) do agente?",
+          "opcoes": [
+            "Para armazenar as credenciais da API",
+            "Para enviar automaticamente o alerta a um serviço externo, como Telegram ou Discord",
+            "Para validar a estrutura do JSON recebido",
+            "Para controlar o tempo do loop (time.sleep)"
           ],
           "correta": 1
         }
