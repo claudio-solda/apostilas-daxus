@@ -1,0 +1,273 @@
+{
+  "titulo": "Curso Completo de Controlador de Acesso Residencial e Comercial",
+  "autor": "Claudio Roberto",
+  "versao": "1.0",
+  "aplicativo": "Apostilha Daxus",
+  "totalAulas": 7,
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "Introdução e Perfil Profissional",
+      "descricao": "O papel do Controlador de Acesso, a diferença para o porteiro e a postura profissional.",
+      "conteudo": "1. O Papel do Controlador de Acesso\n- Responsável principal por gerenciar a triagem, entrada e saída de pessoas, veículos e materiais em um perímetro delimitado.\n- Atua como a primeira barreira de segurança preventiva do local.\n\n2. Diferença Entre Porteiro e Controlador de Acesso\n- Porteiro: foco no atendimento geral ao condomínio, gestão de correspondências, chaves, encomendas e suporte direto ao síndico e moradores.\n- Controlador de Acesso: foco estrito no controle perimetral, identificação, registro, liberação de acesso e cumprimento rígido de protocolos de segurança.\n\n3. Postura Profissional e Apresentação\n- Uniforme limpo, passado e alinhado; identificação (crachá) visível.\n- Comunicação clara, neutra, educada e firme.\n- Imparcialidade e discrição total sobre o fluxo de moradores e empresas.\n- Manutenção do foco absoluto na guarita/recepção (evitar distrações com celular pessoal, conversas paralelas ou leituras não autorizadas).",
+      "exemplosPraticos": [],
+      "dicasImportantes": [
+        "O Controlador de Acesso é a primeira barreira de segurança preventiva do local."
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual é o foco do Controlador de Acesso?",
+          "opcoes": [
+            "Gestão de correspondências e chaves",
+            "Controle perimetral, identificação, registro e liberação de acesso",
+            "Suporte direto ao síndico"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Acolhimento e Triagem",
+      "descricao": "Regra de ouro, entrada de visitantes, prestadores de serviço e entregadores.",
+      "conteudo": "1. Identificação e Triagem Geral\n- Regra de Ouro: ninguém entra sem autorização prévia e sem identificação.\n- Solicitação padrão: documento oficial com foto (RG, CNH) para cadastro.\n\n2. Entrada de Visitantes\n- Interfonar/contatar o morador ou responsável pela sala comercial.\n- Informar nome completo e motivo da visita.\n- Registrar no sistema: nome completo, documento, hora de entrada, destino.\n- Entregar crachá de visitante (quando aplicável) e orientar o trajeto.\n\n3. Prestadores de Serviço e Manutenção\n- Checar se a visita técnica foi pré-agendada pelo morador ou administração.\n- Confirmar o documento com foto do profissional.\n- Anotar dados da empresa, placa do veículo de apoio e ferramentas/equipamentos.\n- Emitir credencial temporária e recolher no momento da saída.\n\n4. Entregadores (Delivery e Encomendas)\n- Regra do \"Delivery na Portaria\": entregadores não devem circular livremente pelas áreas internas/elevadores, salvo exceções autorizadas.\n- Encomendas do correio/transportadoras: conferir destinatário, registrar no livro/sistema de protocolo e guardar em local seguro.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [
+        "Regra de Ouro: ninguém entra sem autorização prévia e sem identificação."
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual é a Regra de Ouro da triagem?",
+          "opcoes": [
+            "Liberar quem tem pressa",
+            "Ninguém entra sem autorização prévia e sem identificação",
+            "Liberar quem já conhece o morador"
+          ],
+          "correta": 1
+        },
+        {
+          "pergunta": "Ao receber um prestador de serviço, o que deve ser feito com a credencial temporária?",
+          "opcoes": [
+            "Deixar com o prestador",
+            "Recolher no momento da saída",
+            "Jogar fora"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Controle de Veículos e Garagem",
+      "descricao": "Triagem de veículos, eclusa e acesso de visitantes com veículo.",
+      "conteudo": "1. Triagem de Veículos\n- Visualização do condutor antes de abrir o portão (manter iluminação interna do veículo acesa à noite, se necessário).\n- Confirmação de cadastro do veículo (placa, modelo e cor).\n- Uso de tags de acesso, biometria ou controle remoto codificado.\n\n2. Procedimento com Portões Intertravados (Eclusa de Veículos / Pedestres)\n- Nunca abrir o segundo portão antes que o primeiro esteja completamente fechado.\n- Manter um único veículo por vez no espaço da eclusa.\n\n3. Acesso de Prestadores e Visitantes com Veículo\n- Estacionar na área de triagem externa (quando houver).\n- Identificar o condutor e todos os ocupantes antes de liberar a cancela ou portão.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [
+        "Nunca abra o segundo portão antes que o primeiro esteja completamente fechado."
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Na eclusa, quando se pode abrir o segundo portão?",
+          "opcoes": [
+            "Quando o primeiro estiver completamente fechado",
+            "Junto com o primeiro",
+            "Quando o motorista pedir"
+          ],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Operação de Equipamentos e Tecnologia",
+      "descricao": "Sistemas de cadastro, dispositivos de acesso, CFTV, rádio HT e interfonia.",
+      "conteudo": "1. Sistemas de Cadastro e Software\n- Uso de softwares de portaria para busca rápida de moradores e histórico.\n- Registro em tempo real de horários de entrada e saída.\n\n2. Dispositivos de Acesso\n- Reconhecimento facial, leitor biométrico, leitores de QR Code e cartões RFID.\n- Procedimento em caso de falha de leitura: validação manual com documento.\n\n3. Monitoramento e Comunicação\n- Central de CFTV: observação constante dos pontos críticos (portões, calçada, eclusa).\n- Radiofrequência (HT) e Interfonia: linguagem objetiva, limpa e profissional.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Em caso de falha de leitura do dispositivo de acesso, o que fazer?",
+          "opcoes": [
+            "Liberar sem conferir",
+            "Validação manual com documento",
+            "Fechar a portaria"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Segurança Preventiva e Gerenciamento de Crise",
+      "descricao": "Atenção seletiva, carona (\"Resta-Um\"), código de pânico e contatos de emergência.",
+      "conteudo": "1. Técnicas de Prevenção e Atenção Seletiva\n- Identificação de comportamentos suspeitos nos arredores do local.\n- Observação de veículos parados por longo tempo perto da entrada.\n\n2. Prevenção de Invasões por Carona (\"Resta-Um\")\n- Impedir que pessoas não identificadas entrem aproveitando a abertura de portas por moradores autorizados.\n\n3. Procedimento sob Ameaça ou Coação (Código de Pânico)\n- Uso do pânico silencioso ou senha de coação no teclado/sistema.\n- Manter a calma, não reagir e seguir ordens do agressor para preservar vidas.\n- Disparo discreto do alarme para a central de monitoramento ou polícia.\n\n4. Contatos de Emergência\n- Polícia Militar: 190\n- Corpo de Bombeiros: 193\n- SAMU: 192\n- Central de Monitoramento / Segurança da Empresa\n- Administração do Condomínio / Síndico",
+      "exemplosPraticos": [],
+      "dicasImportantes": [
+        "Sob ameaça: mantenha a calma, não reaja e acione o pânico silencioso de forma discreta."
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Qual o número da Polícia Militar?",
+          "opcoes": [
+            "190",
+            "192",
+            "193"
+          ],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que fazer sob ameaça ou coação?",
+          "opcoes": [
+            "Reagir ao agressor",
+            "Manter a calma, não reagir e acionar o pânico de forma discreta",
+            "Gritar por ajuda"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Ética, Legislação e LGPD Aplicada",
+      "descricao": "Proteção de dados e resolução de conflitos no atendimento.",
+      "conteudo": "1. Proteção de Dados (LGPD - Lei Geral de Proteção de Dados)\n- Coletar apenas dados estritamente necessários para a segurança (nome e RG/CPF).\n- Proibido tirar fotos de documentos no celular pessoal.\n- Proibido repassar informações de moradores para terceiros.\n\n2. Atendimento ao Cliente e Resolução de Conflitos\n- Diante de visitantes ou moradores impacientes: manter tom firme, porém respeitoso, explicando que o procedimento visa a segurança de todos.\n- Nunca ceder a pressões para burlar protocolos de segurança.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [
+        "Nunca ceda a pressões para burlar protocolos de segurança."
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "É permitido fotografar documentos com o celular pessoal?",
+          "opcoes": [
+            "Sim",
+            "Não, é proibido",
+            "Somente à noite"
+          ],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Checklist Diário",
+      "descricao": "O que verificar no início, durante e no fim do turno.",
+      "conteudo": "INÍCIO DO TURNO:\n[ ] Testar comunicação (interfones, rádios HT e linhas telefônicas).\n[ ] Verificar funcionamento de portões, cancelas e eclusas.\n[ ] Checar monitores e posicionamento das câmeras de CFTV.\n[ ] Fazer a passagem de turno com o colega (rever pendências, chaves e livro).\n\nDURANTE O TURNO:\n[ ] Identificar 100% dos visitantes e prestadores antes da liberação.\n[ ] Manter eclusas operando corretamente (um portão por vez).\n[ ] Registrar entradas, saídas e entregas no sistema ou livro ata.\n\nFIM DO TURNO:\n[ ] Organizar a guarita/bancada.\n[ ] Relatar anomalias no Livro de Ocorrências.\n[ ] Repassar pendências ao próximo controlador de acesso.",
+      "exemplosPraticos": [],
+      "dicasImportantes": [],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": [
+        {
+          "pergunta": "Onde se relatam as anomalias ao fim do turno?",
+          "opcoes": [
+            "No Livro de Ocorrências",
+            "No celular pessoal",
+            "Não precisa relatar"
+          ],
+          "correta": 0
+        }
+      ]
+    }
+  ],
+  "quizFinal": {
+    "titulo": "Quiz de Avaliação - Controlador de Acesso",
+    "totalPerguntas": 6,
+    "perguntas": [
+      {
+        "pergunta": "Qual a diferença entre Porteiro e Controlador de Acesso?",
+        "opcoes": [
+          "Não há diferença",
+          "O Controlador foca no controle perimetral e protocolos; o Porteiro no atendimento geral",
+          "O Porteiro cuida da segurança perimetral"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O que é a prevenção de invasão por carona (\"Resta-Um\")?",
+        "opcoes": [
+          "Impedir que não identificados entrem aproveitando a abertura feita por moradores",
+          "Liberar visitantes em dupla",
+          "Fechar o portão à noite"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Qual documento padrão para cadastro de visitantes?",
+        "opcoes": [
+          "Qualquer papel",
+          "Documento oficial com foto (RG, CNH)",
+          "Apenas o nome"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Entregadores (delivery) devem:",
+        "opcoes": [
+          "Circular livremente pelos elevadores",
+          "Ficar na portaria, salvo exceções autorizadas",
+          "Subir sem registro"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Quais dados a LGPD permite coletar?",
+        "opcoes": [
+          "Todos os possíveis",
+          "Apenas os estritamente necessários para a segurança",
+          "Nenhum"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual o número do Corpo de Bombeiros?",
+        "opcoes": [
+          "190",
+          "192",
+          "193"
+        ],
+        "correta": 2
+      }
+    ],
+    "tabelaNotas": [
+      {
+        "acertos": 6,
+        "nota": "10,0",
+        "conceito": "Excelente"
+      },
+      {
+        "acertos": 5,
+        "nota": "8,3",
+        "conceito": "Muito bom"
+      },
+      {
+        "acertos": 4,
+        "nota": "6,7",
+        "conceito": "Aprovado"
+      },
+      {
+        "acertos": "0 a 3",
+        "nota": "0 a 5,0",
+        "conceito": "Refazer leitura"
+      }
+    ]
+  }
+}
