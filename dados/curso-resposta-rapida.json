@@ -1,9 +1,9 @@
 {
  "titulo": "Curso de Resposta Rápida (Quick Response)",
  "autor": "Claudio Roberto",
- "versao": "0.2",
+ "versao": "1.0",
  "aplicativo": "Apostilha Daxus",
- "totalAulas": 2,
+ "totalAulas": 8,
  "aulas": [
   {
    "id": 1,
@@ -120,22 +120,446 @@
      "correta": 1
     }
    ]
+  },
+  {
+   "id": 3,
+   "titulo": "Contenção: proteger o cliente primeiro",
+   "descricao": "O que é contenção, onde procurar peças suspeitas e como manter o controle.",
+   "conteudo": "Contenção é tudo o que você faz, de forma temporária, para impedir que peça com problema chegue ao cliente enquanto a causa raiz ainda não foi corrigida. Ela não resolve o problema; ela segura o prejuízo.\n\nRegra de ouro: contenção vem antes da análise. Se você demorar para descobrir a causa e não conter, o cliente continua recebendo peça ruim.\n\nOnde procurar peça suspeita, de trás para frente: no posto de trabalho, na peça em processo, no estoque, na expedição, no caminhão a caminho e no cliente. Quanto mais longe a peça estiver, mais cedo é preciso avisar quem pode agir.\n\nComo conter, em 4 ações:\n1. Separar: isola o material suspeito em local identificado.\n2. Identificar: etiqueta com data, turno e motivo.\n3. Inspecionar 100% a característica do problema (na peça com 5 porcas, conferir se as 5 estão presentes), com método claro e padrão de aceitação.\n4. Registrar: quantidade inspecionada, quantidade rejeitada, quem inspecionou e quando.\n\nPeça certificada: depois da contenção, a peça que passou na inspeção recebe uma marca ou etiqueta que prova que foi verificada. Assim ninguém duvida do que é bom e do que é suspeito.\n\nRastreabilidade ajuda a saber exatamente o que conter: lote, data, turno, máquina e operador. Quanto melhor o registro, menor a área de contenção e menor o custo.\n\nA contenção só sai quando a ação permanente estiver implantada e validada, e não antes. Se for retirada cedo demais, o problema volta.",
+   "exemplosPraticos": [
+    "Peça com 5 porcas: separar o lote suspeito, inspecionar 100% contando as 5 porcas, etiquetar as peças certificadas e registrar quantas foram rejeitadas.",
+    "Defeito descoberto pelo cliente: avisar a Qualidade na hora, bloquear estoque, expedição e o que está em trânsito, e enviar equipe de inspeção se o cliente pedir.",
+    "O processo passou do manual para o automático e a inspeção 100% deixou de existir: até a nova detecção ser validada, a contenção manual precisa voltar."
+   ],
+   "dicasImportantes": [
+    "Contenção é provisória e tem custo. Por isso a ação permanente precisa vir rápido.",
+    "Defina o padrão de aceitação ANTES de inspecionar: o que é bom e o que é ruim, de preferência com foto.",
+    "Inspeção 100% também falha por cansaço. Alterne o inspetor e confira com peça-defeito conhecida."
+   ],
+   "observacoes": "Quando o cliente coloca o fornecedor em contenção controlada (CS1 ou CS2), a contenção deixa de ser só interna e passa a ser exigida e acompanhada. Veja no módulo 7.",
+   "imagens": [
+    {
+     "legenda": "Onde procurar peça suspeita e as 4 ações de contenção",
+     "arquivo": "midia/resposta-rapida/modulo3-contencao.svg"
+    },
+    {
+     "legenda": "Ilustração: inspetor conferindo peças numa mesa de contenção (opcional, gerar no Gemini)",
+     "promptGemini": "Ilustração em estilo vetorial limpo, cores azul-escuro e laranja, sem verde: um inspetor de qualidade de uniforme e óculos de proteção conferindo peças metálicas com porcas soldadas sobre uma mesa de inspeção bem iluminada, com duas caixas ao lado, uma com etiqueta amarela 'Suspeitas' e outra com etiqueta azul 'Certificadas'. Fábrica de solda ao fundo, formato horizontal 16:9, sem texto além das duas etiquetas."
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "O que é contenção?",
+     "opcoes": [
+      "Corrigir definitivamente a causa raiz",
+      "Ação temporária para impedir que peça ruim chegue ao cliente",
+      "Trocar o fornecedor",
+      "Punir quem errou"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "Onde procurar peças suspeitas?",
+     "opcoes": [
+      "Só na máquina",
+      "Só no estoque",
+      "Máquina, processo, estoque, expedição, trânsito e cliente",
+      "Somente no cliente"
+     ],
+     "correta": 2
+    },
+    {
+     "pergunta": "Quando a contenção pode ser retirada?",
+     "opcoes": [
+      "Assim que a reunião acabar",
+      "Quando a ação permanente estiver implantada e validada",
+      "Depois de um dia",
+      "Quando o operador pedir"
+     ],
+     "correta": 1
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "titulo": "Análise de causa raiz",
+   "descricao": "5 Porquês, Ishikawa e as duas perguntas que não podem faltar: por que ocorreu e por que escapou.",
+   "conteudo": "Causa raiz é a razão mais profunda do problema: aquela que, se for corrigida, impede que o problema volte. Corrigir só o sintoma (por exemplo, pedir 'mais atenção' ao operador) faz o problema retornar.\n\nToda análise precisa responder duas perguntas:\n1. Por que o defeito OCORREU (causa de ocorrência)?\n2. Por que ele ESCAPOU, isto é, por que não foi detectado antes de sair (causa de escape ou detecção)?\nCada uma precisa da sua própria ação.\n\nFerramenta 1, os 5 Porquês: parta do problema e pergunte 'por quê?' repetidamente, sempre com base em fatos, até chegar a algo que você possa corrigir no sistema (processo, projeto, método). Não precisa ser exatamente 5; pode ser 3 ou 7.\n\nFerramenta 2, Diagrama de Ishikawa (espinha de peixe): organiza as causas possíveis em 6 grupos, os 6M: Mão de obra, Máquina, Método, Material, Medição e Meio ambiente. Serve para não esquecer nenhuma área antes de investigar.\n\nComo provar a causa: uma causa só é raiz se você consegue prová-la. Reproduza o defeito de propósito (por exemplo, retire uma porca e veja se o sistema deixa passar), compare peça boa com peça ruim e meça. Sem prova, é só hipótese.\n\nCuidado com respostas fracas: 'erro do operador', 'falta de atenção' e 'falha humana' quase nunca são causa raiz. Pergunte por que o sistema permitiu o erro.",
+   "exemplosPraticos": [
+    "Poka-yoke existia e a peça passou: a pergunta de escape é por que o sensor não barrou. Hipóteses a testar: conferia só o conjunto, estava em bypass, limite folgado ou sem verificação periódica.",
+    "Eletrodo gasto: a ocorrência é por que passou do limite de pontos; o escape é por que ninguém percebeu o desgaste no controle de qualidade.",
+    "Use o Ishikawa para listar as hipóteses e os 5 Porquês para aprofundar cada uma, testando antes de aceitar."
+   ],
+   "dicasImportantes": [
+    "Comprove com teste, não com opinião.",
+    "Se a resposta for 'falha humana', faça mais um porquê.",
+    "Analise a ocorrência e o escape separadamente, cada um com sua ação."
+   ],
+   "observacoes": "Os exemplos dos desenhos são ilustrativos. A causa real de cada problema precisa ser comprovada no seu processo.",
+   "imagens": [
+    {
+     "legenda": "Ishikawa: as 6 áreas de causa (exemplo ilustrativo)",
+     "arquivo": "midia/resposta-rapida/modulo4-ishikawa.svg"
+    },
+    {
+     "legenda": "5 Porquês aplicados à detecção (exemplo ilustrativo)",
+     "arquivo": "midia/resposta-rapida/modulo4-5porques.svg"
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "Quais duas perguntas toda análise precisa responder?",
+     "opcoes": [
+      "Quem errou e quando",
+      "Por que ocorreu e por que escapou",
+      "Quanto custa e quem paga",
+      "Onde e como"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "O que são os 6M do Ishikawa?",
+     "opcoes": [
+      "Mão de obra, Máquina, Método, Material, Medição e Meio ambiente",
+      "Mês, Meta, Margem, Mercado, Moeda e Marca",
+      "Motor, Mola, Martelo, Molde, Mancal e Mesa",
+      "Média, Moda, Mediana, Máximo, Mínimo e Margem"
+     ],
+     "correta": 0
+    },
+    {
+     "pergunta": "'Falha humana' como causa raiz é:",
+     "opcoes": [
+      "Sempre suficiente",
+      "Quase nunca suficiente: pergunte por que o sistema permitiu o erro",
+      "Obrigatória em todo relatório",
+      "Melhor que usar dados"
+     ],
+     "correta": 1
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "titulo": "Ação corretiva e preventiva",
+   "descricao": "Como escolher ações que realmente funcionam, com responsável e prazo.",
+   "conteudo": "Existem três tipos de ação, e é comum confundi-los:\n• Contenção: protege o cliente agora (temporária).\n• Corretiva: elimina a causa raiz do problema que já aconteceu (permanente).\n• Preventiva: impede que problema parecido aconteça em outras peças, máquinas ou linhas.\n\nUma boa ação responde: o quê, quem, até quando e como saberemos que funcionou. Escreva de forma que qualquer pessoa entenda. 'Instalar sistema de visão que confere as 5 porcas, responsável Engenharia, prazo dia 20, validado com peça-defeito' é melhor que 'melhorar a inspeção'.\n\nNem toda ação tem a mesma força. Da mais forte para a mais fraca:\n1. Eliminar a causa (mudar o projeto ou processo para o erro não existir).\n2. Impedir o erro (poka-yoke que trava a máquina).\n3. Detectar e rejeitar automaticamente (visão, sensor).\n4. Inspeção manual 100%.\n5. Treinar e avisar.\nTreinamento e aviso sozinhos são fracos, pois dependem da memória das pessoas.\n\nAção preventiva é perguntar: 'onde mais isso pode acontecer?'. Se uma peça com 5 porcas passou sem uma delas, outras peças com porca no mesmo tipo de máquina podem ter o mesmo risco. Revise todas.\n\nAcompanhe no quadro: cada ação tem dono, prazo e status. Atrasou, escala. Fechou, precisa ser verificada (veja o módulo 6).",
+   "exemplosPraticos": [
+    "Ação fraca: 'orientar os operadores a conferir as porcas'. Ação forte: sensor ou visão que confere cada porca e trava a rejeição.",
+    "Ação bem escrita: 'Trocar eletrodo por contador de pontos, responsável o líder, prazo dia 12, verificado pelo registro do turno'.",
+    "Preventiva: depois de um problema em uma peça, listar as outras peças que usam o mesmo tipo de máquina e a mesma detecção, e revisar uma por uma."
+   ],
+   "dicasImportantes": [
+    "Treinar e avisar até ajuda, mas nunca deve ser a única ação.",
+    "Toda ação precisa de um jeito de verificar se funcionou.",
+    "Uma ação com muitos responsáveis não tem responsável. Escolha um dono."
+   ],
+   "observacoes": "Se o poka-yoke já existia e falhou, a ação não é só instalar outro: é descobrir por que o primeiro falhou e corrigir isso também.",
+   "imagens": [
+    {
+     "legenda": "Hierarquia da força das ações",
+     "arquivo": "midia/resposta-rapida/modulo5-forca-acoes.svg"
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "Qual ação é a mais forte?",
+     "opcoes": [
+      "Treinar e avisar",
+      "Inspeção manual",
+      "Eliminar a causa ou impedir o erro",
+      "Colocar um cartaz"
+     ],
+     "correta": 2
+    },
+    {
+     "pergunta": "Uma boa ação precisa ter:",
+     "opcoes": [
+      "Só um nome",
+      "Responsável, prazo e forma de verificar",
+      "Um prazo vago",
+      "Só aprovação do cliente"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "A ação preventiva serve para:",
+     "opcoes": [
+      "Reparar apenas a peça ruim",
+      "Evitar que problema parecido aconteça em outras peças e máquinas",
+      "Substituir a contenção",
+      "Só registrar o problema"
+     ],
+     "correta": 1
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "titulo": "Poka-yoke, visão e validação",
+   "descricao": "Como impedir o erro, como provar que o sistema de detecção funciona e por que ele pode falhar.",
+   "conteudo": "Poka-yoke é uma palavra japonesa que significa 'à prova de erro'. É um dispositivo ou método que impede o erro de acontecer ou impede que a peça com erro avance. Exemplos: sensor de presença, gabarito, guia que só deixa encaixar de um jeito, contador de peças e sistema de visão.\n\nHá dois tipos. Prevenção: impede o erro (por exemplo, uma guia que não deixa colocar a peça errada). Detecção: percebe o erro e para a máquina ou rejeita a peça (sensor ou câmera). Quanto mais forte, melhor: o ideal é travar a máquina ou rejeitar a peça. Um simples alarme que depende de alguém reagir é mais fraco.\n\nO sistema de visão usa uma câmera, iluminação e um programa que compara a peça com um modelo bom. Ele pode conferir cada uma das 5 porcas, posição por posição.\n\nPor que um poka-yoke falha? Verifique:\n• conferia só o conjunto, e não cada posição;\n• estava em bypass ou desligado;\n• limite ou tolerância muito folgado;\n• sensor sujo, desregulado ou com a luz errada;\n• a peça passou fora do ciclo (retrabalho ou etapa manual);\n• ninguém testava se ele ainda funcionava.\n\nValidação do sistema de detecção, o que a montadora costuma cobrar:\n1. Teste com peça-defeito conhecida (sem porca) em cada uma das 5 posições; o sistema deve rejeitar todas.\n2. Repetir várias vezes por posição, para provar que não foi sorte.\n3. Verificação no início de cada turno, com registro.\n4. Controle de bypass: ninguém desliga sem autorização, e tudo é registrado.\n5. Rejeição travada: a peça reprovada vai para uma caixa isolada, e só sai com autorização.\n6. Atualizar FMEA e Plano de Controle com a nova detecção.\n7. Manter a inspeção manual até a validação terminar.",
+   "exemplosPraticos": [
+    "Peça-defeito (master): uma peça preparada sem a porca da posição 1. Ela passa no sistema, que deve rejeitar. Repete-se para as posições 2 a 5.",
+    "No início do turno, o líder passa a peça-defeito, registra o resultado e só libera a produção se o sistema rejeitar.",
+    "Sistema de visão já usado em outras peças: reaproveitar o padrão de validação, mas testar a peça nova por conta própria, porque posição e iluminação mudam."
+   ],
+   "dicasImportantes": [
+    "Um sistema que nunca rejeita pode estar quebrado, e não perfeito. Prove com peça-defeito.",
+    "Guarde as peças-defeito identificadas e protegidas; elas são o padrão do teste.",
+    "Mudou a peça, a câmera ou a luz? Valide de novo."
+   ],
+   "observacoes": "Na validação, registre data, quem testou, qual posição e o resultado. Essas evidências são o que a montadora vai pedir.",
+   "imagens": [
+    {
+     "legenda": "Visão conferindo cada posição: peça OK x peça sem porca",
+     "arquivo": "midia/resposta-rapida/modulo6-visao.svg"
+    },
+    {
+     "legenda": "Ilustração: câmera industrial inspecionando peça com porcas (opcional, gerar no Gemini)",
+     "promptGemini": "Ilustração em estilo vetorial limpo, cores azul-escuro e laranja, sem verde: uma câmera industrial de visão montada sobre uma esteira numa fábrica de solda, apontando para uma peça metálica com 5 porcas soldadas, com feixe de luz azul iluminando a peça e uma tela ao lado mostrando 5 círculos marcados. Formato horizontal 16:9, sem texto."
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "Poka-yoke significa:",
+     "opcoes": [
+      "Peça boa",
+      "À prova de erro",
+      "Qualidade total",
+      "Relatório de turno"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "Como provar que o sistema de visão funciona?",
+     "opcoes": [
+      "Confiar no fornecedor",
+      "Testar com peça-defeito conhecida em cada posição",
+      "Ver se a luz acende",
+      "Esperar o cliente reclamar"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "Até a validação terminar, a inspeção manual:",
+     "opcoes": [
+      "Pode ser retirada",
+      "Deve continuar",
+      "É proibida",
+      "Não faz diferença"
+     ],
+     "correta": 1
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "titulo": "Documentos do cliente: 8D, CS1, CS2, FMEA e Plano de Controle",
+   "descricao": "O que a montadora pede para provar que o problema foi resolvido de verdade.",
+   "conteudo": "Montadoras como a GM pedem registros padronizados para acompanhar a resposta do fornecedor. Os principais:\n\n8D (as 8 Disciplinas): relatório de D0 a D8.\nD0 plano e emergência; D1 equipe; D2 descrição do problema; D3 contenção provisória; D4 causa raiz (ocorrência e escape); D5 ação corretiva escolhida; D6 implementação e validação; D7 prevenção da recorrência (padronizar); D8 encerramento e reconhecimento da equipe. Cada cliente tem prazos próprios para cada etapa. Confirme com a Qualidade ou o SQE.\n\nContenção Controlada (CS1 e CS2, Controlled Shipping): status que a GM aplica quando o fornecedor deixa escapar peça com problema. No CS1, o próprio fornecedor faz inspeção adicional (100% da característica do problema), separada da produção, com registro e relatório ao cliente. No CS2, uma empresa independente faz a inspeção, com custo do fornecedor, e o cliente acompanha de perto; é o nível mais sério. A saída acontece depois de um período sem defeito e com a causa raiz corrigida. Os critérios exatos são definidos pelo cliente.\n\nFMEA (Análise dos Modos e Efeitos de Falha): documento que lista o que pode falhar, qual o efeito, qual a causa e como é detectado, com notas de severidade, ocorrência e detecção. Depois de um problema, o FMEA precisa ser atualizado, principalmente a nota de detecção do controle novo.\n\nPlano de Controle: diz, para cada característica, como e quando é verificada, com que método, com que frequência e o que fazer se sair do padrão. Ele precisa refletir o novo sistema (por exemplo, a visão e a verificação no início do turno).\n\nInstrução de trabalho e treinamento: o operador precisa saber o que fazer diferente. Sem isso, o documento fica só no papel.\n\nLições aprendidas: o que aprendemos precisa ir para outras peças e linhas semelhantes.",
+   "exemplosPraticos": [
+    "Problema de porca faltando: o 8D conta o que aconteceu (D2), a inspeção 100% (D3), por que ocorreu e por que escapou (D4), o sistema de visão (D5 e D6) e a atualização de FMEA e Plano de Controle (D7).",
+    "No CS1, o inspetor da própria empresa confere as 5 porcas em 100% das peças, em área separada, e envia o relatório ao cliente na frequência combinada.",
+    "Depois de instalar a visão, o Plano de Controle passa a dizer: verificação com peça-defeito no início do turno, método, responsável e reação se a peça passar."
+   ],
+   "dicasImportantes": [
+    "Os documentos precisam contar a mesma história: 8D, FMEA e Plano de Controle falando a mesma causa e a mesma detecção.",
+    "Responda no prazo, mesmo que parcialmente, avisando o que falta e quando chega.",
+    "Guarde as evidências: fotos, registros de teste e listas de verificação."
+   ],
+   "observacoes": "Os prazos e as exigências variam por cliente e por documento. Sempre confirme com a Qualidade ou o SQE da montadora.",
+   "imagens": [
+    {
+     "legenda": "As 8 disciplinas do relatório 8D",
+     "arquivo": "midia/resposta-rapida/modulo7-8d.svg"
+    },
+    {
+     "legenda": "CS1 e CS2: contenção controlada",
+     "arquivo": "midia/resposta-rapida/modulo7-cs1-cs2.svg"
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "No 8D, qual etapa é a contenção provisória?",
+     "opcoes": [
+      "D1",
+      "D3",
+      "D5",
+      "D8"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "O que é o CS2?",
+     "opcoes": [
+      "Inspeção só do operador",
+      "Inspeção por empresa independente, nível mais sério",
+      "O mesmo que o CS1",
+      "O fim da contenção"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "Depois de um problema, o que precisa ser atualizado?",
+     "opcoes": [
+      "Só o 8D",
+      "FMEA e Plano de Controle com a nova detecção",
+      "Nada",
+      "Só o cartaz do quadro"
+     ],
+     "correta": 1
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "titulo": "Liderar e fechar o problema",
+   "descricao": "O papel do líder, como medir e como confirmar que o problema não volta.",
+   "conteudo": "O líder da Resposta Rápida mantém o ritmo: quadro atualizado, reunião no horário, ações com dono e prazo e escalonamento quando preciso. Ele não resolve tudo sozinho; ele garante que todos resolvam.\n\nCultura: o objetivo é achar a causa, não o culpado. Quem avisa rápido do problema precisa ser agradecido, não punido. Se avisar traz bronca, as pessoas escondem, e aí o cliente descobre primeiro.\n\nIndicadores para acompanhar:\n• tempo entre detectar e conter;\n• tempo para fechar;\n• quantidade de ações atrasadas;\n• reincidência (problema que voltou). Se a reincidência aparece, a causa raiz estava errada ou a ação não foi padronizada.\n\nFechar de verdade: o problema só fecha quando a lista de verificação (veja o desenho) está completa. Depois, faça a auditoria de eficácia: volte em 30, 60 e 90 dias para confirmar que o problema não voltou e que o sistema novo continua sendo verificado.\n\nPadronize e espalhe: leve a lição para outras peças, máquinas e turnos. É assim que a Resposta Rápida deixa de apagar incêndio e passa a evitar o próximo.",
+   "exemplosPraticos": [
+    "Operador avisa que o sensor parou de rejeitar a peça-defeito no teste do turno: o líder agradece, a máquina é bloqueada, a contenção volta e o problema entra no quadro.",
+    "Indicador mensal: 6 problemas abertos, 5 contidos em menos de 4 horas, 1 reincidente. O reincidente volta para revisão da causa raiz.",
+    "Auditoria de 30 dias: o líder pede o registro do teste com peça-defeito de todos os turnos e confere se há falhas ou bypass sem autorização."
+   ],
+   "dicasImportantes": [
+    "Agradeça quem avisa rápido. Isso vale mais que qualquer procedimento.",
+    "Problema que reincide merece nova análise, não só nova contenção.",
+    "Guarde as lições aprendidas num lugar que todos possam consultar."
+   ],
+   "observacoes": "Parabéns por chegar ao fim do curso! Agora faça o quiz final para liberar o certificado.",
+   "imagens": [
+    {
+     "legenda": "Lista de verificação para fechar um problema",
+     "arquivo": "midia/resposta-rapida/modulo8-checklist.svg"
+    }
+   ],
+   "video": null,
+   "glossario": [
+    {
+     "termo": "Resposta Rápida (QR)",
+     "definicao": "Sistema de gestão para tratar problemas de qualidade e produção na hora, com quadro, reunião diária, responsável e prazo."
+    },
+    {
+     "termo": "Contenção",
+     "definicao": "Ação temporária para impedir que peça com problema chegue ao cliente."
+    },
+    {
+     "termo": "Causa raiz",
+     "definicao": "A razão mais profunda do problema; ao corrigi-la, o problema não volta."
+    },
+    {
+     "termo": "Ocorrência",
+     "definicao": "Por que o defeito foi produzido."
+    },
+    {
+     "termo": "Escape",
+     "definicao": "Por que o defeito não foi detectado e saiu da fábrica (falha de detecção)."
+    },
+    {
+     "termo": "5 Porquês",
+     "definicao": "Perguntar 'por quê?' repetidamente, com fatos, até chegar à causa que pode ser corrigida."
+    },
+    {
+     "termo": "Ishikawa (6M)",
+     "definicao": "Espinha de peixe: Mão de obra, Máquina, Método, Material, Medição e Meio ambiente."
+    },
+    {
+     "termo": "Poka-yoke",
+     "definicao": "Dispositivo ou método à prova de erro que impede ou detecta o defeito."
+    },
+    {
+     "termo": "Bypass",
+     "definicao": "Desligar ou ignorar um sistema de proteção. Precisa de autorização e registro."
+    },
+    {
+     "termo": "Peça-defeito (master)",
+     "definicao": "Peça com defeito conhecido, usada para testar se o sistema de detecção realmente rejeita."
+    },
+    {
+     "termo": "Peça certificada",
+     "definicao": "Peça que passou pela inspeção de contenção e recebeu marca ou etiqueta."
+    },
+    {
+     "termo": "Rastreabilidade",
+     "definicao": "Capacidade de saber lote, data, turno, máquina e operador de cada peça."
+    },
+    {
+     "termo": "8D",
+     "definicao": "Relatório de resolução de problemas em 8 disciplinas, de D0 a D8."
+    },
+    {
+     "termo": "CS1 / CS2",
+     "definicao": "Níveis de contenção controlada (Controlled Shipping) aplicados pela GM ao fornecedor."
+    },
+    {
+     "termo": "SQE",
+     "definicao": "Engenheiro de qualidade do cliente responsável pelo fornecedor."
+    },
+    {
+     "termo": "FMEA",
+     "definicao": "Análise dos modos e efeitos de falha; lista falhas possíveis, causas e detecção."
+    },
+    {
+     "termo": "Plano de Controle",
+     "definicao": "Documento que define como, quando e com que método cada característica é verificada."
+    },
+    {
+     "termo": "Escalonamento",
+     "definicao": "Subir o problema ao nível acima quando o time não consegue resolver ou a ação atrasa."
+    },
+    {
+     "termo": "Reincidência",
+     "definicao": "Quando o mesmo problema volta a acontecer."
+    },
+    {
+     "termo": "Auditoria de eficácia",
+     "definicao": "Verificação, em 30, 60 e 90 dias, de que o problema não voltou e o controle continua funcionando."
+    }
+   ],
+   "quizAula": [
+    {
+     "pergunta": "Qual é o principal objetivo da Resposta Rápida?",
+     "opcoes": [
+      "Achar o culpado",
+      "Achar a causa e evitar que o problema volte",
+      "Fazer relatório bonito",
+      "Aumentar o número de reuniões"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "A auditoria de eficácia serve para:",
+     "opcoes": [
+      "Confirmar em 30, 60 e 90 dias que o problema não voltou",
+      "Substituir a análise de causa raiz",
+      "Punir quem errou",
+      "Mudar o prazo das ações"
+     ],
+     "correta": 0
+    },
+    {
+     "pergunta": "Reincidência indica que:",
+     "opcoes": [
+      "Tudo deu certo",
+      "A causa raiz estava errada ou a ação não foi padronizada",
+      "A reunião foi curta",
+      "O cliente está satisfeito"
+     ],
+     "correta": 1
+    }
+   ]
   }
  ],
  "quizFinal": {
-  "titulo": "Quiz de Avaliação - Resposta Rápida (provisório, módulo 1)",
-  "totalPerguntas": 5,
+  "titulo": "Quiz de Avaliação - Curso de Resposta Rápida",
+  "totalPerguntas": 12,
   "perguntas": [
-   {
-    "pergunta": "Qual é a ideia central da Resposta Rápida?",
-    "opcoes": [
-     "Esperar o relatório mensal para tratar os problemas",
-     "Tratar o problema na hora, com as pessoas certas, quadro à vista e prazo",
-     "Descobrir quem errou e punir",
-     "Resolver sozinho e avisar depois"
-    ],
-    "correta": 1
-   },
    {
     "pergunta": "Qual passo vem logo depois de detectar o problema?",
     "opcoes": [
@@ -147,6 +571,106 @@
     "correta": 2
    },
    {
+    "pergunta": "Qual é a duração ideal da reunião diária de Resposta Rápida?",
+    "opcoes": [
+     "De 10 a 15 minutos, em pé",
+     "1 hora, sentados",
+     "Só quando há tempo",
+     "Uma vez por mês"
+    ],
+    "correta": 0
+   },
+   {
+    "pergunta": "A causa raiz deve ser resolvida dentro da reunião diária?",
+    "opcoes": [
+     "Sim, sempre",
+     "Não, marca-se uma análise com quem precisa",
+     "Só se o líder quiser",
+     "Só nas sextas"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "O que é contenção?",
+    "opcoes": [
+     "Corrigir definitivamente a causa raiz",
+     "Ação temporária para impedir que peça ruim chegue ao cliente",
+     "Trocar o fornecedor",
+     "Punir quem errou"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "Quando a contenção pode ser retirada?",
+    "opcoes": [
+     "Assim que a reunião acabar",
+     "Quando a ação permanente estiver implantada e validada",
+     "Depois de um dia",
+     "Quando o operador pedir"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "Quais duas perguntas toda análise precisa responder?",
+    "opcoes": [
+     "Quem errou e quando",
+     "Por que ocorreu e por que escapou",
+     "Quanto custa e quem paga",
+     "Onde e como"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "Qual ação é a mais forte?",
+    "opcoes": [
+     "Treinar e avisar",
+     "Inspeção manual",
+     "Eliminar a causa ou impedir o erro",
+     "Colocar um cartaz"
+    ],
+    "correta": 2
+   },
+   {
+    "pergunta": "Como provar que o sistema de visão funciona?",
+    "opcoes": [
+     "Confiar no fornecedor",
+     "Testar com peça-defeito conhecida em cada posição",
+     "Ver se a luz acende",
+     "Esperar o cliente reclamar"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "O que é o CS2?",
+    "opcoes": [
+     "Inspeção só do operador",
+     "Inspeção por empresa independente, nível mais sério",
+     "O mesmo que o CS1",
+     "O fim da contenção"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "Depois de um problema, o que precisa ser atualizado?",
+    "opcoes": [
+     "Só o 8D",
+     "FMEA e Plano de Controle com a nova detecção",
+     "Nada",
+     "Só o cartaz do quadro"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "A auditoria de eficácia serve para:",
+    "opcoes": [
+     "Confirmar em 30, 60 e 90 dias que o problema não voltou",
+     "Substituir a análise de causa raiz",
+     "Punir quem errou",
+     "Mudar o prazo das ações"
+    ],
+    "correta": 0
+   },
+   {
     "pergunta": "Quais duas perguntas toda análise precisa responder?",
     "opcoes": [
      "Quem errou e quanto custou",
@@ -155,47 +679,27 @@
      "Qual máquina e qual turno"
     ],
     "correta": 1
-   },
-   {
-    "pergunta": "O que significa conter o problema?",
-    "opcoes": [
-     "Esconder o problema do cliente",
-     "Isolar peças suspeitas e proteger o cliente",
-     "Trocar o operador",
-     "Parar a empresa por uma semana"
-    ],
-    "correta": 1
-   },
-   {
-    "pergunta": "Quando um problema pode ser considerado fechado?",
-    "opcoes": [
-     "Quando a ação foi feita",
-     "Quando a causa raiz foi comprovada e a correção verificada",
-     "Quando o líder esqueceu dele",
-     "Quando o cliente parou de ligar"
-    ],
-    "correta": 1
    }
   ],
   "tabelaNotas": [
    {
-    "acertos": 5,
-    "nota": "10,0",
+    "acertos": "11 a 12",
+    "nota": "9,2 a 10,0",
     "conceito": "Excelente"
    },
    {
-    "acertos": 4,
-    "nota": "8,0",
+    "acertos": "10",
+    "nota": "8,3",
     "conceito": "Muito bom"
    },
    {
-    "acertos": 3,
-    "nota": "6,0",
-    "conceito": "Bom"
+    "acertos": "9",
+    "nota": "7,5",
+    "conceito": "Aprovado"
    },
    {
-    "acertos": "0 a 2",
-    "nota": "0 a 4,0",
+    "acertos": "0 a 8",
+    "nota": "0 a 6,7",
     "conceito": "Refazer leitura"
    }
   ]
