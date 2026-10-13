@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" font-family="Inter,Arial,sans-serif">
+<defs><marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8b95ab"/></marker></defs>
+<rect width="700" height="400" rx="18" fill="#16213a"/>
+<text x="350" y="44" text-anchor="middle" font-size="22" font-weight="700" fill="#e7ecf5">Ciclo da Resposta Rápida</text>
+<text x="350" y="68" text-anchor="middle" font-size="13" fill="#8b95ab">Do problema encontrado até o problema fechado e padronizado</text>
+<g><rect x="30" y="100" width="190" height="92" rx="14" fill="#1c2a48" stroke="#38bdf8" stroke-width="2.5"/>
+<circle cx="56" cy="126" r="15" fill="#38bdf8"/><text x="56" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">1</text>
+<text x="80" y="132" font-size="18" font-weight="700" fill="#e7ecf5">Detectar</text>
+<text x="46" y="162" font-size="13" fill="#b8c2d6">Alguém vê o problema</text><text x="46" y="180" font-size="13" fill="#b8c2d6">e avisa na hora</text></g>
+<g><rect x="255" y="100" width="190" height="92" rx="14" fill="#1c2a48" stroke="#f59e0b" stroke-width="2.5"/>
+<circle cx="281" cy="126" r="15" fill="#f59e0b"/><text x="281" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">2</text>
+<text x="305" y="132" font-size="18" font-weight="700" fill="#e7ecf5">Conter</text>
+<text x="271" y="162" font-size="13" fill="#b8c2d6">Isola as peças suspeitas</text><text x="271" y="180" font-size="13" fill="#b8c2d6">e protege o cliente</text></g>
+<g><rect x="480" y="100" width="190" height="92" rx="14" fill="#1c2a48" stroke="#a78bfa" stroke-width="2.5"/>
+<circle cx="506" cy="126" r="15" fill="#a78bfa"/><text x="506" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">3</text>
+<text x="530" y="132" font-size="18" font-weight="700" fill="#e7ecf5">Analisar</text>
+<text x="496" y="162" font-size="13" fill="#b8c2d6">Descobre a causa raiz</text><text x="496" y="180" font-size="13" fill="#b8c2d6">(5 Porquês, Ishikawa)</text></g>
+<g><rect x="480" y="270" width="190" height="92" rx="14" fill="#1c2a48" stroke="#f87171" stroke-width="2.5"/>
+<circle cx="506" cy="296" r="15" fill="#f87171"/><text x="506" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">4</text>
+<text x="530" y="302" font-size="18" font-weight="700" fill="#e7ecf5">Corrigir</text>
+<text x="496" y="332" font-size="13" fill="#b8c2d6">Ação com responsável</text><text x="496" y="350" font-size="13" fill="#b8c2d6">e prazo definido</text></g>
+<g><rect x="255" y="270" width="190" height="92" rx="14" fill="#1c2a48" stroke="#38bdf8" stroke-width="2.5"/>
+<circle cx="281" cy="296" r="15" fill="#38bdf8"/><text x="281" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">5</text>
+<text x="305" y="302" font-size="18" font-weight="700" fill="#e7ecf5">Verificar</text>
+<text x="271" y="332" font-size="13" fill="#b8c2d6">Testa se a correção</text><text x="271" y="350" font-size="13" fill="#b8c2d6">realmente funciona</text></g>
+<g><rect x="30" y="270" width="190" height="92" rx="14" fill="#1c2a48" stroke="#fbbf24" stroke-width="2.5"/>
+<circle cx="56" cy="296" r="15" fill="#fbbf24"/><text x="56" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">6</text>
+<text x="80" y="302" font-size="18" font-weight="700" fill="#e7ecf5">Fechar</text>
+<text x="46" y="332" font-size="13" fill="#b8c2d6">Padroniza e registra</text><text x="46" y="350" font-size="13" fill="#b8c2d6">o que foi aprendido</text></g>
+<line x1="222" y1="146" x2="250" y2="146" stroke="#8b95ab" stroke-width="2.5" marker-end="url(#s)"/>
+<line x1="447" y1="146" x2="475" y2="146" stroke="#8b95ab" stroke-width="2.5" marker-end="url(#s)"/>
+<line x1="575" y1="196" x2="575" y2="264" stroke="#8b95ab" stroke-width="2.5" marker-end="url(#s)"/>
+<line x1="478" y1="316" x2="450" y2="316" stroke="#8b95ab" stroke-width="2.5" marker-end="url(#s)"/>
+<line x1="253" y1="316" x2="225" y2="316" stroke="#8b95ab" stroke-width="2.5" marker-end="url(#s)"/>
+<text x="350" y="388" text-anchor="middle" font-size="12" fill="#8b95ab">Passos 1 e 2 em minutos ou horas · passos 3 a 6 com prazo no quadro</text>
+</svg>

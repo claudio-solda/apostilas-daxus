@@ -1,0 +1,147 @@
+{
+ "titulo": "Curso de Resposta Rápida (Quick Response)",
+ "autor": "Claudio Roberto",
+ "versao": "0.1",
+ "aplicativo": "Apostilha Daxus",
+ "totalAulas": 1,
+ "aulas": [
+  {
+   "id": 1,
+   "titulo": "O que é Resposta Rápida e por que existe",
+   "descricao": "A ideia central, o ciclo de 6 passos e por que o cliente cobra tanto.",
+   "conteudo": "Resposta Rápida (em inglês, Quick Response ou QR) é um jeito de trabalhar em que todo problema de qualidade ou de produção é tratado na hora, com as pessoas certas juntas, um quadro à vista de todos e prazo para fechar. A lógica é simples: quanto mais tempo um problema fica aberto, mais peças ruins são feitas, mais dinheiro se perde e mais perto o defeito chega do cliente.\n\nEla nasceu na indústria automotiva. A montadora não aceita defeito chegando na linha de montagem, muito menos no carro que já está na rua. Por isso o fornecedor precisa mostrar que reage rápido, de forma organizada e que não deixa o mesmo problema voltar.\n\nO que a Resposta Rápida NÃO é: não é procurar culpado, não é só preencher relatório e não é resolver 'do jeito que dá' e esquecer. É um processo com etapas, donos e prazos.\n\nO ciclo tem 6 passos:\n1. Detectar: alguém (operador, líder, inspetor, cliente) vê o problema e avisa imediatamente.\n2. Conter: isola as peças suspeitas e protege o cliente. Inspeção 100%, bloqueio de lote, separação do material.\n3. Analisar: descobre a causa raiz, com ferramentas como 5 Porquês e Ishikawa.\n4. Corrigir: define a ação, quem faz e até quando.\n5. Verificar: prova que a correção funciona, e não apenas que foi feita.\n6. Fechar: padroniza (instrução, plano de controle, FMEA) e registra o aprendizado.\n\nToda análise séria responde duas perguntas: por que o defeito ACONTECEU (ocorrência) e por que ele NÃO FOI PEGO antes de sair (detecção). Se só uma for respondida, o problema volta.",
+   "exemplosPraticos": [
+    "Peça sai da solda por projeção com uma porca faltando: o operador avisa o líder, a peça e o lote suspeito são separados, e a equipe se reúne no quadro no mesmo turno.",
+    "Poka-yoke (sensor) existia, mas a peça passou mesmo assim: além de corrigir a falha, a equipe precisa explicar por que o sensor não barrou. Essa é a pergunta de detecção.",
+    "Eletrodo desgastado gerando pontos fracos: contenção é conferir as peças já soldadas; causa raiz é por que a troca não aconteceu no tempo certo."
+   ],
+   "dicasImportantes": [
+    "Contenção vem antes da análise. Primeiro proteja o cliente, depois descubra a causa.",
+    "Problema fechado é problema com causa raiz comprovada, não apenas com uma ação feita.",
+    "Responsável e prazo são obrigatórios em toda ação. Ação sem dono não anda."
+   ],
+   "observacoes": "Nos próximos módulos você vai ver cada passo do ciclo em detalhe, com os documentos que a GM e outras montadoras exigem (8D, CS1 e CS2, FMEA e Plano de Controle).",
+   "imagens": [
+    {
+     "legenda": "Ciclo da Resposta Rápida em 6 passos",
+     "arquivo": "midia/resposta-rapida/modulo1-ciclo.svg"
+    },
+    {
+     "legenda": "Ilustração: reunião em pé diante do quadro de Resposta Rápida na fábrica (opcional, gerar no Gemini)",
+     "promptGemini": "Ilustração em estilo vetorial limpo, cores azul-escuro e laranja, sem verde: uma equipe de 6 pessoas de uma fábrica de solda por resistência, de capacete e uniforme, reunida em pé diante de um grande quadro branco de gestão visual com colunas 'Problema', 'Contenção', 'Causa raiz', 'Ação', 'Prazo' e 'Status'. Um líder aponta para o quadro. Ao fundo, máquinas de solda. Sem texto legível além dos títulos das colunas, formato horizontal 16:9."
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "Qual é a ideia central da Resposta Rápida?",
+     "opcoes": [
+      "Esperar o relatório mensal para tratar os problemas",
+      "Tratar o problema na hora, com as pessoas certas, quadro à vista e prazo",
+      "Descobrir quem errou e punir",
+      "Resolver sozinho e avisar depois"
+     ],
+     "correta": 1
+    },
+    {
+     "pergunta": "Qual passo vem logo depois de detectar o problema?",
+     "opcoes": [
+      "Fechar o problema",
+      "Analisar a causa raiz",
+      "Conter e proteger o cliente",
+      "Atualizar o FMEA"
+     ],
+     "correta": 2
+    },
+    {
+     "pergunta": "Quais duas perguntas toda análise precisa responder?",
+     "opcoes": [
+      "Quem errou e quanto custou",
+      "Por que aconteceu e por que não foi detectado",
+      "Quando começou e quando termina",
+      "Qual máquina e qual turno"
+     ],
+     "correta": 1
+    }
+   ]
+  }
+ ],
+ "quizFinal": {
+  "titulo": "Quiz de Avaliação - Resposta Rápida (provisório, módulo 1)",
+  "totalPerguntas": 5,
+  "perguntas": [
+   {
+    "pergunta": "Qual é a ideia central da Resposta Rápida?",
+    "opcoes": [
+     "Esperar o relatório mensal para tratar os problemas",
+     "Tratar o problema na hora, com as pessoas certas, quadro à vista e prazo",
+     "Descobrir quem errou e punir",
+     "Resolver sozinho e avisar depois"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "Qual passo vem logo depois de detectar o problema?",
+    "opcoes": [
+     "Fechar o problema",
+     "Analisar a causa raiz",
+     "Conter e proteger o cliente",
+     "Atualizar o FMEA"
+    ],
+    "correta": 2
+   },
+   {
+    "pergunta": "Quais duas perguntas toda análise precisa responder?",
+    "opcoes": [
+     "Quem errou e quanto custou",
+     "Por que aconteceu e por que não foi detectado",
+     "Quando começou e quando termina",
+     "Qual máquina e qual turno"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "O que significa conter o problema?",
+    "opcoes": [
+     "Esconder o problema do cliente",
+     "Isolar peças suspeitas e proteger o cliente",
+     "Trocar o operador",
+     "Parar a empresa por uma semana"
+    ],
+    "correta": 1
+   },
+   {
+    "pergunta": "Quando um problema pode ser considerado fechado?",
+    "opcoes": [
+     "Quando a ação foi feita",
+     "Quando a causa raiz foi comprovada e a correção verificada",
+     "Quando o líder esqueceu dele",
+     "Quando o cliente parou de ligar"
+    ],
+    "correta": 1
+   }
+  ],
+  "tabelaNotas": [
+   {
+    "acertos": 5,
+    "nota": "10,0",
+    "conceito": "Excelente"
+   },
+   {
+    "acertos": 4,
+    "nota": "8,0",
+    "conceito": "Muito bom"
+   },
+   {
+    "acertos": 3,
+    "nota": "6,0",
+    "conceito": "Bom"
+   },
+   {
+    "acertos": "0 a 2",
+    "nota": "0 a 4,0",
+    "conceito": "Refazer leitura"
+   }
+  ]
+ }
+}
