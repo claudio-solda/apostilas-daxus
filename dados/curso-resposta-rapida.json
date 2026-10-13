@@ -1,9 +1,9 @@
 {
  "titulo": "Curso de Resposta Rápida (Quick Response)",
  "autor": "Claudio Roberto",
- "versao": "0.1",
+ "versao": "0.2",
  "aplicativo": "Apostilha Daxus",
- "totalAulas": 1,
+ "totalAulas": 2,
  "aulas": [
   {
    "id": 1,
@@ -60,6 +60,62 @@
       "Por que aconteceu e por que não foi detectado",
       "Quando começou e quando termina",
       "Qual máquina e qual turno"
+     ],
+     "correta": 1
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "titulo": "O quadro e a reunião diária",
+   "descricao": "Como montar o quadro, quem participa e como conduzir a reunião em 15 minutos.",
+   "conteudo": "O coração da Resposta Rápida é um quadro à vista e uma reunião curta. O quadro fica perto da produção, onde todos passam e enxergam, e mostra cada problema aberto do início ao fim. Se o problema não está no quadro, para a empresa ele não existe.\n\nColunas de um quadro: número e data; problema (o quê, onde, quanto, quando, de preferência com foto); contenção; causa raiz; ação; responsável; prazo; status.\n\nO status usa cores simples: vermelho para aberto ou atrasado, amarelo para em andamento dentro do prazo, azul para fechado e verificado. Qualquer pessoa deve bater o olho e saber onde está o problema.\n\nA reunião diária tem regras fixas: mesmo horário todos os dias, em pé, diante do quadro, de 10 a 15 minutos. Quem participa: o líder de produção (que conduz), qualidade, manutenção, engenharia de processo e quem trouxe o problema.\n\nPauta em 4 blocos:\n1. Problemas novos: o que aconteceu e qual foi a contenção.\n2. Ações vencendo hoje ou atrasadas: o dono diz a situação.\n3. Problemas prontos para fechar: confere se a correção foi verificada.\n4. Pedidos de ajuda: o que precisa subir para o nível acima.\n\nRegras de ouro: fala-se de fato e dado, não de culpa; a causa raiz não é resolvida dentro da reunião (marca-se uma análise com quem precisa); toda ação sai com dono e prazo; ação atrasada é escalonada.\n\nEscalonamento significa subir o problema quando o time não consegue resolver sozinho: da equipe para o supervisor, do supervisor para a gerência, e assim por diante, sempre com prazo para resposta.",
+   "exemplosPraticos": [
+    "Todo dia às 8h, em pé diante do quadro: o líder lê os problemas novos, cada responsável fala das suas ações e em 12 minutos a reunião termina.",
+    "Foi achada uma peça sem porca: o problema entra no quadro com foto, contenção (inspeção 100%), e uma reunião de análise é marcada para o mesmo dia com Qualidade, Manutenção e Engenharia.",
+    "Uma ação venceu ontem e continua vermelha: o dono explica o motivo, e se precisa de decisão ou recurso, o assunto sobe para o supervisor com prazo de resposta."
+   ],
+   "dicasImportantes": [
+    "Quadro sujo ou desatualizado é sinal de que o processo morreu. Atualize antes de cada reunião.",
+    "Se a reunião passou de 15 minutos, provavelmente está discutindo causa raiz no lugar errado.",
+    "Foto vale mais que descrição: tire foto da peça, do local e do defeito já na detecção."
+   ],
+   "observacoes": "O quadro pode ser físico (parede) ou digital (app). O mais importante é estar atualizado e à vista de todos.",
+   "imagens": [
+    {
+     "legenda": "Exemplo de quadro de Resposta Rápida com status por cor",
+     "arquivo": "midia/resposta-rapida/modulo2-quadro.svg"
+    }
+   ],
+   "video": null,
+   "quizAula": [
+    {
+     "pergunta": "Qual é a duração ideal da reunião diária de Resposta Rápida?",
+     "opcoes": [
+      "De 10 a 15 minutos, em pé",
+      "1 hora, sentados",
+      "Só quando há tempo",
+      "Uma vez por mês"
+     ],
+     "correta": 0
+    },
+    {
+     "pergunta": "O que fazer com uma ação que passou do prazo?",
+     "opcoes": [
+      "Apagar do quadro",
+      "Esperar a próxima semana",
+      "Escalonar para o nível acima com prazo de resposta",
+      "Mudar o prazo sem avisar"
+     ],
+     "correta": 2
+    },
+    {
+     "pergunta": "A causa raiz deve ser resolvida dentro da reunião diária?",
+     "opcoes": [
+      "Sim, sempre",
+      "Não, marca-se uma análise com quem precisa",
+      "Só se o líder quiser",
+      "Só nas sextas"
      ],
      "correta": 1
     }
