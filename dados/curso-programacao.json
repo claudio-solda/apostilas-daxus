@@ -1,0 +1,332 @@
+{
+  "titulo": "Plano de Estudos: Programação do Zero em 3 Meses",
+  "autor": "Claudio Roberto",
+  "versao": "1.0",
+  "aplicativo": "Apostilha Daxus",
+  "totalAulas": 14,
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "Visão Geral e Como Estudar",
+      "descricao": "O plano de 3 meses, as linguagens escolhidas e a rotina de estudo.",
+      "conteudo": "Este plano leva você do zero até publicar um app simples na internet, em 12 semanas.\n\nLinguagens: Python primeiro, porque tem leitura fácil e ensina bem a lógica. Depois HTML, CSS e JavaScript, que são a base de qualquer site ou app (PWA) que roda no celular.\n\nDivisão:\n• Mês 1: lógica e Python básico\n• Mês 2: Python intermediário e um mini projeto\n• Mês 3: HTML, CSS e JavaScript, com projeto final publicado no GitHub Pages.\n\nRotina sugerida: 1 hora por dia, 5 dias por semana. No fim de cada semana, faça o mini desafio e anote o que aprendeu.",
+      "exemplosPraticos": [
+        "Escolha um caderno ou app de anotações para registrar o que aprender a cada dia",
+        "Defina o horário fixo de estudo (ex: 1h após o jantar)"
+      ],
+      "dicasImportantes": [
+        "Constância vale mais que quantidade: 1 hora por dia rende mais que 7 horas num só dia",
+        "Errar faz parte. Ler a mensagem de erro é metade da solução"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 2,
+      "titulo": "Semana 1: Lógica e Primeiros Passos em Python",
+      "descricao": "Algoritmos, variáveis, print e input.",
+      "conteudo": "Antes de programar, é preciso pensar em passos: um algoritmo é uma sequência de instruções para resolver um problema (como o passo a passo de regular uma máquina).\n\nEm Python você vai aprender:\n• print(): mostrar uma mensagem na tela\n• input(): receber um dado digitado\n• variáveis: caixinhas que guardam valores (nome = \"Claudio\")\n• tipos de dados: texto (str), inteiro (int), decimal (float)\n\nOnde praticar: Google Colab, direto no celular, sem instalar nada.",
+      "exemplosPraticos": [
+        "Programa que pergunta seu nome e responde: Olá, <nome>!",
+        "Programa que soma dois números digitados",
+        "Escreva em português, passo a passo, como trocar um eletrodo (seu primeiro algoritmo)"
+      ],
+      "dicasImportantes": [
+        "Python diferencia maiúscula de minúscula: Nome e nome são variáveis diferentes"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 3,
+      "titulo": "Semana 2: Decisões (if / else)",
+      "descricao": "Fazer o programa escolher caminhos.",
+      "conteudo": "O programa precisa tomar decisões. Usamos if (se), elif (senão se) e else (senão).\n\nOperadores de comparação: ==, !=, >, <, >=, <=\nOperadores lógicos: and (e), or (ou), not (não)\n\nExemplo:\nidade = int(input(\"Idade: \"))\nif idade >= 18:\n    print(\"Maior de idade\")\nelse:\n    print(\"Menor de idade\")\n\nAtenção à indentação (os espaços no começo da linha): ela faz parte do código.",
+      "exemplosPraticos": [
+        "Verificar se um número é par ou ímpar",
+        "Programa de nota: média >= 7 aprovado, senão reprovado",
+        "Calculadora simples (+, -, *, /) com escolha da operação"
+      ],
+      "dicasImportantes": [
+        "Um = atribui valor. Dois == comparam valores"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 4,
+      "titulo": "Semana 3: Repetições (for e while)",
+      "descricao": "Repetir tarefas sem escrever o código várias vezes.",
+      "conteudo": "Laços repetem um bloco de código.\n\nfor: quando você sabe quantas vezes repetir\nfor i in range(1, 11):\n    print(i)\n\nwhile: repete enquanto uma condição for verdadeira\ncontador = 0\nwhile contador < 5:\n    contador += 1\n\nUse break para sair do laço e continue para pular para a próxima volta.",
+      "exemplosPraticos": [
+        "Tabuada de qualquer número",
+        "Contagem regressiva de 10 até 0",
+        "Jogo de adivinhar o número secreto (repete até acertar)"
+      ],
+      "dicasImportantes": [
+        "Cuidado com laço infinito: garanta que a condição do while um dia vai ficar falsa"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 5,
+      "titulo": "Semana 4: Listas e Dicionários",
+      "descricao": "Guardar vários dados juntos.",
+      "conteudo": "Lista: conjunto ordenado de itens.\nmaquinas = [\"MS001\", \"MS002\", \"MS003\"]\nmaquinas.append(\"MS004\")\nprint(maquinas[0])\n\nDicionário: dados com nome (chave e valor).\noperador = {\"nome\": \"Carlos\", \"turno\": 1, \"maquina\": \"MS005\"}\nprint(operador[\"nome\"])\n\nPercorra listas com for. Use len() para saber o tamanho.",
+      "exemplosPraticos": [
+        "Lista de compras: adicionar, remover e mostrar itens",
+        "Média de uma lista de notas",
+        "Cadastro de 3 operadores usando dicionários"
+      ],
+      "dicasImportantes": [
+        "Contagem começa no zero: o primeiro item é o [0]"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 6,
+      "titulo": "Semana 5: Funções",
+      "descricao": "Organizar o código em blocos reutilizáveis.",
+      "conteudo": "Função é um bloco de código com nome, que você chama quando precisar.\n\ndef calcular_media(notas):\n    return sum(notas) / len(notas)\n\nresultado = calcular_media([8, 7, 9])\n\nVantagens: menos repetição, código mais limpo e fácil de corrigir.\n\nParâmetros são os dados que a função recebe. return é o valor que ela devolve.",
+      "exemplosPraticos": [
+        "Função que converte Celsius para Fahrenheit",
+        "Função que diz se um número é primo",
+        "Refazer a calculadora da semana 2 usando funções"
+      ],
+      "dicasImportantes": [
+        "Uma função deve fazer uma coisa só e ter nome que explique o que faz"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 7,
+      "titulo": "Semana 6: Arquivos e Tratamento de Erros",
+      "descricao": "Salvar dados e não deixar o programa quebrar.",
+      "conteudo": "Arquivos: ler e gravar dados permanentes.\nwith open(\"agenda.txt\", \"a\") as f:\n    f.write(\"Maria - 11 99999-0000\\n\")\n\nErros: use try/except para tratar problemas sem fechar o programa.\ntry:\n    n = int(input(\"Número: \"))\nexcept ValueError:\n    print(\"Digite apenas números\")\n\nFormato JSON: muito usado para guardar dados (é o mesmo formato dos cursos desta apostila).",
+      "exemplosPraticos": [
+        "Agenda de contatos que salva em arquivo",
+        "Programa que lê um arquivo e conta as linhas",
+        "Salvar e carregar uma lista de tarefas em JSON"
+      ],
+      "dicasImportantes": [
+        "Sempre feche arquivos. O with open já faz isso sozinho"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 8,
+      "titulo": "Semana 7: Módulos, Bibliotecas e APIs",
+      "descricao": "Usar código pronto feito por outras pessoas.",
+      "conteudo": "Biblioteca é um conjunto de funções prontas. Importe com import.\n\nimport random\nprint(random.randint(1, 10))\n\nBibliotecas úteis: random, datetime, json, requests (para consultar APIs).\n\nAPI é um serviço na internet que entrega dados. Com requests.get(url) você busca informações (ex: cotação do dólar, previsão do tempo).\n\nInstale bibliotecas com pip install nome.",
+      "exemplosPraticos": [
+        "Sorteador de números (estilo loteria)",
+        "Mostrar data e hora atuais formatadas",
+        "Consultar uma API pública gratuita e mostrar um dado na tela"
+      ],
+      "dicasImportantes": [
+        "Veja também a Aula 15 do Curso de Python desta apostila: Agentes de API com Python"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 9,
+      "titulo": "Semana 8: Mini Projeto em Python",
+      "descricao": "Juntar tudo o que aprendeu no mês 1 e 2.",
+      "conteudo": "Escolha um projeto pequeno e construa em etapas:\n\nOpção A: Controle de gastos (adicionar, listar, total, salvar em arquivo)\nOpção B: Cadastro de máquinas e operadores (como os do seu dia a dia)\nOpção C: Jogo de quiz com perguntas e pontuação\n\nMétodo: 1) escreva o que o programa deve fazer; 2) divida em funções; 3) teste cada parte; 4) junte tudo.",
+      "exemplosPraticos": [
+        "Menu com opções: 1 Adicionar, 2 Listar, 3 Sair",
+        "Salvar os dados em JSON ao sair e carregar ao abrir",
+        "Apresentar o projeto funcionando para alguém"
+      ],
+      "dicasImportantes": [
+        "Comece pequeno e funcional. Só depois melhore"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 10,
+      "titulo": "Semana 9: HTML e CSS",
+      "descricao": "A estrutura e a aparência de uma página.",
+      "conteudo": "HTML define a estrutura: títulos (h1), textos (p), links (a), imagens (img), listas (ul/li), botões (button) e formulários (form, input).\n\nCSS define o visual: cores, tamanhos, espaços, fontes.\nbotao { background: #E80020; color: white; border-radius: 12px; }\n\nConceitos-chave: seletores, caixa (margin, padding, border), flexbox para alinhar itens e media queries para adaptar ao celular.",
+      "exemplosPraticos": [
+        "Página pessoal com seu nome, foto, texto e links",
+        "Cartão de visita digital com botão de WhatsApp",
+        "Deixar a página bonita no celular usando flexbox"
+      ],
+      "dicasImportantes": [
+        "Abra o código-fonte de sites que você gosta (no computador, botão direito > Inspecionar) e veja como foram feitos"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 11,
+      "titulo": "Semana 10: JavaScript Básico",
+      "descricao": "Dar vida à página.",
+      "conteudo": "JavaScript roda no navegador. Os conceitos são os mesmos do Python, com sintaxe diferente.\n\nlet nome = \"Claudio\";\nfunction dobrar(n) { return n * 2; }\nif (idade >= 18) { ... }\nfor (let i = 0; i < 5; i++) { ... }\n\nEventos: reagir a cliques.\nbotao.addEventListener(\"click\", () => alert(\"Olá!\"));",
+      "exemplosPraticos": [
+        "Botão que muda o texto da página ao clicar",
+        "Contador com botões + e -",
+        "Calculadora de IMC com formulário"
+      ],
+      "dicasImportantes": [
+        "Abra o console do navegador (F12) para ver erros do JavaScript"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 12,
+      "titulo": "Semana 11: DOM e localStorage",
+      "descricao": "Mudar a página e guardar dados no aparelho.",
+      "conteudo": "DOM é a página vista como objetos que o JavaScript pode alterar.\n\ndocument.getElementById(\"lista\").innerHTML = \"...\";\ndocument.createElement(\"li\");\n\nlocalStorage guarda dados no navegador, mesmo depois de fechar:\nlocalStorage.setItem(\"tarefas\", JSON.stringify(lista));\nlet lista = JSON.parse(localStorage.getItem(\"tarefas\")) || [];\n\nÉ assim que funcionam vários apps simples sem servidor.",
+      "exemplosPraticos": [
+        "Lista de tarefas que adiciona, marca e apaga itens",
+        "Salvar a lista no localStorage e recarregar a página",
+        "Formulário com validação (campo obrigatório)"
+      ],
+      "dicasImportantes": [
+        "O localStorage só guarda texto: use JSON.stringify e JSON.parse"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 13,
+      "titulo": "Semana 12: Projeto Final e Publicação",
+      "descricao": "Seu primeiro app no ar.",
+      "conteudo": "Construa um app simples e publique:\n\nSugestões: lista de tarefas, controle de gastos, quiz, cadastro de máquinas ou anotações.\n\nPasso a passo:\n1. Planeje as telas no papel\n2. Monte o HTML e o CSS\n3. Programe com JavaScript\n4. Salve os dados com localStorage\n5. Teste no celular\n6. Publique no GitHub Pages (veja o Curso Prático de GitHub desta apostila)\n\nParabéns: ao terminar, você terá um app real feito por você.",
+      "exemplosPraticos": [
+        "App completo funcionando no celular",
+        "Publicado em um link do GitHub Pages",
+        "Compartilhar com um amigo ou colega e pedir sugestões"
+      ],
+      "dicasImportantes": [
+        "Depois do mês 3, continue: aprenda frameworks, bancos de dados e faça um projeto novo por mês"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    },
+    {
+      "id": 14,
+      "titulo": "Materiais de Estudo Gratuitos",
+      "descricao": "Onde estudar e praticar, em português.",
+      "conteudo": "Cursos e vídeos:\n• Curso em Vídeo (Gustavo Guanabara): Python, HTML5 e CSS3, no YouTube\n• freeCodeCamp em português: JavaScript, HTML e CSS com exercícios\n• Canal Hashtag Programação e Programação Dinâmica: Python e lógica\n\nDocumentação:\n• MDN Web Docs (developer.mozilla.org): a melhor referência de HTML, CSS e JavaScript\n• javascript.info: JavaScript explicado do básico ao avançado\n• Documentação oficial do Python (docs.python.org/pt-br)\n\nPrática:\n• Google Colab: programar Python no navegador do celular\n• Exercism e Codewars: desafios de código\n• Replit ou CodePen: testar HTML, CSS e JS online\n\nDica: escolha poucos materiais e termine. Pular de curso em curso atrapalha.",
+      "exemplosPraticos": [
+        "Escolher 1 curso de vídeo e 1 site de prática e usar só esses no primeiro mês"
+      ],
+      "dicasImportantes": [
+        "Pratique escrevendo o código você mesmo. Copiar e colar não ensina"
+      ],
+      "observacoes": "",
+      "imagens": [],
+      "video": null,
+      "quizAula": []
+    }
+  ],
+  "quizFinal": {
+    "titulo": "Quiz de Avaliação - Plano de Estudos de Programação",
+    "totalPerguntas": 5,
+    "perguntas": [
+      {
+        "pergunta": "Qual linguagem é indicada para começar neste plano?",
+        "opcoes": [
+          "JavaScript",
+          "Python",
+          "C++"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual comando mostra uma mensagem na tela em Python?",
+        "opcoes": [
+          "input()",
+          "print()",
+          "range()"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual estrutura repete um bloco de código?",
+        "opcoes": [
+          "for / while",
+          "if / else",
+          "def"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Para que serve uma função?",
+        "opcoes": [
+          "Apagar variáveis",
+          "Organizar código em blocos reutilizáveis",
+          "Deixar o site mais bonito"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual tecnologia define o visual (cores e tamanhos) de uma página?",
+        "opcoes": [
+          "HTML",
+          "CSS",
+          "Python"
+        ],
+        "correta": 1
+      }
+    ],
+    "tabelaNotas": [
+      {
+        "acertos": 5,
+        "nota": "10,0",
+        "conceito": "Excelente"
+      },
+      {
+        "acertos": 4,
+        "nota": "8,0",
+        "conceito": "Muito bom"
+      },
+      {
+        "acertos": 3,
+        "nota": "6,0",
+        "conceito": "Bom"
+      },
+      {
+        "acertos": "0 a 2",
+        "nota": "0 a 4,0",
+        "conceito": "Refazer leitura"
+      }
+    ]
+  }
+}
