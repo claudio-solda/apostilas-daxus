@@ -319,8 +319,9 @@
      "arquivo": "midia/resposta-rapida/modulo6-visao.svg"
     },
     {
-     "legenda": "Ilustração: câmera industrial inspecionando peça com porcas (opcional, gerar no Gemini)",
-     "promptGemini": "Ilustração em estilo vetorial limpo, cores azul-escuro e laranja, sem verde: uma câmera industrial de visão montada sobre uma esteira numa fábrica de solda, apontando para uma peça metálica com 5 porcas soldadas, com feixe de luz azul iluminando a peça e uma tela ao lado mostrando 5 círculos marcados. Formato horizontal 16:9, sem texto."
+     "legenda": "Ilustração: sistema de visão conferindo a peça na esteira (imagem ilustrativa, feita no Gemini)",
+     "promptGemini": "Ilustração em estilo vetorial limpo, cores azul-escuro e laranja, sem verde: uma câmera industrial de visão montada sobre uma esteira numa fábrica de solda, apontando para uma peça metálica com 5 porcas soldadas, com feixe de luz azul iluminando a peça e uma tela ao lado mostrando 5 círculos marcados. Formato horizontal 16:9, sem texto.",
+     "arquivo": "midia/resposta-rapida/modulo6-visao-ilustracao.jpg"
     }
    ],
    "video": null,
